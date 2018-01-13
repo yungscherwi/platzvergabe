@@ -21,9 +21,9 @@ http://localhost/phpmyadmin/
   Anzahl der Spalten: 3
   
 - Benennen der Tabellenspalten
-  Name: Martrnr Typ: INT Länge/Werte: 11
-  Name: Nachname Typ: VARCHAR Länge/Werte: 255
-  Name: Vorname Typ: VARCHAR Länge/Werte: 255
+  - Name: Martrnr Typ: INT Länge/Werte: 11
+  - Name: Nachname Typ: VARCHAR Länge/Werte: 255
+  - Name: Vorname Typ: VARCHAR Länge/Werte: 255
   -> Speichern
   
 - Bei Bedarf können manuell Datensätze reingepackt werden, die werden dann unter localhost/platzvergabe/studentenlisten unformatiert ausgegeben

@@ -8,8 +8,9 @@
 
 
         $data['title'] = ucfirst($page);
-
+        $this->load->view('templates/hoersaalheader');
         $this->load->view('hoersaele/'.$page, $data);
+        $this->load->view('templates/footer');
 
     }
   }?>

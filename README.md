@@ -30,3 +30,17 @@ http://localhost/phpmyadmin/
 
 Aufruf der Startseite:
 localhost/platzvergabe
+
+- Navbar auf allen Views
+- CSS Ordner steht, js ordner muss noch angelegt werden (außerhalb von application, also an der root vom ordner)
+- Hörsäle können im Hörsaal-Ordner abgespeichert werden
+- Controller für jeder Funktion
+- Routes für gekürzte Links
+
+Relevante Änderungen in der Config (meist kommentiert eigentlich :D)
+- autoload.php Zeile 92, Zeile 135
+- config.php Zeile 26
+- database.php Zeile 78,79,81 Um Verbindung zur SQL-Datenbank zu erstellen (wenn die nicht erstelt wurde, funktioniert die ganze Seite nicht)
+- routes.php Zeile 4,5,6,7
+
+Der Rest ist alles in den Standardordnern views, models und controllers

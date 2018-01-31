@@ -24,14 +24,7 @@
     <!-- Anderes Design muss noch gesucht/erstellt werden und vielleicht lokal gehosted-->
     <link rel="stylesheet" href="https://rawgit.com/enyo/dropzone/master/dist/dropzone.css">
     <!-- Javascript, welches die Weiterleitung zum jeweiligen Hörsaal verantwortet-->
-    <script type="text/javascript">
-        function goToNewPage() {
-          var nr = document.getElementById("hoersaal");
-          var selectedHs = nr.options[nr.selectedIndex].value;
-
-          window.open(selectedHs); //window.location = selectedVal um es im selben Fenster zu öffnen (klappt bisher leider nicht)
-      }
-    </script>
+	   <script src="<?php echo base_url(); ?>application/libraries/scripts.js"></script> 
     <!-- Header vorbei -->
 </head>
 <body>

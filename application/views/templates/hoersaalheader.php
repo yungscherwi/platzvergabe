@@ -7,8 +7,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <!-- Bootstrap CSS Vielleicht eins weglassen? -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.3/css/bootstrap.min.css" integrity="sha384-Zug+QiDoJOrZ5t4lssLdxGhVrurbmBWopoEl+M6BdEfwnCJZtKxi1KgxUyJq13dy" crossorigin="anonymous">
-  	<link rel="stylesheet" type="text/css" href="<?php echo base_url() ;?>css/table.css">
-    <script src="<?php echo base_url(); ?>application/libraries/scripts.js"></script>
+    <!-- Eigene CSS -->
+    <link rel="stylesheet" type="text/css" href="<?php echo base_url() ;?>css/table.css">
+    <script type="text/javascript">
+  		function printpage() {
+  			window.print();
+  		}
+  	</script>
 </head>
 <body>
 <!-- Navbar https://getbootstrap.com/docs/4.0/components/navbar/-->

@@ -20,7 +20,7 @@
             {
                     $config['upload_path']          = './uploads/';
                     $config['allowed_types']        = 'csv';
-                    $config['max_size']             = '10000'; /* erlaubte Größe: 10 MB*/
+                    $config['max_size']             = '10000'; /*erlaubte Größe: 10MB*/
 
                     $this->load->library('upload', $config);
 

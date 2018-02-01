@@ -8,23 +8,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.3/css/bootstrap.min.css" integrity="sha384-Zug+QiDoJOrZ5t4lssLdxGhVrurbmBWopoEl+M6BdEfwnCJZtKxi1KgxUyJq13dy" crossorigin="anonymous">
-
-
-    <!--
-      DO NOT SIMPLY COPY THOSE LINES. Download the JS and CSS files from the
-      latest release (https://github.com/enyo/dropzone/releases/latest), and
-      host them yourself!
-    -->
-
-    <script src="https://rawgit.com/enyo/dropzone/master/dist/dropzone.js"></script>
-    <!-- Funktioniert irgendwie nicht mit local hosting
-    <script src="../templates/dropzone.js"></script>
-    -->
-
-    <!-- Anderes Design muss noch gesucht/erstellt werden und vielleicht lokal gehosted-->
-    <link rel="stylesheet" href="https://rawgit.com/enyo/dropzone/master/dist/dropzone.css">
+    <!-- Eigene CSS -->
+     <link rel="stylesheet" type="text/css" href="<?php echo base_url() ;?>css/table.css">
     <!-- Javascript, welches die Weiterleitung zum jeweiligen Hörsaal verantwortet-->
-	   <script src="<?php echo base_url(); ?>application/libraries/scripts.js"></script> 
+    <script type="text/javascript">
+        function goToNewPage() {
+          var nr = document.getElementById("hoersaal");
+          var selectedHs = nr.options[nr.selectedIndex].value;
+          window.open(selectedHs); //window.location = selectedVal um es im selben Fenster zu öffnen (klappt bisher leider nicht)
+      }
+    </script>
     <!-- Header vorbei -->
 </head>
 <body>

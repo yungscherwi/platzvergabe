@@ -14,7 +14,7 @@ Bitte laden Sie ihre Tabelle hoch.
 
 <input type="file" name="userfile" size="20" />
 
-<br /><br />
+<br/><br/>
 
 <input type="submit" value="Hochladen" />
 <br><br>

@@ -9,11 +9,11 @@ bei mir geht leider nur die IP und localhost funktioniert nicht
 
 2. .htaccess im Root-Verzeichnis erstellen mit folgendem Inhalt:
 
-RewriteEngine on
-RewriteCond $1 !^(index\.php|assets|images|js|css|uploads|favicon.png)
-RewriteCond %(REQUEST_FILENAME) !-f
-RewriteCond %(REQUEST_FILENAME) !-d
-RewriteRule ^(.*)$ ./index.php/$1 [L]
+RewriteEngine on <br>
+RewriteCond $1 !^(index\.php|assets|images|js|css|uploads|favicon.png) <br>
+RewriteCond %(REQUEST_FILENAME) !-f <br>
+RewriteCond %(REQUEST_FILENAME) !-d <br>
+RewriteRule ^(.*)$ ./index.php/$1 [L] <br>
 
 3. 
 Schreiberlaubnis an uploads Ordner vergeben, sonst funktoniert der Upload nicht

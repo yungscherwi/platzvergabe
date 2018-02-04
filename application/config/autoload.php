@@ -89,7 +89,7 @@ $autoload['drivers'] = array();
 |
 |	$autoload['helper'] = array('url', 'file');
 */
-$autoload['helper'] = array('url'); //erlaubt weiterleitung per url oder so
+$autoload['helper'] = array('url');
 
 /*
 | -------------------------------------------------------------------
@@ -132,4 +132,4 @@ $autoload['language'] = array();
 |
 |	$autoload['model'] = array('first_model' => 'first');
 */
-$autoload['model'] = array('studentenliste_model'); //lädt Studentenliste_model automatisch
+$autoload['model'] = array();

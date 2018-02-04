@@ -1,32 +1,15 @@
-<!-- Wird auf jeder Seite geladen, alles hiernach ist Body und ist eingeschlossen durch footer.php-->
-<!doctype html>
 <html lang="en">
-  <head>
-    <title>Platzvergabe</title>
-    <!-- Required Meta Tags-->
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.3/css/bootstrap.min.css" integrity="sha384-Zug+QiDoJOrZ5t4lssLdxGhVrurbmBWopoEl+M6BdEfwnCJZtKxi1KgxUyJq13dy" crossorigin="anonymous">
+<head>
+	<meta charset="UTF-8">
+	<title>Platzvergabe</title>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+	<script src="<?php echo base_url(); ?>application/libraries/scripts.js"></script>	
+	<link rel="stylesheet" type="text/css" href="<?php echo base_url() ;?>application/views/css/table.css">
 </head>
 <body>
-<!-- Navbar https://getbootstrap.com/docs/4.0/components/navbar/-->
-  <nav class="navbar navbar-expand-lg navbar-light bg-light">
-    <a class="navbar-brand" href="<?php echo base_url();?>"> <!--Klick auf Banner oben verlinkt wieder auf Home-->
-      <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/95/Georg-August-Universit%C3%A4t_G%C3%B6ttingen_Logo.svg/571px-Georg-August-Universit%C3%A4t_G%C3%B6ttingen_Logo.svg.png" width="285" height="56" class="d-inline-block align-top" alt="">
-      Automatisierte Platzvergabe
-    </a>
-<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
-  <span class="navbar-toggler-icon"></span>
-</button>
-<div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-  <div class="navbar-nav">
-    <a class="nav-item nav-link" href="<?php echo base_url();?>">Home</a>
-    <a class="nav-item nav-link" href="<?php echo base_url();?>hochladen">Hochladen</a>
-    <a class="nav-item nav-link" href="<?php echo base_url();?>hoersaele">Hörsäle</a>
-    <a class="nav-item nav-link" href="<?php echo base_url();?>studentenlisten">Studentenlisten</a>
-  </div>
-</div>
-</nav>
-
-<div class="container">
+	<header>
+		<div class="container-fluid logo-container">
+			<img id="logo" src="http://www.uni-goettingen.de/img/redesign/logo.svg">
+		</div>
+	</header>

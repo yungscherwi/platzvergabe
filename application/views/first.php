@@ -1,3 +1,13 @@
+<script type="text/javascript">
+   Dropzone.options.dropzone = {
+        accept: function(file, done) {
+            if (file.type != ".csv") {
+                done("Error! Files of this type are not accepted");
+            }
+            else { done(); }
+        }
+    }
+ </script>
 <div class="container">
   	<div id="dropdownlist" class="dropdownlist">
     	<form method="get" id="hoersaal_auswahl" name="hoersaal_auswahl">
@@ -27,7 +37,7 @@
 	<section>
   		<h1 id="uploadueberschrift">Hier hochladen!</h1>
   		<div id="dropzone">
-  			<form action="<?php base_url();?>application/controllers/controller.php/upload2" class="dropzone" method="post" enctype="multipart/form-data">
+  			<form action="index.php/controller/upload" name="file" class="dropzone" method="post" enctype="multipart/form-data">
   			<div class="dz-message needsclick">
     			Drop files here or click to upload.<br><br><br>
     		<span class="note needsclick">(<strong>Es werden nur CSV Dateien unterstützt</strong>)</span>

@@ -6,6 +6,9 @@
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 	<script src="<?php echo base_url(); ?>application/libraries/scripts.js"></script>	
 	<link rel="stylesheet" type="text/css" href="<?php echo base_url() ;?>application/views/css/table.css">
+	<script src="<?php echo base_url(); ?>application/libraries/dropzone.js"></script>
+	<link rel="stylesheet" href="<?php echo base_url() ?>application/views/css/dropzone.css">
+
 </head>
 <body>
 	<header>

@@ -6,8 +6,8 @@ import xlsxwriter
 wb = openpyxl.Workbook() #open new workbook and activate it
 ws = wb.active
 
-f = open('C:\\xampp\\htdocs\\platzvergabe\\application\\models\\uploads\\ZPrf_Modulname_Semester.csv')
-reader = csv.reader(f, delimiter=';')#siehe zeile 22 
+f = open('C:\\xampp\\htdocs\\platzvergabe\\application\\models\\uploads\\test.csv')
+reader = csv.reader(f, delimiter='?')#siehe zeile 22 
 for row in reader:
     ws.append(row)
 f.close()

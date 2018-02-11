@@ -1,0 +1,83 @@
+import csv
+import pandas as pd
+import sys
+import codecs
+import pyexcel as p
+import json
+from pyexcel.cookbook import merge_all_to_a_book
+import glob
+
+#io = p.get_str(file_name="ZPrf_Modulname_Semester.csv", encoding="latin-1")
+#merge_all_to_a_book(glob.glob(io), "output.xlsx")
+
+#with open("C:\\xampp\\htdocs\\my_project\\secondtry\\py_in_php\\test.csv") as csvfile:
+#    readCSV = csv.reader(csvfile, dialect="excel")
+#    for row in readCSV:
+#        print (row)    
+
+
+#io = pd.read_csv("C:\\xampp\\htdocs\\my_project\\secondtry\\py_in_php\\ZPrf_Modulname_Semester.csv", 'r', encoding='utf-8', errors='ignore')
+#io.encode('utf-8').strip()
+
+#with codecs.open("C:\\xampp\\htdocs\\my_project\\secondtry\\py_in_php\\ZPrf_Modulname_Semester.csv", "r", encoding='utf-8', errors='ignore') as fdata:
+#    print (fdata)    
+
+#io = p.get_sheet(file_name="ZPrf_Modulname_Semester.csv", encoding="latin-1")
+#print (io.row[1])
+#io.row[1] = ['12121212']
+#print (io.row[1])
+#oi =(json.dumps(io.to_array()))
+#print (oi[1]) 
+#my_array = p.get_array(file_name="Zprf_Modulname_Semester.csv", encoding="latin-1")
+
+csv_name="ZPrf_Modulname_Semester.csv"
+xlsx_name="output.xlsx"
+directory="C:\\xampp\\htdocs\\my_project\\secondtry\\py_in_php"
+floats = [1,2,3,4,5,6,7]
+
+        
+def csvtoxlsx(csv_name, xlsx_name, directory, floats):
+    """
+    A function to convert a CSV file to XLSX so it can be used by openpyxl.
+    csvname = file name of csv you want to convert (include .csv)
+    xlsx_name = name you want to name the xlsx file (include .xlsx)
+    cwd = directory to find csv file (can pass os.getcwd())
+    floats = A list of column indexes in which floats appear
+    """
+
+    os.chdir(directory)
+
+    f = open(csv_name, 'rt')
+    csv.register_dialect('commas', delimiter=',')
+    reader = csv.reader(f, dialect='commas')
+    wb = Workbook()
+    dest_filename = xlsx_name
+    ws = wb.worksheets[0]
+    ws.title = xlsx_name[:-5]
+
+    for row_index, row in enumerate(reader):
+        for column_index, cell in enumerate(row):
+
+            column_letter = get_column_letter((column_index + 1))
+
+            if column_index in floats:
+                s = cell
+                #Handles heading row or non floats
+                try:
+                    s = float(s)
+                    ws[('%s%s'%(column_letter, (row_index + 1)))].value = s
+
+                except ValueError:
+                    ws[('%s%s'%(column_letter, (row_index + 1)))].value = s
+
+            elif column_index not in floats:
+                #Handles openpyxl 'illigal chars'
+                try:
+                    ws[('%s%s'%(column_letter, (row_index + 1)))].value = cell
+
+                except:
+                    ws[('%s%s'%(column_letter, (row_index + 1)))].value = 'illigal char'
+
+
+
+    wb.save(filename = dest_filename)        

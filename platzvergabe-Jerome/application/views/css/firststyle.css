@@ -1,0 +1,88 @@
+#logo {
+    height: 50px;
+}
+header{
+    background-color: #13306a;
+    display: block;
+    box-sizing: border-box;
+
+}
+
+body{
+    font-family: "Helvetica Neue",Helvetica,ARial,sans-serif;
+    font-size: 14px;
+    line-height: 1.42857143;
+    color: #333;
+    margin: 0;
+}
+
+html {
+    font-size: 10px;
+    font-family: sans-serif;
+}
+
+* {
+    box-sizing: border box;
+    -moz-box-sizing: border-box;
+}
+.container-fluid {
+    padding-top: 25px;
+    padding-bottom: 25px;
+    padding-right: 15px;
+    padding-left: 15px;
+    max-width: 1170px;
+    margin-right: auto;
+    margin-left: auto;
+
+}
+
+.dropdownlist, .box, section {
+    padding-top: 25px;
+}
+
+#button {
+    margin-left: 0px;
+}
+
+.box__dragndrop,
+.box__uploading,
+.box__success,
+.box__error {
+  display: none;
+}
+
+section {
+    font-family: Roboto, "Open Sans", sans-serif;
+    color: #646C7F;
+    font-size: 20px;
+    line-height: 1.4rem;
+    margin-right: 200px;
+}
+
+.dropzone{
+    /*border: 2px dashed #0087F7;
+    border-radius: 5px;*/
+    background: white;
+    padding: 54px 54px;
+}
+
+.container{
+    padding-top: 25px;
+    padding-right: 15px;
+    padding-left: 15px;
+    margin-right: auto;
+    margin-left: auto;
+    width: 1170px;
+}
+
+h1 {
+    font-size: 36px;
+    margin-top: 20px;
+    margin-bottom: 10px;
+    font-family: inherit;
+    font-weight: 500;
+    line-height: 1.1;
+    color: inherit;
+    margin: .67em 0;
+}
+

@@ -11,6 +11,7 @@ bisschen aufgeräumt
 
 update 12.02:
 -tables.css hinzugefuegt
+-lecture_hall_header hinzugefuegt
 -controller erweitert
 
 

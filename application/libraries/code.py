@@ -1,7 +1,6 @@
 import csv
 import openpyxl
 import xlrd
-import xlsxwriter
 
 wb = openpyxl.Workbook() #open new workbook and activate it
 ws = wb.active
@@ -23,5 +22,3 @@ for i in range (1, len(rb)):
 
 for i in range(1, len(rb)):#print
     print(int(rb[i][0]))
-
-

@@ -1,83 +1,28 @@
-import csv
-import pandas as pd
-import sys
-import codecs
-import pyexcel as p
-import json
-from pyexcel.cookbook import merge_all_to_a_book
-import glob
-
-#io = p.get_str(file_name="ZPrf_Modulname_Semester.csv", encoding="latin-1")
-#merge_all_to_a_book(glob.glob(io), "output.xlsx")
-
-#with open("C:\\xampp\\htdocs\\my_project\\secondtry\\py_in_php\\test.csv") as csvfile:
-#    readCSV = csv.reader(csvfile, dialect="excel")
-#    for row in readCSV:
-#        print (row)    
-
-
-#io = pd.read_csv("C:\\xampp\\htdocs\\my_project\\secondtry\\py_in_php\\ZPrf_Modulname_Semester.csv", 'r', encoding='utf-8', errors='ignore')
-#io.encode('utf-8').strip()
-
-#with codecs.open("C:\\xampp\\htdocs\\my_project\\secondtry\\py_in_php\\ZPrf_Modulname_Semester.csv", "r", encoding='utf-8', errors='ignore') as fdata:
-#    print (fdata)    
-
-#io = p.get_sheet(file_name="ZPrf_Modulname_Semester.csv", encoding="latin-1")
-#print (io.row[1])
-#io.row[1] = ['12121212']
-#print (io.row[1])
-#oi =(json.dumps(io.to_array()))
-#print (oi[1]) 
-#my_array = p.get_array(file_name="Zprf_Modulname_Semester.csv", encoding="latin-1")
-
-csv_name="ZPrf_Modulname_Semester.csv"
-xlsx_name="output.xlsx"
-directory="C:\\xampp\\htdocs\\my_project\\secondtry\\py_in_php"
-floats = [1,2,3,4,5,6,7]
-
-        
-def csvtoxlsx(csv_name, xlsx_name, directory, floats):
-    """
-    A function to convert a CSV file to XLSX so it can be used by openpyxl.
-    csvname = file name of csv you want to convert (include .csv)
-    xlsx_name = name you want to name the xlsx file (include .xlsx)
-    cwd = directory to find csv file (can pass os.getcwd())
-    floats = A list of column indexes in which floats appear
-    """
-
-    os.chdir(directory)
-
-    f = open(csv_name, 'rt')
-    csv.register_dialect('commas', delimiter=',')
-    reader = csv.reader(f, dialect='commas')
-    wb = Workbook()
-    dest_filename = xlsx_name
-    ws = wb.worksheets[0]
-    ws.title = xlsx_name[:-5]
-
-    for row_index, row in enumerate(reader):
-        for column_index, cell in enumerate(row):
-
-            column_letter = get_column_letter((column_index + 1))
-
-            if column_index in floats:
-                s = cell
-                #Handles heading row or non floats
-                try:
-                    s = float(s)
-                    ws[('%s%s'%(column_letter, (row_index + 1)))].value = s
-
-                except ValueError:
-                    ws[('%s%s'%(column_letter, (row_index + 1)))].value = s
-
-            elif column_index not in floats:
-                #Handles openpyxl 'illigal chars'
-                try:
-                    ws[('%s%s'%(column_letter, (row_index + 1)))].value = cell
-
-                except:
-                    ws[('%s%s'%(column_letter, (row_index + 1)))].value = 'illigal char'
-
-
-
-    wb.save(filename = dest_filename)        
+Matrnr;Anrede;Nachname;Vorname;Email;Note;Punkte;Prfbem;Prfbem-Bezeichnung;Versuch;Studiengang;Fachgruppe;Fachsemester;Vorbehalt
+99999999;Herr;A;Vorname A;Vorname A.A@stud.uni-goettingen.de;;;;<Ohne>;1;Wirtschaftsinformatik (Bachelor of Science);Vertiefung Wirtschaftsinformatik - Wahlmodule (3 aus IIV, DIW, IKT, SRS);7;0
+99999999;Frau;Ž;Vorname K;Vorname K.Ž@stud.uni-goettingen.de;;;;<Ohne>;1;Wirtschaftsinformatik (Bachelor of Science);Vertiefung Wirtschaftsinformatik - Wahlmodule (3 aus IIV, DIW, IKT, SRS);5;0
+88888888;Herr;B;Vorname Ž;Vorname Ž.B@stud.uni-goettingen.de;;;;<Ohne>;1;Wirtschaftsinformatik (Bachelor of Science);Vertiefung Wirtschaftsinformatik - Wahlmodule (3 aus IIV, DIW, IKT, SRS);6;0
+77777777;Herr;C;Vorname Y;Vorname Y.C@stud.uni-goettingen.de;;;;<Ohne>;1;Wirtschaftsinformatik (Bachelor of Science);Vertiefung Wirtschaftsinformatik - Wahlmodule (3 aus IIV, DIW, IKT, SRS);6;0
+66666666;Herr;D;Vorname C;Vorname C.D@stud.uni-goettingen.de;;;;<Ohne>;1;Wirtschaftsinformatik (Bachelor of Science);Vertiefung Wirtschaftsinformatik - Wahlmodule (3 aus IIV, DIW, IKT, SRS);6;0
+123456794;Herr;E;Vorname N;Vorname N.E@stud.uni-goettingen.de;;;;<Ohne>;1;Wirtschaftsinformatik (Bachelor of Science);Freier Wahlbereich;5;0
+123456795;Herr;F;Vorname D;Vorname D.F@stud.uni-goettingen.de;;;;<Ohne>;1;Wirtschaftsinformatik (Bachelor of Science);Vertiefung Wirtschaftsinformatik - Wahlmodule (3 aus IIV, DIW, IKT, SRS);6;0
+123456796;Frau;G;Vorname E;Vorname E.G@stud.uni-goettingen.de;;;;<Ohne>;1;Wirtschaftsinformatik (Bachelor of Science);Vertiefung Wirtschaftsinformatik - Wahlmodule (3 aus IIV, DIW, IKT, SRS);4;0
+123456797;Herr;H;Vorname F;Vorname F.H@stud.uni-goettingen.de;;;;<Ohne>;1;Wirtschaftsinformatik (Bachelor of Science);Freier Wahlbereich;6;0
+123456798;Frau;I;Vorname S;Vorname S.I@stud.uni-goettingen.de;;;;<Ohne>;1;Wirtschaftsinformatik (Bachelor of Science);Vertiefung Wirtschaftsinformatik - Wahlmodule (3 aus IIV, DIW, IKT, SRS);6;0
+123456799;Frau;J;Vorname G;Vorname G.J@stud.uni-goettingen.de;;;;<Ohne>;1;Wirtschaftsinformatik (Bachelor of Science);Vertiefung Wirtschaftsinformatik - Wahlmodule (3 aus IIV, DIW, IKT, SRS);4;0
+123456800;Frau;K;Vorname H;Vorname H.K@stud.uni-goettingen.de;;;;<Ohne>;1;Wirtschaftsinformatik (Bachelor of Science);Vertiefung Wirtschaftsinformatik - Wahlmodule (3 aus IIV, DIW, IKT, SRS);8;0
+123456801;Herr;L;Vorname I;Vorname I.L@stud.uni-goettingen.de;;;;<Ohne>;1;Wirtschaftsinformatik (Bachelor of Science);Freier Wahlbereich;7;0
+123456802;Herr;O;Vorname T;Vorname T.O@stud.uni-goettingen.de;;;;<Ohne>;1;Wirtschaftsinformatik (Bachelor of Science);Freier Wahlbereich;6;0
+123456803;Frau;™;Vorname J;Vorname J.™@stud.uni-goettingen.de;;;;<Ohne>;1;Wirtschaftsinformatik (Bachelor of Science);Vertiefung Wirtschaftsinformatik - Wahlmodule (3 aus IIV, DIW, IKT, SRS);7;0
+123456804;Herr;P;Vorname U;Vorname U.P@stud.uni-goettingen.de;;;;<Ohne>;1;Wirtschaftsinformatik (Bachelor of Science);Vertiefung Wirtschaftsinformatik - Wahlmodule (3 aus IIV, DIW, IKT, SRS);6;0
+123456805;Frau;Q;Vorname L;Vorname L.Q@stud.uni-goettingen.de;;;;<Ohne>;1;Wirtschaftsinformatik (Bachelor of Science);Vertiefung Wirtschaftsinformatik - Wahlmodule (3 aus IIV, DIW, IKT, SRS);4;0
+123456806;Frau;R;Vorname O;Vorname O.R@stud.uni-goettingen.de;;;;<Ohne>;1;Wirtschaftsinformatik (Bachelor of Science);Vertiefung Wirtschaftsinformatik - Wahlmodule (3 aus IIV, DIW, IKT, SRS);6;0
+123456807;Herr;S;Vorname B;Vorname B.S@stud.uni-goettingen.de;;;;<Ohne>;1;Wirtschaftsinformatik (Bachelor of Science);Freier Wahlbereich;7;0
+123456808;Herr;T;Vorname P;Vorname P.T@stud.uni-goettingen.de;;;;<Ohne>;1;Wirtschaftsinformatik (Bachelor of Science);Vertiefung Wirtschaftsinformatik - Wahlmodule (3 aus IIV, DIW, IKT, SRS);11;0
+123456809;Herr;U;Vorname R;Vorname R.U@stud.uni-goettingen.de;;;;<Ohne>;1;Wirtschaftsinformatik (Bachelor of Science);Vertiefung Wirtschaftsinformatik - Wahlmodule (3 aus IIV, DIW, IKT, SRS);4;0
+123456810;Herr;š;Vorname V;Vorname V.š@stud.uni-goettingen.de;;;;<Ohne>;1;Wirtschaftsinformatik (Bachelor of Science);Vertiefung Wirtschaftsinformatik - Wahlmodule (3 aus IIV, DIW, IKT, SRS);7;0
+123456811;Herr;V;Vorname Z;Vorname Z.V@stud.uni-goettingen.de;;;;<Ohne>;1;Wirtschaftsinformatik (Bachelor of Science);Vertiefung Wirtschaftsinformatik - Wahlmodule (3 aus IIV, DIW, IKT, SRS);6;0
+123456812;Herr;W;Vorname M;Vorname M.W@stud.uni-goettingen.de;;;;<Ohne>;1;Wirtschaftsinformatik (Bachelor of Science);Vertiefung Wirtschaftsinformatik - Wahlmodule (3 aus IIV, DIW, IKT, SRS);6;0
+123456813;Herr;X;Vorname X;Vorname X.X@stud.uni-goettingen.de;;;;<Ohne>;1;Wirtschaftsinformatik (Bachelor of Science);Vertiefung Wirtschaftsinformatik - Wahlmodule (3 aus IIV, DIW, IKT, SRS);6;0
+123456814;Herr;Y;Vorname W;Vorname W.Y@stud.uni-goettingen.de;;;;<Ohne>;1;Wirtschaftsinformatik (Bachelor of Science);Vertiefung Wirtschaftsinformatik - Wahlmodule (3 aus IIV, DIW, IKT, SRS);7;0
+123456815;Herr;Z;Vorname Q;Vorname Q.Z@stud.uni-goettingen.de;;;;<Ohne>;1;Wirtschaftsinformatik (Bachelor of Science);Vertiefung Wirtschaftsinformatik - Wahlmodule (3 aus IIV, DIW, IKT, SRS);6;0

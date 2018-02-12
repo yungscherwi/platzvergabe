@@ -1,13 +1,3 @@
-<script type="text/javascript">
-   Dropzone.options.dropzone = {
-        accept: function(file, done) {
-            if (file.type != ".csv") {
-                done("Error! Files of this type are not accepted");
-            }
-            else { done(); }
-        }
-    }
- </script>
 <div class="container">
   	<div id="dropdownlist" class="dropdownlist">
     	<form method="get" id="hoersaal_auswahl" name="hoersaal_auswahl">
@@ -46,7 +36,7 @@
 		</div>
 	</section>
 	<br><br>
-	<button type="submit" form="hoersaal_auswahl" class="btn btn-default" onClick="goToNewPage()">Abschicken</button>
+	<button type="submit" form="hoersaal_auswahl" class="btn btn-default" onClick="goToNewPage()"><a>Abschicken</a></button>
 </div>
 </body>
 <link rel="stylesheet" type="text/css" href="<?php echo base_url() ?>application/views/css/firststyle.css">

@@ -9,4 +9,8 @@ bisschen aufgeräumt
 -controller ist noch ein schlachtfeld
 -table.css muss noch überarbeitet werden (mache ich im laufe der woche) 
 
+update 12.02:
+-tables.css hinzugefuegt
+-controller erweitert
+
 

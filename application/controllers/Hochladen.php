@@ -11,7 +11,9 @@
             public function index()
             {
               $this->load->view('templates/hochladenheader');
-              $this->load->view('hochladen/index', array('error' => ' ' ));
+
+              $data['hoersaalID'] = $this->hoersaal_model->get_hoersaalID(); //liefert die HoersaalID Spalte aus hoersaal
+              $this->load->view('hochladen/index', $data);
               $this->load->view('templates/footer');
             }
 

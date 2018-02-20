@@ -4,26 +4,53 @@
 <?php
 print('<thead><tr><th colspan="13"><p><strong>'.$raum.'</strong></p></th></tr></thead>'); //Raumnummer und schwarzer balken (irgenwie dynamisch generieren?)
 $reiheLength = count($reihe); //Bestimmt Länge von Array $reihe
-$reihenNummer = 0; //Counter für Reihennummer
-$MartrNr = [69696969,12345678,11581029,99999999,11581029,11581029,11581029,11581029];
+$reihenNummer = $reiheLength; //Counter für Reihennummer
+//$MartrNr !!! MUSS AUCH noch REVERSED WERDEN, SONST FALSCHE REIHENFOLGE BEI LISTE FÜR KLAUSURVERANTWORTLICHEN
 $MartrNrLength = count($MartrNr);
-$platznummer = 1; //counter Variabel für Platznummer
-/* So oft durchlaufen wie der Array lang ist */
+$platznummer = $MartrNrLength; //counter Variabel für Platznummer
+$plaetze = 0; //Anzahl der für die Klausur verfügbaren Plätze, wird gleich berechnet
+//Berechnet die Anzahl verfügbaren Plätze, kann theoretisch auch woanders hin und das Ergebnis in die Datenbank
 for($i=0;$i<$reiheLength;$i++){
-  $reihenNummer++;
-  print ('<tr><td class="noBorder">Reihe ' .$reihenNummer. ' </td>');
-  /* Erste Reihe besetzen und dann jede ungerade */
-  if($i==0 || $i%2==0){
+  /* Wenn ungerade reihenanzahl,dann: */
+  if($reiheLength%2!=0){
+    /*Wenn Counter i gleich Länge des Arrays besetzen! */
+  if($i==($reiheLength) || $i%2==0){
     for($j=0;$j<$platzAnzahl[$i];$j++){
       /* Den ersten Platz jeder Reihe, ab da jeden 3. besetzen */
-      if($j==0 || $j%3==0){
-        if($MartrNrLength>=$platznummer){
-        print ('<td>Platz ' . $platznummer . ':<br>'. $MartrNr[$platznummer-1] . '</td>');
-        $platznummer++;
-        }
-        else{
-          print('<td></td>');
-        }
+        if($j==0 || $j%3==0){
+          $plaetze++;
+        }}}}
+  // Das selbe nochmal nur für gerade Reihenanzahl
+  else{
+    /*Wenn Counter i gleich Länge des Arrays besetzen! */
+  if($i==($reiheLength) || $i%2!=0){
+    for($j=0;$j<$platzAnzahl[$i];$j++){
+      /* Den ersten Platz jeder Reihe, ab da jeden 3. besetzen */
+        if($j==0 || $j%3==0){
+            $plaetze++;
+        }}}}}
+
+
+//Hier beginnt der eigentliche Platzvergabe-Algorithmus
+/* So oft durchlaufen wie der Array lang ist */
+for($i=0;$i<$reiheLength;$i++){
+  print ('<tr><td class="noBorder">Reihe ' .$reihenNummer. ' </td>');
+  /* Wenn ungerade reihenanzahl,dann: */
+  if($reiheLength%2!=0){
+    /*Wenn Counter i gleich Länge des Arrays besetzen! */
+  if($i==($reiheLength) || $i%2==0){
+    for($j=0;$j<$platzAnzahl[$i];$j++){
+      /* Den ersten Platz jeder Reihe, ab da jeden 3. besetzen */
+        if($j==0 || $j%3==0){
+          //Wenn MatrNrLength kleiner gleich Platznummer-> Platz 1 $$
+          if(($MartrNrLength>=$platznummer)&&($plaetze<=$MartrNrLength)){
+            print ('<td>Platz ' . $platznummer . ':<br>'. $MartrNr[$platznummer-1] . '</td>');
+            $platznummer--;
+            $plaetze--;
+          }else{
+            print('<td></td>');
+            $plaetze--;
+          }
       }
       else{
         print ('<td class="tdgrey"></td>');
@@ -31,13 +58,46 @@ for($i=0;$i<$reiheLength;$i++){
     }
     print('<td class="noBorder">Reihe '.$reihenNummer. '</td></tr>');
   }
-  /* Wenn Reihe ungerade, nicht besetzen */
+  /* Sonst nicht besetzen */
   else{
     for($j=0;$j<$platzAnzahl[$i];$j++){
     print ('<td class="tdgrey"></td>');
     }
     print('<td class="noBorder">Reihe '.$reihenNummer. '</td></tr>');
+    }
   }
+  // Das selbe nochmal nur für gerade Reihenanzahl
+  else{
+    /*Wenn Counter i gleich Länge des Arrays besetzen! */
+  if($i==($reiheLength) || $i%2!=0){
+    for($j=0;$j<$platzAnzahl[$i];$j++){
+      /* Den ersten Platz jeder Reihe, ab da jeden 3. besetzen */
+        if($j==0 || $j%3==0){
+          //Wenn MatrNrLength kleiner gleich Platznummer-> Platz 1 $$
+          if(($MartrNrLength>=$platznummer)&&($plaetze<=$MartrNrLength)){
+            print ('<td>Platz ' . $platznummer . ':<br>'. $MartrNr[$platznummer-1] . '</td>');
+            $platznummer--;
+            $plaetze--;
+          }else{
+            print('<td></td>');
+            $plaetze--;
+          }
+      }
+      else{
+        print ('<td class="tdgrey"></td>');
+      }
+    }
+    print('<td class="noBorder">Reihe '.$reihenNummer. '</td></tr>');
+  }
+  /* Sonst nicht besetzen */
+  else{
+    for($j=0;$j<$platzAnzahl[$i];$j++){
+    print ('<td class="tdgrey"></td>');
+    }
+    print('<td class="noBorder">Reihe '.$reihenNummer. '</td></tr>');
+    }
+  }
+    $reihenNummer--;
 }
  ?>
  <!-- Rest der Tabelle-->

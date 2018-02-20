@@ -10,7 +10,9 @@ class Hoersaal_model extends CI_Model{
     $array1 = $query->row_array();
     $arr = explode(',',$array1['platzAnzahl']);
 
-    return($arr);
+    $revarr = array_reverse($arr); //für richtige Ausrichtung des hörsaals
+
+    return($revarr);
   }
   //Ausgabe von Spalte 'reihe' in einem Array
   public function get_reihe($raum){
@@ -19,7 +21,8 @@ class Hoersaal_model extends CI_Model{
     $array1 = $query->row_array();
     $arr = explode(',',$array1['reihe']);
 
-    return ($arr);
+    $revarr = array_reverse($arr); //für richtige Ausrichtung des hörsaals
+    return ($revarr);
   }
 
   public function createDatabase($raumInfo){
@@ -44,20 +47,23 @@ class Hoersaal_model extends CI_Model{
     $this->dbforge->add_field($fields);
     $this->dbforge->add_key('reihe', true); //Primärschlüssel
     $this->dbforge->create_table($raumInfo[0]); //Name = erste Stelle vom Array
-    //Datenbank ist erstellt, jetzt Insert
-    for($i=0; $raumInfo[1]>$i; $i++){ //je nach anzahl der reihen loopen
-    $infos = array(
-      'platzAnzahl' => $raumInfo [2],
-      'hoersaalID' => $raumInfo[0] //hoersaalID immer identisch
-    );
-    $this->db->insert($raumInfo[0], $infos);
-    }
+
     //Hörsaal in Übersichtstabelle einfügen
     $data = array(
       'hoersaalID' => $raumInfo[0]
     );
     $this->db->insert('hoersaal', $data);
-    return ($raumInfo);
+    }
+
+    //Datenbank ist erstellt, jetzt Insert
+    public function insertIntoDatabase($insertInfo){
+    $infos = array(
+      'platzAnzahl' => $insertInfo [1],
+      'hoersaalID' => $insertInfo[0] //hoersaalID immer identisch
+    );
+    $this->db->insert($insertInfo[0], $infos);
+
+    return ($insertInfo);
 
   }
 

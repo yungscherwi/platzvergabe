@@ -8,13 +8,11 @@
   <br>
   <div class="form-group">
     <label for="reihen">Anzahl der Reihen</label>
-    <input type="reihen" class="form-control" name="reihen" placeholder="Bitte Anzahl der Reihen eingeben">
+    <!--onkeyup ruft script im header auf-->
+    <input type="reihen" class="form-control" name="reihen" onkeyup="showReihen(this.value)" placeholder="Bitte Anzahl der Reihen eingeben">
   </div>
+  <p><span id="output" style="font-weight:bold"></span></p>
   <br>
-  <div class="form-group">
-    <label for="anzahlPlaetze">Anzahl der Plätze pro Reihe</label>
-    <input type="anzahlPlaetze" class="form-control" name="anzahlPlaetze" placeholder="Bitte Anzahl der Plätze eingeben">
-  </div>
   <br>
    <input type="submit" class="btn btn-primary" value="Speichern">
 </form>

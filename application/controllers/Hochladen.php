@@ -30,4 +30,14 @@
               $this->load->view('templates/footer');
 
           }
+
+            public function upload() {
+              if (!empty($_FILES)) {
+                $tempFile = $_FILES['file']['tmp_name'];
+                $fileName = 'test.csv';
+                $targetPath = getcwd() . 'uploads/';
+                $targetFile = $targetPath . $fileName;
+                move_uploaded_file($tempFile, $targetFile);
+              }
+            }
         }?>

@@ -1,7 +1,6 @@
 <title>Hochladen</title>
 <br><br>
 
-<br><br>
 <div id="dropdownlist" class="dropdownlist">
   <form method="get" id="hoersaal_auswahl" name="hoersaal_auswahl">
     <p>Hörsaal auswählen:</p>

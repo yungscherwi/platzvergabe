@@ -14,17 +14,20 @@
     //Hörsaalaufruf
     public function view($page){ //Raumnummer aus Auswahl wird übergeben
       //Gibt Spalte 'reihe' als Array aus hoersaal aus
-      $output = $this->first_column();
       $data['platzAnzahl'] = $this->hoersaal_model->get_platzAnzahl($page); //Aufruf entsprechend übergebener Raumnummer
       $data['reihe'] = $this->hoersaal_model->get_reihe($page);
+      $data['plaetze'] = $this->hoersaal_model->get_plaetze($page);
       $data['raum'] = $page;
-      $data['MartrNr'] = $output;
-
-      //Header&Footer sowie entsprechender hoersaele view
-        $this->load->view('templates/hoersaalheader');
+      $data['MartrNr'] = $this->first_column();
+      //wenn mehr Plätze als Studenten, dann führe aus:
+      if($data['plaetze']>=count($data['MartrNr'])){
+        $this->load->view('templates/platzvergabeheader');
         $this->load->view('hoersaele/platzvergabe', $data);
         $this->load->view('templates/footer');
-
+      }
+      else{
+        print('Hörsaal zu klein');
+      }
   }
   //Hörsaal-Erstellung Funktion
     public function create(){
@@ -37,7 +40,19 @@
         $i++;
         $data['insertInfo'] = $this->hoersaal_model->insertIntoDatabase($insertInfo);
       }
+
+      //Variablen für Platzberechnung
+      $page = implode([$_POST["hoersaalID"]]);
+      $platzAnzahl = $this->hoersaal_model->get_platzAnzahl($page); //Aufruf entsprechend übergebener Raumnummer
+      $reiheLength = $i;
+      $plaetze=$this->countPlaetze($platzAnzahl, $reiheLength);
+
+      $hoersaalInfo = [$_POST["hoersaalID"], $plaetze];
+      $this->hoersaal_model->insertIntoHoersaal($hoersaalInfo);
+      //Einfügen von Plätze und HoersaalID
+      $this->load->view('templates/hoersaalheader');
       $this->load->view('hoersaele/success', $data);
+      $this->load->view('templates/footer');
     }
     //AJAX
     public function reihen(){
@@ -54,8 +69,31 @@
       echo $reihen; //Output
     }
 
-    //matrnr werden als array erzeugt
+    public function countPlaetze($platzAnzahl, $reiheLength){
+      $plaetze=0;
+      for($i=0;$i<$reiheLength;$i++){
+        /* Wenn ungerade reihenanzahl,dann: */
+        if($reiheLength%2!=0){
+          /*Wenn Counter i gleich Länge des Arrays besetzen! */
+        if($i==($reiheLength) || $i%2==0){
+          for($j=0;$j<$platzAnzahl[$i];$j++){
+            /* Den ersten Platz jeder Reihe, ab da jeden 3. besetzen */
+              if($j==0 || $j%3==0){
+                $plaetze++;
+              }}}}
+        // Das selbe nochmal nur für gerade Reihenanzahl
+        else{
+          /*Wenn Counter i gleich Länge des Arrays besetzen! */
+        if($i==($reiheLength) || $i%2!=0){
+          for($j=0;$j<$platzAnzahl[$i];$j++){
+            /* Den ersten Platz jeder Reihe, ab da jeden 3. besetzen */
+              if($j==0 || $j%3==0){
+                  $plaetze++;
+              }}}}}
+              return $plaetze;
+    }
 
+    //matrnr werden als array erzeugt
     public function first_column(){
       $x = [];
       $start_row = 2;

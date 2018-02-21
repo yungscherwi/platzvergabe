@@ -25,6 +25,16 @@ class Hoersaal_model extends CI_Model{
     return ($revarr);
   }
 
+//fragt die Anzahl der Plätze ab
+  public function get_plaetze($raum){
+    $sql = "SELECT plaetze FROM hoersaal WHERE hoersaalID = '$raum'"; //SQL-Abfrage für Platzanzahl
+    $query = $this->db->query($sql);
+    $array1 = $query->row_array();
+
+    $arr= implode($array1); //implode macht Array zu String
+    return ($arr);
+  }
+
   public function createDatabase($raumInfo){
     $this->load->dbforge();
 
@@ -47,13 +57,7 @@ class Hoersaal_model extends CI_Model{
     $this->dbforge->add_field($fields);
     $this->dbforge->add_key('reihe', true); //Primärschlüssel
     $this->dbforge->create_table($raumInfo[0]); //Name = erste Stelle vom Array
-
-    //Hörsaal in Übersichtstabelle einfügen
-    $data = array(
-      'hoersaalID' => $raumInfo[0]
-    );
-    $this->db->insert('hoersaal', $data);
-    }
+  }
 
     //Datenbank ist erstellt, jetzt Insert
     public function insertIntoDatabase($insertInfo){
@@ -66,6 +70,15 @@ class Hoersaal_model extends CI_Model{
     return ($insertInfo);
 
   }
+
+    public function insertIntoHoersaal($hoersaalInfo){
+      //Hörsaal in Übersichtstabelle einfügen
+      $data = array(
+        'hoersaalID' => $hoersaalInfo[0],
+        'plaetze' =>$hoersaalInfo[1]
+      );
+      $this->db->insert('hoersaal', $data);
+    }
 
   public function get_hoersaalID(){
     $sql = "SELECT group_concat(hoersaalID separator ',') as 'hoersaalID' FROM `hoersaal`"; // geht nur mit ` statt ' komischerweise

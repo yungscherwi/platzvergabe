@@ -8,7 +8,7 @@
   <br>
   <div class="form-group">
     <label for="reihen">Anzahl der Reihen</label>
-    <!--onkeyup ruft script im header auf-->
+    <!--onkeyup ruft ajax-script im header auf-->
     <input type="reihen" class="form-control" name="reihen" onkeyup="showReihen(this.value)" placeholder="Bitte Anzahl der Reihen eingeben">
   </div>
   <p><span id="output" style="font-weight:bold"></span></p>

@@ -9,7 +9,7 @@
       <?php
       $hoersaalIDLength = count($hoersaalID);
       for($i=0; $hoersaalIDLength>$i; $i++){
-        print ('<option value="hoersaele/view/'.$hoersaalID[$i].'">'.$hoersaalID[$i].'</option>');
+        print ('<option value="hoersaele/view/'.$hoersaalID[$i].'">'.$hoersaalID[$i].' (Plätze: '. $plaetze[$i] . ') </option>');
       }
       ?>
     </select>

@@ -35,6 +35,16 @@ class Hoersaal_model extends CI_Model{
     return ($arr);
   }
 
+  public function get_allPlaetze(){
+    $sql = "SELECT group_concat(plaetze separator ',') as 'plaetze' FROM `hoersaal`"; // geht nur mit ` statt ' komischerweise
+    $query = $this->db->query($sql);
+    $array1 = $query->row_array();
+    $arr = explode(',',$array1['plaetze']);
+
+    return($arr);
+
+  }
+
   public function createDatabase($raumInfo){
     $this->load->dbforge();
 

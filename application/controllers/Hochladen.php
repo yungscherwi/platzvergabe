@@ -12,7 +12,10 @@
             {
               $this->load->view('templates/hochladenheader');
 
+              //um nur passende hörsäle auszuwählen
               $data['hoersaalID'] = $this->hoersaal_model->get_hoersaalID(); //liefert die HoersaalID Spalte aus hoersaal
+              $data['plaetze'] = $this->hoersaal_model->get_allPlaetze(); //alle plätze als array
+
               $this->load->view('hochladen/index', $data);
               $this->load->view('templates/footer');
             }

@@ -1,3 +1,5 @@
+
+
 <h3>Your file was successfully uploaded!</h3>
 
 <ul>
@@ -6,4 +8,4 @@
 <?php endforeach; ?>
 </ul>
 
-<p><?php echo anchor('hochladen', 'Upload Another File!'); ?></p>
+<p><?php echo anchor('hochladen', 'Zurück zur Platzvergabe'); ?></p>

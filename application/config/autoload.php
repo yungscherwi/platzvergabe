@@ -132,4 +132,4 @@ $autoload['language'] = array();
 |
 |	$autoload['model'] = array('first_model' => 'first');
 */
-$autoload['model'] = array('studentenliste_model'); //lädt Studentenliste_model automatisch
+$autoload['model'] = array('hoersaal_model'); //lädt Studentenliste_model automatisch

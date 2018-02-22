@@ -1,9 +1,21 @@
 <title>Hochladen</title>
-<br><br>
+<h1> Hochladen: </h1>
+<br>
 
+<?php echo $error;?>
+<?php echo form_open_multipart('hochladen/do_upload');?>
+
+<input type="file" name="userfile" size="20" />
+
+<br><br><br>
+
+<input type="submit" class="btn btn-primary" value="Hochladen" />
+
+<br><br>
 <div id="dropdownlist" class="dropdownlist">
   <form method="get" id="hoersaal_auswahl" name="hoersaal_auswahl">
-    <p>Hörsaal auswählen:</p>
+    <h1>Hörsaal auswählen:</h1>
+    <br>
     <select id="hoersaal">
       <option value="hochladen">--Bitte auswählen--</option>
       <?php
@@ -16,5 +28,5 @@
 </form>
 </div>
 <br><br>
-	<button type="submit" form="hoersaal_auswahl" class="btn btn-default" onClick="goToNewPage()">Abschicken</button>
+	<button type="submit" form="hoersaal_auswahl" class="btn btn-primary" onClick="goToNewPage()">Abschicken</button>
 <br><br>

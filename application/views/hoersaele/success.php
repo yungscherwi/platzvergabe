@@ -1,9 +1,2 @@
 <!-- Bestätigungsseite-->
-Erstellen erfolgreich boi
-<html>
-<body>
-  <?php
-  print_r($raumInfo);
-  ?>
-</body>
-</html>
+<h1> Hörsaal wurde erfolgreich erstellt</h1>

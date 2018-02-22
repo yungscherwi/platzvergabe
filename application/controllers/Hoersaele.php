@@ -3,7 +3,7 @@
     //Hörsaal-Erstellen
     public function index(){
 
-        $this->load->view('templates/hoersaalheader');
+        $this->load->view('templates/header');
         $this->load->view('hoersaele/index');
         $this->load->view('templates/footer');
 
@@ -14,16 +14,20 @@
       $data['platzAnzahl'] = $this->hoersaal_model->get_platzAnzahl($page); //Aufruf entsprechend übergebener Raumnummer
       $data['reihe'] = $this->hoersaal_model->get_reihe($page);
       $data['plaetze'] = $this->hoersaal_model->get_plaetze($page);
+      $data['sperrplatzcheck'] = $this->hoersaal_model->get_sperrplatzCheck($page);
+      $data['sperrplatzreihe'] = $this->hoersaal_model->get_sperrplatzreihe($page);
+      $data['sperrplaetze'] = $this->hoersaal_model->get_sperrplatz($page);
       $data['raum'] = $page;
       $data['MartrNr'] = $this->first_column();
-      //wenn mehr Plätze als Studenten, dann führe aus:
+
+      //wenn hörsaal groß genug, dann führe aus:
       if($data['plaetze']>=count($data['MartrNr'])){
         $this->load->view('templates/platzvergabeheader');
         $this->load->view('hoersaele/platzvergabe', $data);
         $this->load->view('templates/footer');
       }
       else{
-        $this->load->view('templates/hoersaalheader');
+        $this->load->view('templates/header');
         $this->load->view('hoersaele/alternativen');
         $this->load->view('templates/footer');
       }
@@ -49,7 +53,7 @@
       $hoersaalInfo = [$_POST["hoersaalID"], $plaetze];
       $this->hoersaal_model->insertIntoHoersaal($hoersaalInfo);
       //Einfügen von Plätze und HoersaalID
-      $this->load->view('templates/hoersaalheader');
+      $this->load->view('templates/header');
       $this->load->view('hoersaele/success', $data);
       $this->load->view('templates/footer');
     }

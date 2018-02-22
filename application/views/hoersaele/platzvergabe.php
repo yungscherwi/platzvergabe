@@ -29,14 +29,9 @@ for($i=0;$i<$reiheLength;$i++){
     /*Erste Reihe und dann jede 2. Reihe besetzen*/
   if($i==($reiheLength) || $i%2==0){
     for($j=0;$j<$platzAnzahl[$i];$j++){
-      if($sperrplatzreihe[$sperrplatzcounter]==$i){
-        if($sperrplaetze[$sperrplatzcounter]==$j){
-          print('<td class="tdgrey"></td>');
-          $j--;
-          $i--;
-          $sperrplatzcouner++;
+      if((($reihe[$i])==$sperrplatzreihe[$sperrplatzcounter])&&(($j+1)==$sperrplaetze[$sperrplatzcounter])){
+          print('<td class="noBorder" style="background-color: #8a2be2"></td>');
         }
-      }
       else{
       /* Den ersten Platz jeder Reihe, ab da jeden 3. besetzen */
         if($j==0 || $j%3==0){
@@ -70,7 +65,11 @@ for($i=0;$i<$reiheLength;$i++){
     /*Wenn Counter i gleich Länge des Arrays besetzen! */
   if($i==($reiheLength) || $i%2!=0){
     for($j=0;$j<$platzAnzahl[$i];$j++){
-      /* Den ersten Platz jeder Reihe, ab da jeden 3. besetzen */
+      //Bestimmt die Stelle des Sperrplatzes
+      if((($reihe[$i])==$sperrplatzreihe[$sperrplatzcounter])&&(($j+1)==$sperrplaetze[$sperrplatzcounter])){
+          print('<td class="noBorder" style="background-color: #8a2be2"></td>');
+        }
+        /* Den ersten Platz jeder Reihe, ab da jeden 3. besetzen */
         if($j==0 || $j%3==0){
           //Wenn MatrNrLength kleiner gleich Platznummer-> Platz 1 $$
           if(($MartrNrLength>=$platznummer)&&($plaetze<=$MartrNrLength)){
@@ -91,8 +90,13 @@ for($i=0;$i<$reiheLength;$i++){
   /* Sonst nicht besetzen */
   else{
     for($j=0;$j<$platzAnzahl[$i];$j++){
+      //Sperrplatz Bestimmung
+      if((($reihe[$i])==$sperrplatzreihe[$sperrplatzcounter])&&(($j+1)==$sperrplaetze[$sperrplatzcounter])){
+          print('<td class="noBorder" style="background-color: #8a2be2"></td>');
+        }
+        else{
     print ('<td class="tdgrey"></td>');
-    }
+  }}
     print('<td class="noBorder">Reihe '.$reihenNummer. '</td></tr>');
     }
   }

@@ -11,9 +11,9 @@
     //Hörsaalaufruf
     public function view($page){ //Raumnummer aus Auswahl wird übergeben
       //Gibt Spalte 'reihe' als Array aus hoersaal aus
-      $data['platzAnzahl'] = $this->hoersaal_model->get_platzAnzahl($page); //Aufruf entsprechend übergebener Raumnummer
+      $data['platzAnzahl'] = $this->hoersaal_model->get_platzAnzahl($page); //Plätze pro Reihe
       $data['reihe'] = $this->hoersaal_model->get_reihe($page);
-      $data['plaetze'] = $this->hoersaal_model->get_plaetze($page);
+      $data['plaetze'] = $this->hoersaal_model->get_plaetze($page); //Plätze des gesamten Hörsaals
       $data['sperrplatzcheck'] = $this->hoersaal_model->get_sperrplatzCheck($page);
       $data['sperrplatzreihe'] = $this->hoersaal_model->get_sperrplatzreihe($page);
       $data['sperrplaetze'] = $this->hoersaal_model->get_sperrplatz($page);
@@ -57,6 +57,8 @@
       $this->load->view('hoersaele/success', $data);
       $this->load->view('templates/footer');
     }
+
+
     //AJAX
     public function reihen(){
       $q = $_REQUEST['q']; //Query für Eingabe
@@ -70,6 +72,21 @@
             </div>';
         }
       echo $reihen; //Output
+    }
+
+    public function showSperrplaetze(){
+      $q = $_REQUEST['q']; //Query für Eingabe
+      $sperrplaetze = ""; //initialisiert String
+
+        for($i=0; $q>$i;$i++){ //Ausgabe von Formvorlage entsprechend eingegebener Zahl
+          $sperrplaetze = $sperrplaetze . //name="anzahlPlaetze.$i um für jede Reihe einen individuellen Namen zu haben"
+          '<div class="form-group">
+              <label for="anzahlPlaetze">Reihe '. ($i+1) .'</label>
+              <input type="anzahlPlaetze" class="form-control" name="anzahlPlaetze'.$i.'" placeholder="Bitte Anzahl der Plätze eingeben">
+            </div>';
+        }
+      echo $sperrplaetze; //Output
+
     }
 
     public function countPlaetze($platzAnzahl, $reiheLength){

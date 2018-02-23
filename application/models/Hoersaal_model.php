@@ -8,7 +8,7 @@ class Hoersaal_model extends CI_Model{
   //Checkt ob Sperrplätze vorhanden im jeweiligen Raum
 
   public function get_sperrplatzCheck($raum){
-    $sql = "SELECT sperrplaetze FROM hoersaal WHERE hoersaalID = '$raum'"; //SQL-Abfrage für Platzanzahl
+    $sql = "SELECT sperrplaetze FROM hoersaaluebersicht WHERE hoersaalID = '$raum'"; //SQL-Abfrage für Platzanzahl
     $query = $this->db->query($sql);
     $array1 = $query->row_array();
 
@@ -40,7 +40,7 @@ class Hoersaal_model extends CI_Model{
 
 //fragt die Anzahl der Plätze ab
   public function get_plaetze($raum){
-    $sql = "SELECT plaetze FROM hoersaal WHERE hoersaalID = '$raum'"; //SQL-Abfrage für Platzanzahl
+    $sql = "SELECT plaetze FROM hoersaaluebersicht WHERE hoersaalID = '$raum'"; //SQL-Abfrage für Platzanzahl
     $query = $this->db->query($sql);
     $array1 = $query->row_array();
 
@@ -49,7 +49,7 @@ class Hoersaal_model extends CI_Model{
   }
 
   public function get_allPlaetze(){
-    $sql = "SELECT group_concat(plaetze separator ',') as 'plaetze' FROM `hoersaal`"; // geht nur mit ` statt ' komischerweise
+    $sql = "SELECT group_concat(plaetze separator ',') as 'plaetze' FROM `hoersaaluebersicht`"; // geht nur mit ` statt ' komischerweise
     $query = $this->db->query($sql);
     $array1 = $query->row_array();
     $arr = explode(',',$array1['plaetze']);
@@ -59,7 +59,7 @@ class Hoersaal_model extends CI_Model{
   }
 
   public function get_hoersaalID(){
-    $sql = "SELECT group_concat(hoersaalID separator ',') as 'hoersaalID' FROM `hoersaal`"; // geht nur mit ` statt ' komischerweise
+    $sql = "SELECT group_concat(hoersaalID separator ',') as 'hoersaalID' FROM `hoersaaluebersicht`"; // geht nur mit ` statt ' komischerweise
     $query = $this->db->query($sql);
     $array1 = $query->row_array();
     $arr = explode(',',$array1['hoersaalID']);
@@ -107,7 +107,7 @@ class Hoersaal_model extends CI_Model{
 
     $this->dbforge->add_field($fields);
     $this->dbforge->add_key('reihe', true); //Primärschlüssel
-    $this->dbforge->add_field('CONSTRAINT FOREIGN KEY (hoersaalID) REFERENCES hoersaal(hoersaalID)'); //Fremdschlüssel
+    $this->dbforge->add_field('CONSTRAINT FOREIGN KEY (hoersaalID) REFERENCES hoersaaluebersicht(hoersaalID)'); //Fremdschlüssel
     $this->dbforge->create_table($raumInfo[0]); //Name = erste Stelle vom Array
 //hoersaalID wird eingefügt in die Tabelle
     $data = array(
@@ -130,7 +130,7 @@ class Hoersaal_model extends CI_Model{
 
     public function insertIntoHoersaal($hoersaalInfo){
       //Anzahl der Plaetze wird in Tabelle 'hoersaal' ergänzt
-      $sql = "UPDATE hoersaal SET plaetze = ".$hoersaalInfo[1]." WHERE hoersaalID = '".$hoersaalInfo[0]."'";
+      $sql = "UPDATE hoersaaluebersicht SET plaetze = ".$hoersaalInfo[1]." WHERE hoersaalID = '".$hoersaalInfo[0]."'";
       $query = $this->db->query($sql);
 
       return;

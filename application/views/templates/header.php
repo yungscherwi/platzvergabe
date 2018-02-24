@@ -19,7 +19,7 @@
           window.open(selectedHs); //window.location = selectedVal um es im selben Fenster zu öffnen (klappt bisher leider nicht)
       }
 
-    function showReihen(int){
+  function showReihen(int){
       if(int.length == 0){
         document.getElementById('reihen').innerHTML = '';
       } else{
@@ -37,20 +37,20 @@
       }
     }
 
-    function showSperrplaetze(int){
+    function sperrplaetze(int){
       if(int.length == 0){
-        document.getElementById('reihen').innerHTML = '';
+        document.getElementById('sperrplaetze').innerHTML = '';
       } else{
         //AJAX REQUEST
         var xmlhttp = new XMLHttpRequest();
         xmlhttp.onreadystatechange = function(){          //prüft ob serververbindung besteht
           if(this.readyState == 4 && this.status == 200){
-            document.getElementById('reihen').
+            document.getElementById('sperrplaetze').
             innerHTML = this.responseText;
           }
         }
         //aufruf der funktion im controller hoersaele  + Übergabe der Eingabe
-        xmlhttp.open("GET", "hoersaele/reihen?q="+int, true);
+        xmlhttp.open("GET", "hoersaele/sperrplaetze?q="+int, true);
         xmlhttp.send();
       }
     }

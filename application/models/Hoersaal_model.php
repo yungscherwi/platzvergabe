@@ -113,7 +113,7 @@ class Hoersaal_model extends CI_Model{
     $data = array(
       'hoersaalID' => $raumInfo[0]
     );
-    $this->db->insert('hoersaal', $data);
+    $this->db->insert('hoersaaluebersicht', $data);
   }
 
     //Datenbank ist erstellt, jetzt Insert

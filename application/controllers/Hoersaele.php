@@ -74,19 +74,25 @@
       echo $reihen; //Output
     }
 
-    public function showSperrplaetze(){
+    public function sperrplaetze(){
       $q = $_REQUEST['q']; //Query für Eingabe
       $sperrplaetze = ""; //initialisiert String
 
         for($i=0; $q>$i;$i++){ //Ausgabe von Formvorlage entsprechend eingegebener Zahl
           $sperrplaetze = $sperrplaetze . //name="anzahlPlaetze.$i um für jede Reihe einen individuellen Namen zu haben"
-          '<div class="form-group">
-              <label for="anzahlPlaetze">Reihe '. ($i+1) .'</label>
-              <input type="anzahlPlaetze" class="form-control" name="anzahlPlaetze'.$i.'" placeholder="Bitte Anzahl der Plätze eingeben">
-            </div>';
+          '<h2>Sperrplatz '.($i+1).'</h1>
+          <br>
+          <div class="form-group">
+              <label for="anzahlPlaetze">Reihe</label>
+              <input type="anzahlPlaetze" class="form-control" name="anzahlPlaetze'.$i.'" placeholder="Bitte Reihe eingeben">
+            </div>
+            <div class="form-group">
+                <label for="anzahlPlaetze">Platznummer</label>
+                <input type="anzahlPlaetze" class="form-control" name="anzahlPlaetze'.$i.'" placeholder="Bitte Platznummer eingeben">
+              </div>
+              <br>';
         }
       echo $sperrplaetze; //Output
-
     }
 
     public function countPlaetze($platzAnzahl, $reiheLength){

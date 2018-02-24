@@ -12,17 +12,18 @@
     <input type="reihen" class="form-control" name="reihen" onkeyup="showReihen(this.value)" placeholder="Bitte Anzahl der Reihen eingeben">
   </div>
   <!--Output von Ajax-->
+<p><span id="reihen" style="font-weight:bold"></span></p>
 
 <!-- Sperrplatzabfrage-->
 <input type="checkbox" name="showSperrplaetze" onclick="showMe('sperrplatzabfrage')">Sperrplätze vorhanden (+Erklärung was Sperrplätze sind)
 <!-- Wenn checked zeige an: -->
 <br><br>
 <div class id="sperrplatzabfrage" style="display:none">
-  <label for="reihen">Anzahl der Reihen</label>
-  <input type="reihen" class="form-control" name="reihen" onkeyup="showReihen(this.value)" placeholder="Bitte Anzahl der Reihen eingeben">
+  <label for="checkbox">Anzahl der Sperrplaetze</label>
+  <input type="sperrplaetze" class="form-control" name="checkbox" onkeyup="sperrplaetze(this.value)" placeholder="Bitte Anzahl der Sperrplätze eingeben">
 </div>
-<br><br>
-<p><span id="reihen" style="font-weight:bold"></span></p>
+<br>
+<p><span id="sperrplaetze" style="font-weight:bold"></span></p>
 
   <br>
   <br>

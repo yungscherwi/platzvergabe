@@ -103,3 +103,8 @@ tr.trgrey {
     margin-left: auto;
     width: 1170px;
 }
+
+#logoutbtn {
+    float: right;
+    padding-right: 25px;
+}

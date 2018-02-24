@@ -40,33 +40,10 @@
         window.print();
       }
     </script>
+  </head>
   <!-- Header vorbei -->
 <body>
-<!-- Navbar https://getbootstrap.com/docs/4.0/components/navbar/-->
-<nav class="navbar navbar-expand-lg navbar-light bg-light">
-  <a class="navbar-brand" href="<?php echo base_url();?>"> <!--Klick auf Banner oben verlinkt wieder auf Home-->
+    <a>
     <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/95/Georg-August-Universit%C3%A4t_G%C3%B6ttingen_Logo.svg/571px-Georg-August-Universit%C3%A4t_G%C3%B6ttingen_Logo.svg.png" width="285" height="56" class="d-inline-block align-top" alt="">
-  </a>
-  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-    <span class="navbar-toggler-icon"></span>
-  </button>
-  <div class="collapse navbar-collapse" id="navbarNav">
-      <ul class="navbar-nav navbar-center">
-          <li class="nav-item active">
-            <a class="nav-link" href="<?php echo base_url() ?>">Home</a>
-          </li>
-        </li>
-          <li class="nav-item active">
-              <a class="nav-link" href="<?php echo base_url();?>hochladen">Platzvergabe</a>
-            </li>
-          <li class="nav-item active">
-            <a class="nav-link" href="<?php echo base_url();?>uebersicht">Hörsaalübersicht</a>
-          </li>
-      <li class="nav-item active">
-        <a class="nav-link" href="<?php echo base_url();?>hoersaele">Erstellen</a>
-
-      </ul>
-    </div>
-</nav>
-
-<div class="container">
+    </a>
+</body>

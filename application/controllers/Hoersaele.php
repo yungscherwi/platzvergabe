@@ -4,6 +4,7 @@
     public function index(){
 
         $this->load->view('templates/header');
+        $this->load->view('templates/navbar');
         $this->load->view('hoersaele/index');
         $this->load->view('templates/footer');
 
@@ -23,11 +24,13 @@
       //wenn hörsaal groß genug, dann führe aus:
       if($data['plaetze']>=count($data['MartrNr'])){
         $this->load->view('templates/platzvergabeheader');
+        $this->load->view('templates/navbar');
         $this->load->view('hoersaele/platzvergabe', $data);
         $this->load->view('templates/footer');
       }
       else{
         $this->load->view('templates/header');
+        $this->load->view('templates/navbar');
         $this->load->view('hoersaele/alternativen');
         $this->load->view('templates/footer');
       }
@@ -54,6 +57,7 @@
       $this->hoersaal_model->insertIntoHoersaal($hoersaalInfo);
       //Einfügen von Plätze und HoersaalID
       $this->load->view('templates/header');
+      $this->load->view('templates/navbar');
       $this->load->view('hoersaele/success', $data);
       $this->load->view('templates/footer');
     }

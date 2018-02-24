@@ -5,7 +5,7 @@
             public function index()
             {
               $this->load->view('templates/header');
-
+              $this->load->view('templates/navbar');
               //um nur passende hörsäle auszuwählen
               $data['hoersaalID'] = $this->hoersaal_model->get_hoersaalID(); //liefert die HoersaalID Spalte aus hoersaal
               $data['plaetze'] = $this->hoersaal_model->get_allPlaetze(); //alle plätze als array
@@ -24,6 +24,7 @@
 
               $data['title'] = ucfirst($page);
               $this->load->view('templates/header');
+              $this->load->view('templates/navbar');
               $this->load->view('hoersaele/index'.$page);
               $this->load->view('templates/footer');
 
@@ -47,6 +48,7 @@
                   {
                           $error = array('error' => $this->upload->display_errors());
                           $this->load->view('templates/header');
+                          $this->load->view('templates/navbar');
                           $this->load->view('hochladen/index', $error);
                           $this->load->view('templates/footer');
                   }
@@ -54,6 +56,7 @@
                   {
                           $data = array('upload_data' => $this->upload->data());
                           $this->load->view('templates/header');
+                          $this->load->view('templates/navbar');
                           $this->load->view('hochladen/upload_success', $data);
                           $this->load->view('templates/footer');
 

@@ -21,9 +21,10 @@
 <div class id="sperrplatzabfrage" style="display:none">
   <label for="checkbox">Anzahl der Sperrplaetze</label>
   <input type="sperrplaetze" class="form-control" name="checkbox" onkeyup="sperrplaetze(this.value)" placeholder="Bitte Anzahl der Sperrplätze eingeben">
+<p><span id="sperrplaetze" style="font-weight:bold"></span></p>
 </div>
 <br>
-<p><span id="sperrplaetze" style="font-weight:bold"></span></p>
+
 
   <br>
   <br>

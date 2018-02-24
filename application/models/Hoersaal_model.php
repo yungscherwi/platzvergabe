@@ -72,8 +72,9 @@ class Hoersaal_model extends CI_Model{
     $query = $this->db->query($sql);
     $array1 = $query->row_array();
     $arr = explode(',',$array1['sperrplatz']);
+    $revarr = array_reverse($arr); //für richtige Ausrichtung des hörsaals
 
-    return ($arr);
+    return ($revarr);
   }
 
   public function get_sperrplatzreihe($raum){
@@ -109,7 +110,7 @@ class Hoersaal_model extends CI_Model{
     $this->dbforge->add_key('reihe', true); //Primärschlüssel
     $this->dbforge->add_field('CONSTRAINT FOREIGN KEY (hoersaalID) REFERENCES hoersaaluebersicht(hoersaalID)'); //Fremdschlüssel
     $this->dbforge->create_table($raumInfo[0]); //Name = erste Stelle vom Array
-//hoersaalID wird eingefügt in die Tabelle
+    //hoersaalID wird eingefügt in die Tabelle
     $data = array(
       'hoersaalID' => $raumInfo[0]
     );
@@ -120,7 +121,7 @@ class Hoersaal_model extends CI_Model{
     public function insertIntoDatabase($insertInfo){
     $infos = array(
       'platzAnzahl' => $insertInfo [1],
-      'hoersaalID' => $insertInfo[0] //MUSS NOCH ALS FREMDSCHLÜSSEL DEKLARIERT WERDEN
+      'hoersaalID' => $insertInfo[0]
     );
     $this->db->insert($insertInfo[0], $infos);
 
@@ -134,7 +135,25 @@ class Hoersaal_model extends CI_Model{
       $query = $this->db->query($sql);
 
       return;
+    }
 
+    public function updateSperrplatz($hoersaalInfo){
+      //Sperrplätze auf 1 gesetzt, da vorhanden
+      $sql = "UPDATE hoersaaluebersicht SET sperrplaetze = '1' WHERE hoersaalID = '".$hoersaalInfo[0]."'";
+      $query = $this->db->query($sql);
+
+      return;
+    }
+
+    public function insertIntoSperrplaetze($sperrplatzInfo){
+      $infos = array(
+        'hoersaalID' => $sperrplatzInfo[0],
+        'sperrplatzreihe' => $sperrplatzInfo[1],
+        'sperrplatz' => $sperrplatzInfo[2],
+      );
+      $this->db->insert('sperrplaetze', $infos);
+
+      return;
     }
 
 } ?>

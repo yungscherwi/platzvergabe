@@ -23,11 +23,20 @@ for($i=0;$i<$reiheLength;$i++){
   print ('<tr><td class="noBorder">Reihe ' .$reihenNummer. ' </td>');
   /* Wenn ungerade reihenanzahl,dann: */
   if($reiheLength%2!=0){
-    /*Wenn Counter i gleich Länge des Arrays besetzen! */
+    /*1. Reihe und jede ungerade */
   if($i==($reiheLength) || $i%2==0){
     for($j=0;$j<$platzAnzahl[$i];$j++){
       /* Den ersten Platz jeder Reihe, ab da jeden 3. besetzen */
         if($j==0 || $j%3==0){
+          //Sperrplatzüberprüfung
+          if((($reihe[$i])==$sperrplatzreihe[$sperrplatzcounter])&&(($j+1)==$sperrplaetze[$sperrplatzcounter])){
+            if((count($sperrplaetze))>($sperrplatzcounter+1)){
+              $sperrplatzcounter++;
+            }
+            print('<td class="noBorder" style="background-color: 	#8b0000"></td>');
+
+          }
+          else{
           //Wenn MatrNrLength kleiner gleich Platznummer-> Platz 1 $$
           if(($MartrNrLength>=$platznummer)&&($plaetze<=$MartrNrLength)){
             print ('<td>Platz ' . $platznummer . ':<br>'. $MartrNr[$platznummer-1] . '</td>');
@@ -38,57 +47,96 @@ for($i=0;$i<$reiheLength;$i++){
             $plaetze--;
           }
       }
-      else{
+    }
+      else{ //wenn nicht nicht besetzbar
+        //Sperrplatzüberprüfung
+        if((($reihe[$i])==$sperrplatzreihe[$sperrplatzcounter])&&(($j+1)==$sperrplaetze[$sperrplatzcounter])){
+          if((count($sperrplaetze))>($sperrplatzcounter+1)){
+            $sperrplatzcounter++;
+            }
+          print('<td class="noBorder" style="background-color: 	#8b0000"></td>');
+          }
+          else{
         print ('<td class="tdgrey"></td>');
       }
     }
+      }
+
     print('<td class="noBorder">Reihe '.$reihenNummer. '</td></tr>');
   }
   /* Sonst nicht besetzen */
   else{
     for($j=0;$j<$platzAnzahl[$i];$j++){
-    print ('<td class="tdgrey"></td>');
-    }
+      //Sperrplatzüberprüfung
+      if((($reihe[$i])==$sperrplatzreihe[$sperrplatzcounter])&&(($j+1)==$sperrplaetze[$sperrplatzcounter])){
+        if((count($sperrplaetze))>($sperrplatzcounter+1)){
+          $sperrplatzcounter++;
+          }
+        print('<td class="noBorder" style="background-color: 	#8b0000"></td>');
+        }
+        else{
+          print ('<td class="tdgrey"></td>');
+        }
+      }
     print('<td class="noBorder">Reihe '.$reihenNummer. '</td></tr>');
     }
   }
-  // Das selbe nochmal nur für gerade Reihenanzahl
+  // Der selbe Algorithmus nochmal nur für gerade Reihenanzahl
   else{
     /*Wenn Counter i gleich Länge des Arrays besetzen! */
   if($i==($reiheLength) || $i%2!=0){
+    for($j=0;$j<$platzAnzahl[$i];$j++){
+        /* Den ersten Platz jeder Reihe, ab da jeden 3. besetzen */
+        if($j==0 || $j%3==0){
+          //Sperrplatzüberprüfung
+          if((($reihe[$i])==$sperrplatzreihe[$sperrplatzcounter])&&(($j+1)==$sperrplaetze[$sperrplatzcounter])){
+            if((count($sperrplaetze))>($sperrplatzcounter+1)){
+              $sperrplatzcounter++;
+            }
+            print('<td class="noBorder" style="background-color: 	#8b0000"></td>');
+
+          }
+          else{
+          //Wenn MatrNrLength kleiner gleich Platznummer-> Platz 1 $$
+          if(($MartrNrLength>=$platznummer)&&($plaetze<=$MartrNrLength)){
+            print ('<td>Platz ' . $platznummer . ':<br>'. $MartrNr[$platznummer-1] . '</td>');
+            $platznummer--;
+            $plaetze--;
+          }
+          else{
+            print('<td></td>');
+            $plaetze--;
+          }
+        }
+      }
+
+      else{
+        if((($reihe[$i])==$sperrplatzreihe[$sperrplatzcounter])&&(($j+1)==$sperrplaetze[$sperrplatzcounter])){
+          if((count($sperrplaetze))>($sperrplatzcounter+1)){
+            $sperrplatzcounter++;
+          }
+          print('<td class="noBorder" style="background-color: 	#8b0000"></td>');
+        }
+        else{
+        print ('<td class="tdgrey"></td>');
+      }
+    }}
+    print('<td class="noBorder">Reihe '.$reihenNummer. '</td></tr>');
+  }
+  /* Sonst nicht besetzen */
+  else{
     for($j=0;$j<$platzAnzahl[$i];$j++){
       if((($reihe[$i])==$sperrplatzreihe[$sperrplatzcounter])&&(($j+1)==$sperrplaetze[$sperrplatzcounter])){
         if((count($sperrplaetze))>($sperrplatzcounter+1)){
           $sperrplatzcounter++;
         }
         print('<td class="noBorder" style="background-color: 	#8b0000"></td>');
-        $plaetze--;
       }
       else{
-        /* Den ersten Platz jeder Reihe, ab da jeden 3. besetzen */
-        if($j==0 || $j%3==0){
-          //Wenn MatrNrLength kleiner gleich Platznummer-> Platz 1 $$
-          if(($MartrNrLength>=$platznummer)&&($plaetze<=$MartrNrLength)){
-            print ('<td>Platz ' . $platznummer . ':<br>'. $MartrNr[$platznummer-1] . '</td>');
-            $platznummer--;
-            $plaetze--;
-          }else{
-            print('<td></td>');
-            $plaetze--;
-          }
-      }
-      else{
-        print ('<td class="tdgrey"></td>');
-      }
-      }
-    }
-    print('<td class="noBorder">Reihe '.$reihenNummer. '</td></tr>');
-  }
-  /* Sonst nicht besetzen */
-  else{
-    for($j=0;$j<$platzAnzahl[$i];$j++){
     print ('<td class="tdgrey"></td>');
     }
+  }
+
     print('<td class="noBorder">Reihe '.$reihenNummer. '</td></tr>');
     }
   }

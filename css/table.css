@@ -78,7 +78,7 @@ td.noBorder, th.noBorder, tr.noBorder td {
 }
 
 tr.trgrey, td.tdgrey {
-	background-color: #8e8e8e; /*heavy-grey: #424242;*/
+	background-color: #8e8e8e;
 }
 tr.trgrey {
 	line-height: 10px;

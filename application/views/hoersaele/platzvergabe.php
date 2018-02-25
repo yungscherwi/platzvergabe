@@ -10,10 +10,15 @@ $MartrNrLength = count($MartrNr);
 $platznummer = $MartrNrLength; //counter Variabel für Platznummer
 $sitzplaetze=$plaetze; //weil $plaetze als Counter benötigt
 
-//<td class="noBorder" style="background-color: #FFFFFF"></td> Sperrplatz Code
-print_r($reihe);
 print_r($sperrplatzreihe);
+print('<br>');
 print_r($sperrplaetze);
+print('<br>');
+print_r($reihe);
+print('<br>');
+print_r($platzAnzahl);
+print('<br>');
+print_r($reiheLength);
 //print_r($sperrplatzcheck);
 $sperrplatzcounter=0;
 print_r($sperrplaetze[$sperrplatzcounter]);
@@ -23,7 +28,7 @@ for($i=0;$i<$reiheLength;$i++){
   print ('<tr><td class="noBorder">Reihe ' .$reihenNummer. ' </td>');
   /* Wenn ungerade reihenanzahl,dann: */
   if($reiheLength%2!=0){
-    /*1. Reihe und jede ungerade */
+    /*1. Reihe und jede gerade */
   if($i==($reiheLength) || $i%2==0){
     for($j=0;$j<$platzAnzahl[$i];$j++){
       /* Den ersten Platz jeder Reihe, ab da jeden 3. besetzen */

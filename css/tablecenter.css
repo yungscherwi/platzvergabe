@@ -1,0 +1,28 @@
+table {
+  table-layout: fixed;
+  width: 200px;
+  margin:auto;
+}
+
+td {
+	width: 100px;
+  height: 80px;
+  text-align:center;
+}
+table td{
+	border: 1px solid black;
+}
+
+td.noBorder{
+	border-right-style: hidden;
+	border: 0;
+}
+
+tr.trgrey, td.tdgrey {
+	background-color: #8e8e8e; /*heavy-grey: #424242;*/
+}
+
+div.container{
+  margin:auto;
+
+}

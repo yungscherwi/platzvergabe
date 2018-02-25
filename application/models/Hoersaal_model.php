@@ -74,6 +74,16 @@ class Hoersaal_model extends CI_Model{
     $arr = explode(',',$array1['sperrplatz']);
     $revarr = array_reverse($arr); //für richtige Ausrichtung des hörsaals
 
+    return ($arr);
+  }
+
+  public function get_revsperrplatz($raum){
+    $sql = "SELECT group_concat(sperrplatz separator ',') as 'sperrplatz' FROM `sperrplaetze` WHERE hoersaalID = '".$raum."'";
+    $query = $this->db->query($sql);
+    $array1 = $query->row_array();
+    $arr = explode(',',$array1['sperrplatz']);
+    $revarr = array_reverse($arr); //für richtige Ausrichtung des hörsaals
+
     return ($revarr);
   }
 
@@ -152,6 +162,20 @@ class Hoersaal_model extends CI_Model{
         'sperrplatz' => $sperrplatzInfo[2],
       );
       $this->db->insert('sperrplaetze', $infos);
+
+      return;
+    }
+
+    public function delete_hoersaal($hoersaalID){
+      $sql = "DROP TABLE ".$hoersaalID."";
+      $query = $this->db->query($sql);
+
+      $sql = "DELETE FROM sperrplaetze WHERE hoersaalID = '".$hoersaalID."'";
+      $query = $this->db->query($sql);
+
+      $sql = "DELETE FROM hoersaaluebersicht WHERE hoersaalID = '".$hoersaalID."'";
+      $query = $this->db->query($sql);
+
 
       return;
     }

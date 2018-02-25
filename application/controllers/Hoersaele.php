@@ -60,6 +60,8 @@
       $sperrplatzreihe = $this->hoersaal_model->get_sperrplatzreihe($page);
       $sperrplaetze = $this->hoersaal_model->get_sperrplatz($page);
       $reihe = $this->hoersaal_model->get_reihe($page);
+
+      $revsperrplaetze = $this->hoersaal_model->get_revsperrplatz($page); // sonst wird nicht richtig gezählt, rev nur relevant für count
       $plaetze=$this->countPlaetze($platzAnzahl, $sperrplatzcheck, $sperrplatzreihe, $sperrplaetze, $reihe);
 
       //Platzanzahl bei Klausur in hoersaalübersicht
@@ -113,7 +115,7 @@
       echo $sperrplaetze; //Output
     }
 
-    public function countPlaetze($platzAnzahl, $sperrplatzcheck, $sperrplatzreihe, $sperrplaetze, $reihe){
+    public function countPlaetze($platzAnzahl, $sperrplatzcheck, $sperrplatzreihe, $revsperrplaetze, $reihe){
       $plaetze=0;
       $sperrplatzcounter=0;
       $reiheLength = count($reihe);
@@ -121,14 +123,14 @@
       for($i=0;$i<$reiheLength;$i++){
         /* Wenn ungerade reihenanzahl,dann: */
         if($reiheLength%2!=0){
-          /*1. Reihe und jede ungerade */
+          /*1. Reihe und jede gerade */
         if($i==($reiheLength) || $i%2==0){
           for($j=0;$j<$platzAnzahl[$i];$j++){
             /* Den ersten Platz jeder Reihe, ab da jeden 3. besetzen */
               if($j==0 || $j%3==0){
                 //Sperrplatzüberprüfung
-                if((($reihe[$i])==$sperrplatzreihe[$sperrplatzcounter])&&(($j+1)==$sperrplaetze[$sperrplatzcounter])){
-                  if((count($sperrplaetze))>($sperrplatzcounter+1)){
+                if((($reihe[$i])==$sperrplatzreihe[$sperrplatzcounter])&&(($j+1)==$revsperrplaetze[$sperrplatzcounter])){
+                  if((count($revsperrplaetze))>($sperrplatzcounter+1)){
                     $sperrplatzcounter++;
                   }
                 }
@@ -147,8 +149,8 @@
             /* Den ersten Platz jeder Reihe, ab da jeden 3. besetzen */
               if($j==0 || $j%3==0){
                 //Sperrplatzüberprüfung
-                if((($reihe[$i])==$sperrplatzreihe[$sperrplatzcounter])&&(($j+1)==$sperrplaetze[$sperrplatzcounter])){
-                  if((count($sperrplaetze))>($sperrplatzcounter+1)){
+                if((($reihe[$i])==$sperrplatzreihe[$sperrplatzcounter])&&(($j+1)==$revsperrplaetze[$sperrplatzcounter])){
+                  if((count($revsperrplaetze))>($sperrplatzcounter+1)){
                     $sperrplatzcounter++;
                   }
                 }
@@ -162,6 +164,7 @@
       }
               return $plaetze;
     }
+
 
     //matrnr werden als array erzeugt
     public function first_column(){

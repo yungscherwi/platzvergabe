@@ -1,5 +1,4 @@
 <h1> Hörsaal zu klein </h1>
 <br>
-<p> Der von ihnen gewählte Hörsaal bietet leider nicht genug Platz für alle teilnehmenden Studenten, bitte wählen sie einen anderen aus. </p>
-
+<p> Ihre Liste enthält <?php print_r(count($MartrNr)); ?> Studenten, der von ihnen gewählte Hörsaal verfügt aber nur über <?php print_r($plaetze); ?> Plätze.</p>
 <p><?php echo anchor('hochladen', 'Zurück zur Platzvergabe'); ?></p>

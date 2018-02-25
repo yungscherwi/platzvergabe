@@ -19,6 +19,7 @@
       $data['sperrplaetze'] = $this->hoersaal_model->get_sperrplatz($page);
       $data['raum'] = $page;
       $data['MartrNr'] = $this->first_column();
+      $data['maxPlatzAnzahl'] = $this->hoersaal_model->get_maxPlatzAnzahl($page);
 
       //wenn hörsaal groß genug, dann führe aus:
       if($data['plaetze']>=count($data['MartrNr'])){
@@ -28,7 +29,7 @@
       }
       else{
         $this->load->view('templates/header');
-        $this->load->view('hoersaele/alternativen');
+        $this->load->view('hoersaele/alternativen', $data);
         $this->load->view('templates/footer');
       }
   }
@@ -72,7 +73,9 @@
         $this->hoersaal_model->updateSperrplatz($hoersaalInfo);
       }
 
-
+      $data['hoersaalID']=[$_POST["hoersaalID"]];
+      $data['reihen'] =$reihe;
+      $data['plaetze']=$plaetze;
       $this->load->view('templates/header');
       $this->load->view('hoersaele/success', $data);
       $this->load->view('templates/footer');
@@ -115,9 +118,8 @@
       echo $sperrplaetze; //Output
     }
 
-    public function countPlaetze($platzAnzahl, $sperrplatzcheck, $sperrplatzreihe, $revsperrplaetze, $reihe){
+    public function countPlaetze($platzAnzahl, $sperrplatzcheck, $sperrplatzreihe, $sperrplaetze, $reihe){
       $plaetze=0;
-      $sperrplatzcounter=0;
       $reiheLength = count($reihe);
 
       for($i=0;$i<$reiheLength;$i++){
@@ -128,15 +130,7 @@
           for($j=0;$j<$platzAnzahl[$i];$j++){
             /* Den ersten Platz jeder Reihe, ab da jeden 3. besetzen */
               if($j==0 || $j%3==0){
-                //Sperrplatzüberprüfung
-                if((($reihe[$i])==$sperrplatzreihe[$sperrplatzcounter])&&(($j+1)==$revsperrplaetze[$sperrplatzcounter])){
-                  if((count($revsperrplaetze))>($sperrplatzcounter+1)){
-                    $sperrplatzcounter++;
-                  }
-                }
-                else{
                   $plaetze++;
-                }
               }
             }
           }
@@ -148,20 +142,29 @@
           for($j=0;$j<$platzAnzahl[$i];$j++){
             /* Den ersten Platz jeder Reihe, ab da jeden 3. besetzen */
               if($j==0 || $j%3==0){
-                //Sperrplatzüberprüfung
-                if((($reihe[$i])==$sperrplatzreihe[$sperrplatzcounter])&&(($j+1)==$revsperrplaetze[$sperrplatzcounter])){
-                  if((count($revsperrplaetze))>($sperrplatzcounter+1)){
-                    $sperrplatzcounter++;
-                  }
-                }
-                else{
                   $plaetze++;
-                }
               }
             }
           }
         }
       }
+      //Sperrplatzüberprüfung
+      for($i=0;$i<(count($sperrplaetze));$i++){
+        //ungerade Reihenanzahl
+      if($reiheLength%2!=0){
+        if($sperrplatzreihe[$i]==$reiheLength || $sperrplatzreihe[$i]%2==1){
+          if($sperrplaetze[$i]==0 || $sperrplaetze[$i]%3==1)
+        $plaetze--;
+        }
+      }
+      //gerade Reihenanzahl
+      if($reiheLength%2==0){
+        if($sperrplatzreihe[$i]==$reiheLength || $sperrplatzreihe[$i]%2!=0){
+          if($sperrplaetze[$i]==0 || $sperrplaetze[$i]%3==1)
+        $plaetze--;
+        }
+      }
+    }
               return $plaetze;
     }
 

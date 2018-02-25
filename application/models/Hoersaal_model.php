@@ -179,5 +179,14 @@ class Hoersaal_model extends CI_Model{
 
       return;
     }
+//höchste Anzahl an Plätzen pro Reihe im Hörsaal
+    public function get_maxPlatzAnzahl($hoersaalID){
+      $sql = "SELECT MAX(platzAnzahl) FROM ".$hoersaalID."";
+      $query = $this->db->query($sql);
+      $array1 = $query->row_array();
+
+      $arr= implode($array1); //implode macht Array zu String
+      return ($arr);
+    }
 
 } ?>

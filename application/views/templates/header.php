@@ -16,7 +16,8 @@
         function goToNewPage() {
           var nr = document.getElementById("hoersaal");
           var selectedHs = nr.options[nr.selectedIndex].value;
-          window.open(selectedHs); //window.location = selectedVal um es im selben Fenster zu öffnen (klappt bisher leider nicht)
+          window.open(selectedHs); //öffnet Hörsaal
+          window.open('kontrollliste'); //öffnet Kontrollliste
       }
 
   function showReihen(int){

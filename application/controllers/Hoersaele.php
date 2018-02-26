@@ -149,6 +149,7 @@
         }
       }
       //Sperrplatzüberprüfung
+      if($sperrplatzcheck==1){
       for($i=0;$i<(count($sperrplaetze));$i++){
         //ungerade Reihenanzahl
       if($reiheLength%2!=0){
@@ -165,6 +166,7 @@
         }
       }
     }
+  }
               return $plaetze;
     }
 

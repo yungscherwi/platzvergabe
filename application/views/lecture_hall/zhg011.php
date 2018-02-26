@@ -1,9 +1,9 @@
 	<div class="container">	
 		<div class="hoersaal">
-			<table style="width: 420%">
+			<table style="width:420%">
 				<thead>
 					<tr>
-						<th colspan="62"><p><strong>ZHG 011</strong></p></th>
+						<th class="text-center" colspan="62"><p><strong>ZHG 011</strong></p></th>
 					</tr>
 				</thead>
 				<tr>
@@ -26,10 +26,10 @@
 					<td class="tdgrey"></td>
 					<td class="tdgrey"></td>
 					<td>Platz 150:<br><?php print $value[149]; ?></td>
-					<td class="noBorder" ></td>
-					<td class="noBorder" ></td>
-					<td class="noBorder" ></td>
-					<td class="noBorder" ></td>
+					<td class="noBorder" style="background-color: #d3d3d3"></td>
+					<td class="noBorder" style="background-color: #d3d3d3"></td>
+					<td class="noBorder" style="background-color: #d3d3d3"></td>
+					<td class="noBorder" style="background-color: #d3d3d3"></td>
 					<td class="noBorder" style="background-color: #d3d3d3"></td>
 					<td>Platz 149:<br><?php print $value[148]; ?></td>
 					<td class="tdgrey"></td>
@@ -47,9 +47,9 @@
 					<td class="tdgrey"></td>
 					<td class="tdgrey"></td>
 					<td class="noBorder" style="background-color: #d3d3d3"></td>
-					<td class="noBorder"></td>
-					<td class="noBorder"></td>
-					<td class="noBorder"></td>
+					<td class="noBorder" style="background-color: #d3d3d3"></td>
+					<td class="noBorder" style="background-color: #d3d3d3"></td>
+					<td class="noBorder" style="background-color: #d3d3d3"></td>
 					<td>Platz 144:<br><?php print $value[143]; ?></td>
 					<td class="tdgrey"></td>
 					<td class="tdgrey"></td>
@@ -90,10 +90,10 @@
 					<td></td>
 					<td></td>
 					<td></td>
-					<td class="noBorder" style="background-color: #FFFFFF"></td>
-					<td class="noBorder" style="background-color: #FFFFFF"></td>
-					<td class="noBorder" style="background-color: #FFFFFF"></td>
-					<td class="noBorder" style="background-color: #FFFFFF"></td>
+					<td class="noBorder" style="background-color: #d3d3d3"></td>
+					<td class="noBorder" style="background-color: #d3d3d3"></td>
+					<td class="noBorder" style="background-color: #d3d3d3"></td>
+					<td class="noBorder" style="background-color: #d3d3d3"></td>
 					<td class="noBorder" style="background-color: #d3d3d3"></td>
 					<td></td>
 					<td></td>
@@ -111,9 +111,9 @@
 					<td></td>
 					<td></td>
 					<td class="noBorder" style="background-color: #d3d3d3"></td>
-					<td class="noBorder" style="background-color: #FFFFFF"></td>
-					<td class="noBorder" style="background-color: #FFFFFF"></td>
-					<td class="noBorder" style="background-color: #FFFFFF"></td>
+					<td class="noBorder" style="background-color: #d3d3d3"></td>
+					<td class="noBorder" style="background-color: #d3d3d3"></td>
+					<td class="noBorder" style="background-color: #d3d3d3"></td>
 					<td></td>
 					<td></td>
 					<td></td>
@@ -155,9 +155,9 @@
 					<td class="tdgrey"></td>
 					<td>Platz 136:<br><?php print $value[135]; ?></td>
 					<td class="tdgrey"></td>
-					<td class="noBorder"></td>
-					<td class="noBorder"></>
-					<td class="noBorder"></td>
+					<td class="noBorder" style="background-color: #d3d3d3"></td>
+					<td class="noBorder" style="background-color: #d3d3d3"></>
+					<td class="noBorder" style="background-color: #d3d3d3"></td>
 					<td class="noBorder" style="background-color: #d3d3d3"></td>
 					<td>Platz 135:<br><?php print $value[134]; ?></td>
 					<td class="tdgrey"></td>
@@ -175,8 +175,8 @@
 					<td class="tdgrey"></td>
 					<td class="tdgrey"></td>
 					<td class="noBorder" style="background-color: #d3d3d3"></td>
-					<td class="noBorder"></td>
-					<td class="noBorder"></td>
+					<td class="noBorder" style="background-color: #d3d3d3"></td>
+					<td class="noBorder" style="background-color: #d3d3d3"></td>
 					<td class="tdgrey"></td>
 					<td>Platz 130:<br><?php print $value[129]; ?></td>
 					<td class="tdgrey"></td>
@@ -219,9 +219,9 @@
 					<td></td>
 					<td></td>
 					<td></td>
-					<td class="noBorder" style="background-color: #FFFFFF"></td>
-					<td class="noBorder" style="background-color: #FFFFFF"></td>
-					<td class="noBorder" style="background-color: #FFFFFF"></td>
+					<td class="noBorder" style="background-color: #d3d3d3"></td>
+					<td class="noBorder" style="background-color: #d3d3d3"></td>
+					<td class="noBorder" style="background-color: #d3d3d3"></td>
 					<td class="noBorder" style="background-color: #d3d3d3"></td>
 					<td></td>
 					<td></td>
@@ -237,10 +237,10 @@
 					<td></td>
 					<td></td>
 					<td></td>
-					<td class="noBorder" style="background-color: #FFFFFF"></td>
 					<td class="noBorder" style="background-color: #d3d3d3"></td>
-					<td class="noBorder" style="background-color: #FFFFFF"></td>
-					<td class="noBorder" style="background-color: #FFFFFF"></td>
+					<td class="noBorder" style="background-color: #d3d3d3"></td>
+					<td class="noBorder" style="background-color: #d3d3d3"></td>
+					<td class="noBorder" style="background-color: #d3d3d3"></td>
 					<td></td>
 					<td></td>
 					<td></td>
@@ -283,9 +283,9 @@
 					<td class="tdgrey"></td>
 					<td>Platz 121:<br><?php print $value[120]; ?></td>
 					<td class="tdgrey"></td>
-					<td class="tdgrey"></td>
-					<td class="noBorder"></td>
-					<td class="noBorder"></td>
+					<td class="tdgrey" ></td>
+					<td class="noBorder" style="background-color: #d3d3d3"></td>
+					<td class="noBorder" style="background-color: #d3d3d3"></td>
 					<td  class="noBorder" style="background-color: #d3d3d3"></td>
 					<td>Platz 120:<br><?php print $value[119]; ?></td>
 					<td class="tdgrey"></td>
@@ -301,10 +301,10 @@
 					<td class="tdgrey"></td>
 					<td>Platz 116:<br><?php print $value[115]; ?></td>
 					<td class="tdgrey"></td>
-					<td class="noBorder" style="background-color: #FFFFFF"></td>
 					<td class="noBorder" style="background-color: #d3d3d3"></td>
-					<td class="noBorder"></td>
-					<td class="noBorder"></td>
+					<td class="noBorder" style="background-color: #d3d3d3"></td>
+					<td class="noBorder" style="background-color: #d3d3d3"></td>
+					<td class="noBorder" style="background-color: #d3d3d3"></td>
 					<td class="tdgrey"></td>
 					<td>Platz 115:<br><?php print $value[114]; ?></td>
 					<td class="tdgrey"></td>
@@ -348,26 +348,26 @@
 					<td></td>
 					<td></td>
 					<td></td>
-					<td class="noBorder" style="background-color: #FFFFFF"></td>
-					<td class="noBorder" style="background-color: #FFFFFF"></td>
-					<td  class="noBorder" style="background-color: #d3d3d3"></td>
-					<td class="noBorder" style="background-color: #FFFFFF"></td>
-					<td></td>
-					<td></td>
-					<td></td>
-					<td></td>
-					<td></td>
-					<td></td>
-					<td></td>
-					<td></td>
-					<td></td>
-					<td></td>
-					<td></td>
-					<td></td>
-					<td></td>
-					<td class="noBorder" style="background-color: #FFFFFF"></td>
 					<td class="noBorder" style="background-color: #d3d3d3"></td>
-					<td class="noBorder" style="background-color: #FFFFFF"></td>
+					<td class="noBorder" style="background-color: #d3d3d3"></td>
+					<td  class="noBorder" style="background-color: #d3d3d3"></td>
+					<td class="noBorder" style="background-color: #d3d3d3"></td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td class="noBorder" style="background-color: #d3d3d3"></td>
+					<td class="noBorder" style="background-color: #d3d3d3"></td>
+					<td class="noBorder" style="background-color: #d3d3d3"></td>
 					<td></td>
 					<td></td>
 					<td></td>
@@ -413,9 +413,9 @@
 					<td class="tdgrey"></td>
 					<td class="tdgrey"></td>
 					<td>Platz 103:<br><?php print $value[102]; ?></td>
-					<td class="noBorder"></td>
 					<td class="noBorder" style="background-color: #d3d3d3"></td>
-					<td class="noBorder"></td>
+					<td class="noBorder" style="background-color: #d3d3d3"></td>
+					<td class="noBorder" style="background-color: #d3d3d3"></td>
 					<td class="tdgrey"></td>
 					<td class="tdgrey"></td>
 					<td>Platz 102:<br><?php print $value[101]; ?></td>
@@ -429,7 +429,7 @@
 					<td class="tdgrey"></td>
 					<td>Platz 99:<br><?php print $value[98]; ?></td>
 					<td class="tdgrey"></td>
-					<td class="noBorder"></td>
+					<td class="noBorder" style="background-color: #d3d3d3"></td>
 					<td class="noBorder" style="background-color: #d3d3d3"></td>
 					<td>Platz 98:<br><?php print $value[97]; ?></td>
 					<td class="tdgrey"></td>
@@ -479,9 +479,8 @@
 					<td></td>
 					<td></td>
 					<td class="noBorder" style="background-color: #d3d3d3"></td>
-					<td class="noBorder" style="background-color: #FFFFFF"></td>
-					<td class="noBorder" style="background-color: #FFFFFF"></td>
-					<td></td>
+					<td class="noBorder" style="background-color: #d3d3d3"></td>
+					<td class="noBorder" style="background-color: #d3d3d3"></td>
 					<td></td>
 					<td></td>
 					<td></td>
@@ -495,8 +494,9 @@
 					<td></td>
 					<td class="noBorder" style="background-color: #FFFFFF"></td>
 					<td class="noBorder" style="background-color: #d3d3d3"></td>
-					<td></td>
-					<td></td>
+					<td class="noBorder" style="background-color: #d3d3d3"></td>
+					<td class="noBorder"></td>
+					<td class="noBorder"></td>
 					<td></td>
 					<td></td>
 					<td></td>
@@ -543,8 +543,8 @@
 					<td>Platz 85:<br><?php print $value[84]; ?></td>
 					<td class="tdgrey"></td>
 					<td class="noBorder" style="background-color: #d3d3d3"></td>
-					<td class="noBorder"></td>
-					<td class="noBorder"></td>
+					<td class="noBorder" style="background-color: #d3d3d3"></td>
+					<td class="noBorder" style="background-color: #d3d3d3"></td>
 					<td class="tdgrey"></td>
 					<td>Platz 84:<br><?php print $value[83]; ?></td>
 					<td class="tdgrey"></td>
@@ -557,7 +557,7 @@
 					<td class="tdgrey"></td>
 					<td>Platz 83:<br><?php print $value[82]; ?></td>
 					<td class="tdgrey"></td>
-					<td class="noBorder" style="background-color: #FFFFFF"></td>
+					<td class="noBorder" style="background-color: #d3d3d3"></td>
 					<td class="noBorder" style="background-color: #d3d3d3"></td>
 					<td>Platz 82:<br><?php print $value[81]; ?></td>
 					<td class="tdgrey"></td>
@@ -605,10 +605,10 @@
 					<td></td>
 					<td></td>
 					<td></td>
-					<td class="noBorder" style="background-color: #FFFFFF"></td>
 					<td class="noBorder" style="background-color: #d3d3d3"></td>
-					<td class="noBorder" style="background-color: #FFFFFF"></td>
-					<td class="noBorder" style="background-color: #FFFFFF"></td>
+					<td class="noBorder" style="background-color: #d3d3d3"></td>
+					<td class="noBorder" style="background-color: #d3d3d3"></td>
+					<td class="noBorder" style="background-color: #d3d3d3"></td>
 					<td></td>
 					<td></td>
 					<td></td>
@@ -621,7 +621,7 @@
 					<td></td>
 					<td></td>
 					<td></td>
-					<td class="noBorder" style="background-color: #FFFFFF"></td>
+					<td class="noBorder" style="background-color: #d3d3d3"></td>
 					<td class="noBorder" style="background-color: #d3d3d3"></td>
 					<td></td>
 					<td></td>
@@ -669,11 +669,11 @@
 					<td class="tdgrey"></td>
 					<td class="tdgrey"></td>
 					<td>Platz 69:<br><?php print $value[68]; ?></td>
-					<td class="noBorder"></td>
 					<td class="noBorder" style="background-color: #d3d3d3"></td>
-					<td class="noBorder"></td>
-					<td class="noBorder"></td>
-					<td class="noBorder"></td>
+					<td class="noBorder" style="background-color: #d3d3d3"></td>
+					<td class="noBorder" style="background-color: #d3d3d3"></td>
+					<td class="noBorder" style="background-color: #d3d3d3"></td>
+					<td class="noBorder" style="background-color: #d3d3d3"></td>
 					<td>Platz 68:<br><?php print $value[67]; ?></td>
 					<td class="tdgrey"></td>
 					<td class="tdgrey"></td>
@@ -685,7 +685,7 @@
 					<td class="tdgrey"></td>
 					<td>Platz 65:<br><?php print $value[64]; ?></td>
 					<td class="tdgrey"></td>
-					<td class="noBorder"></td>
+					<td class="noBorder" style="background-color: #d3d3d3"></td>
 					<td class="noBorder" style="background-color: #d3d3d3"></td>
 					<td>Platz 63:<br><?php print $value[62]; ?></td>
 					<td class="tdgrey"></td>
@@ -733,23 +733,10 @@
 					<td></td>
 					<td></td>
 					<td></td>
-					<td class="noBorder" style="background-color: #FFFFFF"></td>
 					<td class="noBorder" style="background-color: #d3d3d3"></td>
-					<td class="noBorder" style="background-color: #FFFFFF"></td>
-					<td class="noBorder" style="background-color: #FFFFFF"></td>
-					<td class="noBorder" style="background-color: #FFFFFF"></td>
-					<td></td>
-					<td></td>
-					<td></td>
-					<td></td>
-					<td></td>
-					<td></td>
-					<td></td>
-					<td></td>
-					<td></td>
-					<td></td>
-					<td class="noBorder" style="background-color: #FFFFFF"></td>
-					<td class="noBorder" style="background-color: #FFFFFF"></td>
+					<td class="noBorder" style="background-color: #d3d3d3"></td>
+					<td class="noBorder" style="background-color: #d3d3d3"></td>
+					<td class="noBorder" style="background-color: #d3d3d3"></td>
 					<td class="noBorder" style="background-color: #d3d3d3"></td>
 					<td></td>
 					<td></td>
@@ -761,6 +748,9 @@
 					<td></td>
 					<td></td>
 					<td></td>
+					<td class="noBorder" style="background-color: #d3d3d3"></td>
+					<td class="noBorder" style="background-color: #d3d3d3"></td>
+					<td class="noBorder" style="background-color: #d3d3d3"></td>
 					<td></td>
 					<td></td>
 					<td></td>
@@ -769,8 +759,18 @@
 					<td></td>
 					<td></td>
 					<td></td>
-					<td class="noborder" style="background-color: #d3d3d3"></td>
-					<td class="noborder" style="background-color: #d3d3d3"></td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td class="noBorder" style="background-color: #d3d3d3"></td>
+					<td class="noBorder" style="background-color: #d3d3d3"></td>
 					<td class="noBorder" style="background-color: #d3d3d3"></td>
 					<td class="noBorder" style="background-color: #FFFFFF">Reihe 11</td>
 				</tr>
@@ -796,13 +796,13 @@
 					<td>Platz 52:<br><?php print $value[51]; ?></td>
 					<td class="tdgrey"></td>
 					<td class="tdgrey"></td>
-					<td class="noBorder"></td>
-					<td class="noBorder"></td>
 					<td class="noBorder" style="background-color: #d3d3d3"></td>
-					<td class="noBorder"></td>
-					<td class="noBorder"></td>
-					<td class="noBorder"></td>
-					<td class="noBorder"></td>
+					<td class="noBorder" style="background-color: #d3d3d3"></td>
+					<td class="noBorder" style="background-color: #d3d3d3"></td>
+					<td class="noBorder" style="background-color: #d3d3d3"></td>
+					<td class="noBorder" style="background-color: #d3d3d3"></td>
+					<td class="noBorder" style="background-color: #d3d3d3"></td>
+					<td class="noBorder" style="background-color: #d3d3d3"></td>
 					<td class="tdgrey"></td>
 					<td class="tdgrey"></td>
 					<td>Platz 51:<br><?php print $value[50]; ?></td>
@@ -812,10 +812,10 @@
 					<td class="tdgrey"></td>
 					<td class="tdgrey"></td>
 					<td>Platz 49:<br><?php print $value[48]; ?></td>
-					<td class="noBorder"></td>
-					<td class="noBorder"></td>
 					<td class="noBorder" style="background-color: #d3d3d3"></td>
-					<td clasS="noBorder"></td>
+					<td class="noBorder" style="background-color: #d3d3d3"></td>
+					<td class="noBorder" style="background-color: #d3d3d3"></td>
+					<td clasS="noBorder" style="background-color: #d3d3d3"></td>
 					<td class="tdgrey"></td>
 					<td class="tdgrey"></td>
 					<td>Platz 48:<br><?php print $value[49]; ?></td>
@@ -860,26 +860,26 @@
 					<td></td>
 					<td></td>
 					<td></td>
-					<td class="noBorder" style="background-color: #FFFFFF"></td>
-					<td class="noBorder" style="background-color: #FFFFFF"></td>
 					<td class="noBorder" style="background-color: #d3d3d3"></td>
-					<td class="noBorder" style="background-color: #FFFFFF"></td>
-					<td class="noBorder" style="background-color: #FFFFFF"></td>
-					<td class="noBorder" style="background-color: #FFFFFF"></td>
-					<td class="noBorder" style="background-color: #FFFFFF"></td>
-					<td></td>
-					<td></td>
-					<td></td>
-					<td></td>
-					<td></td>
-					<td></td>
-					<td></td>
-					<td></td>
-					<td></td>
-					<td class="noBorder" style="background-color: #FFFFFF"></td>
-					<td class="noBorder" style="background-color: #FFFFFF"></td>
 					<td class="noBorder" style="background-color: #d3d3d3"></td>
-					<td class="noBorder" style="background-color: #FFFFFF"></td>
+					<td class="noBorder" style="background-color: #d3d3d3"></td>
+					<td class="noBorder" style="background-color: #d3d3d3"></td>
+					<td class="noBorder" style="background-color: #d3d3d3"></td>
+					<td class="noBorder" style="background-color: #d3d3d3"></td>
+					<td class="noBorder" style="background-color: #d3d3d3"></td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td class="noBorder" style="background-color: #d3d3d3"></td>
+					<td class="noBorder" style="background-color: #d3d3d3"></td>
+					<td class="noBorder" style="background-color: #d3d3d3"></td>
+					<td class="noBorder" style="background-color: #d3d3d3"></td>
 					<td></td>
 					<td></td>
 					<td></td>
@@ -923,14 +923,14 @@
 					<td class="tdgrey"></td>
 					<td>Platz 39:<br><?php print $value[38]; ?></td>
 					<td class="tdgrey"></td>
-					<td class="noBorder"></td>
-					<td class="noBorder"></td>
-					<td class="noBorder"></td>
 					<td class="noBorder" style="background-color: #d3d3d3"></td>
-					<td class="noBorder"></td>
-					<td class="noBorder"></td>
-					<td class="noBorder"></td>
-					<td class="noBorder"></td>
+					<td class="noBorder" style="background-color: #d3d3d3"></td>
+					<td class="noBorder" style="background-color: #d3d3d3"></td>
+					<td class="noBorder" style="background-color: #d3d3d3"></td>
+					<td class="noBorder" style="background-color: #d3d3d3"></td>
+					<td class="noBorder" style="background-color: #d3d3d3"></td>
+					<td class="noBorder" style="background-color: #d3d3d3"></td>
+					<td class="noBorder" style="background-color: #d3d3d3"></td>
 					<td class="tdgrey"></td>
 					<td class="tdgrey"></td>
 					<td>Platz 38:<br><?php print $value[37]; ?></td>
@@ -940,10 +940,10 @@
 					<td class="tdgrey"></td>
 					<td class="tdgrey"></td>
 					<td>Platz 36:<br><?php print $value[35]; ?></td>
-					<td class="noBorder"></td>
-					<td class="noBorder"></td>
 					<td class="noBorder" style="background-color: #d3d3d3"></td>
-					<td class="noBorder"></td>
+					<td class="noBorder" style="background-color: #d3d3d3"></td>
+					<td class="noBorder" style="background-color: #d3d3d3"></td>
+					<td class="noBorder" style="background-color: #d3d3d3"></td>
 					<td class="tdgrey"></td>
 					<td class="tdgrey"></td>
 					<td>Platz 35:<br><?php print $value[36]; ?></td>
@@ -987,27 +987,27 @@
 					<td></td>
 					<td></td>
 					<td></td>
-					<td class="noBorder" style="background-color: #FFFFFF"></td>
-					<td class="noBorder" style="background-color: #FFFFFF"></td>
-					<td class="noBorder" style="background-color: #FFFFFF"></td>
 					<td class="noBorder" style="background-color: #d3d3d3"></td>
-					<td class="noBorder" style="background-color: #FFFFFF"></td>
-					<td class="noBorder" style="background-color: #FFFFFF"></td>
-					<td class="noBorder" style="background-color: #FFFFFF"></td>
-					<td class="noBorder" style="background-color: #FFFFFF"></td>
-					<td></td>
-					<td></td>
-					<td></td>
-					<td></td>
-					<td></td>
-					<td></td>
-					<td></td>
-					<td></td>
-					<td class="noBorder" style="background-color: #FFFFFF"></td>
-					<td class="noBorder" style="background-color: #FFFFFF"></td>
-					<td class="noBorder" style="background-color: #FFFFFF"></td>
 					<td class="noBorder" style="background-color: #d3d3d3"></td>
-					<td class="noBorder" style="background-color: #FFFFFF"></td>
+					<td class="noBorder" style="background-color: #d3d3d3"></td>
+					<td class="noBorder" style="background-color: #d3d3d3"></td>
+					<td class="noBorder" style="background-color: #d3d3d3"></td>
+					<td class="noBorder" style="background-color: #d3d3d3"></td>
+					<td class="noBorder" style="background-color: #d3d3d3"></td>
+					<td class="noBorder" style="background-color: #d3d3d3"></td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td class="noBorder" style="background-color: #d3d3d3"></td>
+					<td class="noBorder" style="background-color: #d3d3d3"></td>
+					<td class="noBorder" style="background-color: #d3d3d3"></td>
+					<td class="noBorder" style="background-color: #d3d3d3"></td>
+					<td class="noBorder" style="background-color: #d3d3d3"></td>
 					<td></td>
 					<td></td>
 					<td></td>
@@ -1051,14 +1051,14 @@
 					<td class="tdgrey"></td>
 					<td>Platz 26:<br><?php print $value[25]; ?></td>
 					<td class="tdgrey"></td>
-					<td class="noBorder"></td>
-					<td class="noBorder"></td>
-					<td class="noBorder"></td>
 					<td class="noBorder" style="background-color: #d3d3d3"></td>
-					<td class="noBorder"></td>
-					<td class="noBorder"></td>
-					<td class="noBorder"></td>
-					<td class="noBorder"></td>
+					<td class="noBorder" style="background-color: #d3d3d3"></td>
+					<td class="noBorder" style="background-color: #d3d3d3"></td>
+					<td class="noBorder" style="background-color: #d3d3d3"></td>
+					<td class="noBorder" style="background-color: #d3d3d3"></td>
+					<td class="noBorder" style="background-color: #d3d3d3"></td>
+					<td class="noBorder" style="background-color: #d3d3d3"></td>
+					<td class="noBorder" style="background-color: #d3d3d3"></td>
 					<td class="tdgrey"></td>
 					<td class="tdgrey"></td>
 					<td>Platz 25:<br><?php print $value[24]; ?></td>
@@ -1067,12 +1067,12 @@
 					<td>Platz 24:<br><?php print $value[23]; ?></td>
 					<td class="tdgrey"></td>
 					<td class="tdgrey"></td>
-					<td class="noBorder"></td>
-					<td class="noBorder"></td>
-					<td class="noBorder"></td>
 					<td class="noBorder" style="background-color: #d3d3d3"></td>
-					<td class="noBorder"></td>
-					<td class="noBorder"></td>
+					<td class="noBorder" style="background-color: #d3d3d3"></td>
+					<td class="noBorder" style="background-color: #d3d3d3"></td>
+					<td class="noBorder" style="background-color: #d3d3d3"></td>
+					<td class="noBorder" style="background-color: #d3d3d3"></td>
+					<td class="noBorder" style="background-color: #d3d3d3"></td>
 					<td class="tdgrey"></td>
 					<td>Platz 23:<br><?php print $value[22]; ?></td>
 					<td class="tdgrey"></td>
@@ -1115,29 +1115,29 @@
 					<td></td>
 					<td></td>
 					<td></td>
-					<td class="noBorder" style="background-color: #FFFFFF"></td>
-					<td class="noBorder" style="background-color: #FFFFFF"></td>
-					<td class="noBorder" style="background-color: #FFFFFF"></td>
 					<td class="noBorder" style="background-color: #d3d3d3"></td>
-					<td class="noBorder" style="background-color: #FFFFFF"></td>
-					<td class="noBorder" style="background-color: #FFFFFF"></td>
-					<td class="noBorder" style="background-color: #FFFFFF"></td>
-					<td class="noBorder" style="background-color: #FFFFFF"></td>
-					<td></td>
-					<td></td>
-					<td></td>
-					<td></td>
-					<td></td>
-					<td></td>
-					<td></td>
-					<td class="noBorder" style="background-color: #FFFFFF"></td>
-					<td class="noBorder" style="background-color: #FFFFFF"></td>
-					<td class="noBorder" style="background-color: #FFFFFF"></td>
-					<td class="noBorder" style="background-color: #FFFFFF"></td>
 					<td class="noBorder" style="background-color: #d3d3d3"></td>
-					<td class="noBorder" style="background-color: #FFFFFF"></td>
-					<td class="noBorder" style="background-color: #FFFFFF"></td>
-					<td class="noBorder" style="background-color: #FFFFFF"></td>
+					<td class="noBorder" style="background-color: #d3d3d3"></td>
+					<td class="noBorder" style="background-color: #d3d3d3"></td>
+					<td class="noBorder" style="background-color: #d3d3d3"></td>
+					<td class="noBorder" style="background-color: #d3d3d3"></td>
+					<td class="noBorder" style="background-color: #d3d3d3"></td>
+					<td class="noBorder" style="background-color: #d3d3d3"></td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td class="noBorder" style="background-color: #d3d3d3"></td>
+					<td class="noBorder" style="background-color: #d3d3d3"></td>
+					<td class="noBorder" style="background-color: #d3d3d3"></td>
+					<td class="noBorder" style="background-color: #d3d3d3"></td>
+					<td class="noBorder" style="background-color: #d3d3d3"></td>
+					<td class="noBorder" style="background-color: #d3d3d3"></td>
+					<td class="noBorder" style="background-color: #d3d3d3"></td>
+					<td class="noBorder" style="background-color: #d3d3d3"></td>
 					<td></td>
 					<td></td>
 					<td></td>
@@ -1179,14 +1179,14 @@
 					<td class="tdgrey"></td>
 					<td>Platz 15:<br><?php print $value[14]; ?></td>
 					<td class="tdgrey"></td>
-					<td class="noBorder"></td>
-					<td class="noBorder"></td>
-					<td class="noBorder"></td>
 					<td class="noBorder" style="background-color: #d3d3d3"></td>
-					<td class="noBorder"></td>
-					<td class="noBorder"></td>
-					<td class="noBorder"></td>
-					<td class="noBorder"></td>
+					<td class="noBorder" style="background-color: #d3d3d3"></td>
+					<td class="noBorder" style="background-color: #d3d3d3"></td>
+					<td class="noBorder" style="background-color: #d3d3d3"></td>
+					<td class="noBorder" style="background-color: #d3d3d3"></td>
+					<td class="noBorder" style="background-color: #d3d3d3"></td>
+					<td class="noBorder" style="background-color: #d3d3d3"></td>
+					<td class="noBorder" style="background-color: #d3d3d3"></td>
 					<td class="tdgrey"></td>
 					<td class="tdgrey"></td>
 					<td>Platz 14:<br><?php print $value[13]; ?></td>
@@ -1194,14 +1194,14 @@
 					<td class="tdgrey"></td>
 					<td>Platz 13:<br><?php print $value[12]; ?></td>
 					<td class="tdgrey"></td>
-					<td class="noBorder"></td>
-					<td class="noBorder"></td>
-					<td class="noBorder"></td>
-					<td class="noBorder"></td>
 					<td class="noBorder" style="background-color: #d3d3d3"></td>
-					<td class="noBorder"></td>
-					<td class="noBorder"></td>
-					<td class="noBorder"></td>
+					<td class="noBorder" style="background-color: #d3d3d3"></td>
+					<td class="noBorder" style="background-color: #d3d3d3"></td>
+					<td class="noBorder" style="background-color: #d3d3d3"></td>
+					<td class="noBorder" style="background-color: #d3d3d3"></td>
+					<td class="noBorder" style="background-color: #d3d3d3"></td>
+					<td class="noBorder" style="background-color: #d3d3d3"></td>
+					<td class="noBorder" style="background-color: #d3d3d3"></td>
 					<td>Platz 12:<br><?php print $value[11]; ?></td>
 					<td class="tdgrey"></td>
 					<td class="tdgrey"></td>
@@ -1243,30 +1243,30 @@
 					<td></td>
 					<td></td>
 					<td></td>
-					<td class="noBorder" style="background-color: #FFFFFF"></td>
-					<td class="noBorder" style="background-color: #FFFFFF"></td>
-					<td class="noBorder" style="background-color: #FFFFFF"></td>
 					<td class="noBorder" style="background-color: #d3d3d3"></td>
-					<td class="noBorder" style="background-color: #FFFFFF"></td>
-					<td class="noBorder" style="background-color: #FFFFFF"></td>
-					<td class="noBorder" style="background-color: #FFFFFF"></td>
-					<td class="noBorder" style="background-color: #FFFFFF"></td>
-					<td class="noBorder" style="background-color: #FFFFFF"></td>
-					<td></td>
-					<td></td>
-					<td></td>
-					<td></td>
-					<td></td>
-					<td></td>
-					<td class="noBorder" style="background-color: #FFFFFF"></td>
-					<td class="noBorder" style="background-color: #FFFFFF"></td>
-					<td class="noBorder" style="background-color: #FFFFFF"></td>
-					<td class="noBorder" style="background-color: #FFFFFF"></td>
 					<td class="noBorder" style="background-color: #d3d3d3"></td>
-					<td class="noBorder" style="background-color: #FFFFFF"></td>
-					<td class="noBorder" style="background-color: #FFFFFF"></td>
-					<td class="noBorder" style="background-color: #FFFFFF"></td>
-					<td class="noBorder" style="background-color: #FFFFFF"></td>
+					<td class="noBorder" style="background-color: #d3d3d3"></td>
+					<td class="noBorder" style="background-color: #d3d3d3"></td>
+					<td class="noBorder" style="background-color: #d3d3d3"></td>
+					<td class="noBorder" style="background-color: #d3d3d3"></td>
+					<td class="noBorder" style="background-color: #d3d3d3"></td>
+					<td class="noBorder" style="background-color: #d3d3d3"></td>
+					<td class="noBorder" style="background-color: #d3d3d3"></td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td class="noBorder" style="background-color: #d3d3d3"></td>
+					<td class="noBorder" style="background-color: #d3d3d3"></td>
+					<td class="noBorder" style="background-color: #d3d3d3"></td>
+					<td class="noBorder" style="background-color: #d3d3d3"></td>
+					<td class="noBorder" style="background-color: #d3d3d3"></td>
+					<td class="noBorder" style="background-color: #d3d3d3"></td>
+					<td class="noBorder" style="background-color: #d3d3d3"></td>
+					<td class="noBorder" style="background-color: #d3d3d3"></td>
+					<td class="noBorder" style="background-color: #d3d3d3"></td>
 					<td></td>
 					<td></td>
 					<td></td>
@@ -1305,32 +1305,32 @@
 					<td>Platz 5:<br><?php print $value[4]; ?></td>
 					<td class="tdgrey"></td>
 					<td class="tdgrey"></td>
-					<td class="noBorder"></td>
-					<td class="noBorder"></td>
-					<td class="noBorder"></td>
-					<td class="noBorder"></td>
-					<td class="noBorder"></td>
 					<td class="noBorder" style="background-color: #d3d3d3"></td>
-					<td class="noBorder" style="background-color: #FFFFFF"></td>
-					<td class="noBorder" style="background-color: #FFFFFF"></td>
-					<td class="noBorder" style="background-color: #FFFFFF"></td>
-					<td class="noBorder" style="background-color: #FFFFFF"></td>
-					<td class="noBorder" style="background-color: #FFFFFF"></td>
+					<td class="noBorder" style="background-color: #d3d3d3"></td>
+					<td class="noBorder" style="background-color: #d3d3d3"></td>
+					<td class="noBorder" style="background-color: #d3d3d3"></td>
+					<td class="noBorder" style="background-color: #d3d3d3"></td>
+					<td class="noBorder" style="background-color: #d3d3d3"></td>
+					<td class="noBorder" style="background-color: #d3d3d3"></td>
+					<td class="noBorder" style="background-color: #d3d3d3"></td>
+					<td class="noBorder" style="background-color: #d3d3d3	"></td>
+					<td class="noBorder" style="background-color: #d3d3d3"></td>
+					<td class="noBorder" style="background-color: #d3d3d3"></td>
 					<td class="tdgrey"></td>
 					<td>Platz 4:<br><?php print $value[3]; ?></td>
 					<td class="tdgrey"></td>
 					<td class="tdgrey"></td>
 					<td>Platz 3:<br><?php print $value[2]; ?></td>
 					<td class="tdgrey"></td>
-					<td class="noBorder" style="background-color: #FFFFFF"></td>
-					<td class="noBorder" style="background-color: #FFFFFF"></td>
-					<td class="noBorder" style="background-color: #FFFFFF"></td>
-					<td class="noBorder" style="background-color: #FFFFFF"></td>
 					<td class="noBorder" style="background-color: #d3d3d3"></td>
-					<td class="noBorder" style="background-color: #FFFFFF"></td>
-					<td class="noBorder" style="background-color: #FFFFFF"></td>
-					<td class="noBorder" style="background-color: #FFFFFF"></td>
-					<td class="noBorder" style="background-color: #FFFFFF"></td>
+					<td class="noBorder" style="background-color: #d3d3d3"></td>
+					<td class="noBorder" style="background-color: #d3d3d3"></td>
+					<td class="noBorder" style="background-color: #d3d3d3"></td>
+					<td class="noBorder" style="background-color: #d3d3d3"></td>
+					<td class="noBorder" style="background-color: #d3d3d3"></td>
+					<td class="noBorder" style="background-color: #d3d3d3"></td>
+					<td class="noBorder" style="background-color: #d3d3d3"></td>
+					<td class="noBorder" style="background-color: #d3d3d3"></td>
 					<td class="tdgrey"></td>
 					<td class="tdgrey"></td>
 					<td>Platz 2:<br><?php print $value[2]; ?></td>
@@ -1369,11 +1369,16 @@
 					<td class="tdgrey"></td>
 					<td class="noBorder" style="background-color: #FFFFFF"></td>
 					<td class="noBorder" style="background-color: #FFFFFF"></td>
-					<td class="noBorder" style="background-color: #FFFFFF"></td>
-					<td class="noBorder" style="background-color: #FFFFFF"></td>
-					<td class="noBorder" style="background-color: #FFFFFF"></td>
-					<td class="noBorder" style="background-color: #FFFFFF"></td>
-					<td class="noBorder" style="background-color: #FFFFFF"></td>
+					<td class="noBorder" style="background-color: #d3d3d3"></td>
+					<td class="noBorder" style="background-color: #d3d3d3"></td>
+					<td class="noBorder" style="background-color: #d3d3d3"></td>
+					<td class="noBorder" style="background-color: #d3d3d3"></td>
+					<td class="noBorder" style="background-color: #d3d3d3"></td>
+					<td class="noBorder" style="background-color: #d3d3d3"></td>
+					<td class="noBorder" style="background-color: #d3d3d3"></td>
+					<td class="noBorder" style="background-color: #d3d3d3"></td>
+					<td class="noBorder" style="background-color: #d3d3d3"></td>
+					<td class="noBorder" style="background-color: #d3d3d3"></td>
 					<td class="noBorder" style="background-color: #d3d3d3"></td>
 					<td class="noBorder" style="background-color: #FFFFFF"></td>
 					<td class="noBorder" style="background-color: #FFFFFF"></td>
@@ -1381,20 +1386,15 @@
 					<td class="noBorder" style="background-color: #FFFFFF"></td>
 					<td class="noBorder" style="background-color: #FFFFFF"></td>
 					<td class="noBorder" style="background-color: #FFFFFF"></td>
-					<td class="noBorder" style="background-color: #FFFFFF"></td>
-					<td class="noBorder" style="background-color: #FFFFFF"></td>
-					<td class="noBorder" style="background-color: #FFFFFF"></td>
-					<td class="noBorder" style="background-color: #FFFFFF"></td>
-					<td class="noBorder" style="background-color: #FFFFFF"></td>
-					<td class="noBorder" style="background-color: #FFFFFF"></td>
-					<td class="noBorder" style="background-color: #FFFFFF"></td>
-					<td class="noBorder" style="background-color: #FFFFFF"></td>
-					<td class="noBorder" style="background-color: #FFFFFF"></td>
 					<td class="noBorder" style="background-color: #d3d3d3"></td>
-					<td class="noBorder" style="background-color: #FFFFFF"></td>
-					<td class="noBorder" style="background-color: #FFFFFF"></td>
-					<td class="noBorder" style="background-color: #FFFFFF"></td>
-					<td class="noBorder" style="background-color: #FFFFFF"></td>
+					<td class="noBorder" style="background-color: #d3d3d3"></td>
+					<td class="noBorder" style="background-color: #d3d3d3"></td>
+					<td class="noBorder" style="background-color: #d3d3d3"></td>
+					<td class="noBorder" style="background-color: #d3d3d3"></td>
+					<td class="noBorder" style="background-color: #d3d3d3"></td>
+					<td class="noBorder" style="background-color: #d3d3d3"></td>
+					<td class="noBorder" style="background-color: #d3d3d3"></td>
+					<td class="noBorder" style="background-color: #d3d3d3"></td>
 					<td class="noBorder" style="background-color: #FFFFFF"></td>
 					<td class="noBorder" style="background-color: #FFFFFF"></td>
 					<td class="noBorder" style="background-color: #FFFFFF"></td>
@@ -1416,6 +1416,12 @@
 				</tr>
 			</table>
 		</div>
+		<br><br>
+		<button id="drucken" type="button" class="btn btn-default" onClick="javascript:location.href='localhost/my_project/secondtry/application/views/zhg004.php" style="float: right; margin-left: 3px;"><span class="glyphicon glyphicon-floppy-disk"></span>&nbsp;Speichern
+		</button>
+		<form method="get" action="">
+			<button id="drucken" type="button" class="btn btn-default" onClick="printpage()" style="float: right;"><span class="glyphicon glyphicon-print"></span>&nbsp;Drucken</button>
+		</form>
 	</div>
 </body>
 </html>

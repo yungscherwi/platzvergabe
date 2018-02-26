@@ -3,7 +3,7 @@
 			<table id="table" style="width: 290%">
 				<thead>
 					<tr>
-						<th colspan="43"><p><strong>ZHG 008</strong></p></th>
+						<th colspan="43" class="text-center"><p><strong>ZHG 008</strong></p></th>
 					</tr>
 				</thead>
 				<tr class="trgrey">

@@ -1,4 +1,4 @@
-	<div class="container">	
+	<div class="container-fluid">	
 		<div class="hoersaal">
 			<table>
 				<thead>
@@ -165,10 +165,8 @@
 			</table>
 		</div>
 		<br><br>
-		<button type="button" class="btn btn-default" onClick="javascript:location.href='localhost/my_project/secondtry/application/views/zhg004.php" style="float: right; margin-left: 3px;"><span class="glyphicon glyphicon-floppy-disk"></span>&nbsp;Speichern
-		</button>
 		<form method="get" action="">
-			<button type="button" class="btn btn-default" onClick="printpage()" style="float: right;"><span class="glyphicon glyphicon-print"></span>&nbsp;Drucken</button>
+			<button id="drucken" type="button" class="btn btn-default" onClick="printpage()" style="float: right;"><span class="glyphicon glyphicon-print"></span>&nbsp;Drucken</button>
 		</form>
 	</div>
 </body>

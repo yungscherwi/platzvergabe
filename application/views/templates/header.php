@@ -2,15 +2,12 @@
 <head>
 	<meta charset="UTF-8">
 	<title>Platzvergabe</title>
-	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-	<link rel="stylesheet" href="<?php echo base_url() ?>application/views/css/faq.css">
-	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.3/js/bootstrap.min.js" integrity="sha384-a5N7Y/aK3qNeh15eJKGWxsqtnX/wWdSZSKp+81YjTmS15nvnvxKHuzaWwXHDli+4" crossorigin="anonymous"></script>
-	<script src="<?php echo base_url(); ?>application/libraries/jquery.js"></script>
-	<script src="<?php echo base_url(); ?>application/libraries/scripts.js"></script>
-	<script src="<?php echo base_url(); ?>application/libraries/dropzone.js"></script>
-	<link rel="stylesheet" href="<?php echo base_url() ?>application/views/css/dropzone.css">
-
+	<script src="<?php echo base_url(); ?>../libraries/jquery.js"></script>
+	<script src="<?php echo base_url(); ?>../libraries/dropzone.js"></script>
+	<script src="<?php echo base_url(); ?>../bootstrap/js/bootstrap.min.js"></script>
+	<link rel="stylesheet" href="<?php echo base_url() ?>../css/dropzone.css">
+	<link rel="stylesheet" href="<?php echo base_url() ?>../css/default.css">
+	<link rel="stylesheet" href="<?php echo base_url() ?>../bootstrap/css/bootstrap.min.css">
 </head>
 <body>
 	<header>
@@ -18,24 +15,46 @@
 			<img id="logo" src="http://www.uni-goettingen.de/img/redesign/logo.svg">
 		</div>
 	</header>
-	<div class="dienavbar">
-		<nav class="navbar navbar-expand-lg navbar-light bg-light">
-			<a class="navbar-brand" href="<?php echo base_url() ?>">Automatisierte Platzvergabe</a>
-			<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-				<span class="navbar-toggler-icon"></span>
-			</button>
-			<div class="collapse navbar-collapse" id="navbarNav">
-		    	<ul class="navbar-nav navbar-center">
-		      		<li class="nav-item active">
-		        		<a class="nav-link" href="<?php echo base_url() ?>">Home</a>
-		      		</li>
-					<li class="nav-item active">
-						<a class="nav-link" href="<?php echo base_url() ?>index.php/controller/viewHoersaele">Hörsäle</a>
-					</li>
-	    	  		<li class="nav-item active">
-	    	    		<a class="nav-link" href="<?php echo base_url() ?>index.php/controller/viewFAQ">FAQ</a>
-	   		  		</li>
-	    		</ul>
-  			</div>
-		</nav>
+	<div class="" style="height: 40px;" id="navigation-container">
+			<div class="container-fluid">	
+				<div class="navigation">
+					<nav>
+						<ol>
+							<li>
+								<a href="<?php echo base_url();?>main/view">Home</a>
+							</li>
+							<li>
+								<a href="<?php echo base_url();?>hoersaele">Prüfungsraum erstellen</a>
+							</li>
+							<li>
+								<a class="dropdown-toggle" data-toggle="dropdown" href="<?php echo base_url();?>hochladen">Prüfungsraum auswählen<span class="caret"></span></a>
+								<ul class="dropdown-menu">
+									<li><a href="<?php echo base_url(); ?>zhg">ZHG Hörsaal</a></li><br>
+									<li><a href="<?php echo base_url(); ?>hochladen">Erstellte Prüfungsräume</a></li>
+								</ul>
+							</li>
+							<li>
+								<a href="<?php echo base_url();?>hoersaele/hoersaeleverwalten">Prüfungsraum verwalten</a>
+							</li>
+						</ol>
+					</nav>
+					<label class="logoutbtn" ><a style="color: white" href="<?php echo base_url();?>main/logout"><span class="glyphicon glyphicon-log-out"></span>&nbsp;&nbsp;Logout</a></label> 
+				</div>
+			</div>
 	</div>
+</body>
+<script>
+window.onscroll = function() {myFunction()};
+
+var navbar = document.getElementById("navigation-container");
+var sticky = navbar.offsetTop;
+
+function myFunction() {
+  if (window.pageYOffset >= sticky) {
+    navbar.classList.add("sticky")
+  } else {
+    navbar.classList.remove("sticky");
+  }
+}
+</script>
+</html>

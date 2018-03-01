@@ -16,8 +16,8 @@
         function goToNewPage() {
           var nr = document.getElementById("hoersaal");
           var selectedHs = nr.options[nr.selectedIndex].value;
-          window.open(selectedHs); //öffnet Hörsaal
-          window.open('kontrollliste'); //öffnet Kontrollliste
+          window.open('hoersaele/view/'+selectedHs); //öffnet Hörsaal
+          window.open('hoersaele/kontrollliste/'+selectedHs); //öffnet Kontrollliste
       }
 
   function showReihen(int){

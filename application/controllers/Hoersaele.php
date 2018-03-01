@@ -33,6 +33,19 @@
         $this->load->view('templates/footer');
       }
   }
+//Kontrolliste Aufruf mit Übergabe des ausgewählten Hörsaals
+  public function kontrollliste($page){
+    $data['hoersaalID'] = $this->hoersaal_model->get_hoersaalID(); //liefert die HoersaalID Spalte aus hoersaal
+    $data['plaetze'] = $this->hoersaal_model->get_allPlaetze(); //alle plätze als array
+    $data['matrikelnummern'] = $this->first_column();
+    $data['nachnamen'] = $this->nachname_column();
+    $data['vornamen'] = $this->vorname_column();
+    $data['reihe'] = $this->hoersaal_model->get_reihe($page);
+
+    $this->load->view('templates/header');
+    $this->load->view('pages/kontrollliste', $data);
+    $this->load->view('templates/footer');
+  }
   //Hörsaal-Erstellung Funktion
     public function create(){
       $raumInfo = [$_POST["hoersaalID"]]; //Variable aus der Form in einen Array speichern
@@ -57,21 +70,24 @@
       //Variablen für Platzberechnung
       $page = implode([$_POST["hoersaalID"]]);
       $platzAnzahl = $this->hoersaal_model->get_platzAnzahl($page); //Aufruf entsprechend übergebener Raumnummer
-      $sperrplatzcheck = $this->hoersaal_model->get_sperrplatzCheck($page);
       $sperrplatzreihe = $this->hoersaal_model->get_sperrplatzreihe($page);
       $sperrplaetze = $this->hoersaal_model->get_sperrplatz($page);
       $reihe = $this->hoersaal_model->get_reihe($page);
 
       $revsperrplaetze = $this->hoersaal_model->get_revsperrplatz($page); // sonst wird nicht richtig gezählt, rev nur relevant für count
-      $plaetze=$this->countPlaetze($platzAnzahl, $sperrplatzcheck, $sperrplatzreihe, $sperrplaetze, $reihe);
+
+      //hoersaalübersicht updaten, wenn sperrplatz vorhanden
+      $hoersaalID = [$_POST["hoersaalID"]];
+      if(!empty($_POST["checkbox"])){ //checkbox ist das InputFeld für Sperrplätze
+        $this->hoersaal_model->updateSperrplatz($hoersaalID);
+      }
+
+      $sperrplatzcheck = $this->hoersaal_model->get_sperrplatzCheck($page);
+      $plaetze=$this->countPlaetze($platzAnzahl, $sperrplatzcheck, $sperrplatzreihe, $revsperrplaetze, $reihe);
 
       //Platzanzahl bei Klausur in hoersaalübersicht
       $hoersaalInfo = [$_POST["hoersaalID"], $plaetze];
       $this->hoersaal_model->insertIntoHoersaal($hoersaalInfo);
-      //hoersaalübersicht updaten, wenn sperrplatz vorhanden
-      if(!empty($_POST["checkbox"])){ //checkbox ist das InputFeld für Sperrplätze
-        $this->hoersaal_model->updateSperrplatz($hoersaalInfo);
-      }
 
       $data['hoersaalID']=[$_POST["hoersaalID"]];
       $data['reihen'] =$reihe;
@@ -149,7 +165,7 @@
         }
       }
       //Sperrplatzüberprüfung
-      if($sperrplatzcheck==1){
+      if($sperrplatzcheck[0]==1){
       for($i=0;$i<(count($sperrplaetze));$i++){
         //ungerade Reihenanzahl
       if($reiheLength%2!=0){
@@ -166,8 +182,11 @@
         }
       }
     }
+    return $plaetze;
   }
+    else{
               return $plaetze;
+            }
     }
 
 
@@ -185,6 +204,41 @@
       }
       fclose($handle);
       return $x;	//print_r ($x);
+
+    }
+
+    //Spalte Nachname
+    public function nachname_column(){
+      $x = [];
+
+      $start_row = 2;
+      $i = 1;
+      $handle = fopen('uploads/liste.csv', 'r');
+      while(($row = fgetcsv($handle, 1000, ';')) !== FALSE) {
+        if($i >= $start_row) {
+          array_push($x, utf8_encode($row[2]));
+        }
+        $i++;
+      }
+      fclose($handle);
+      return $x;
+
+    }
+    //Spalte Vorname
+    public function vorname_column(){
+      $x = [];
+
+      $start_row = 2;
+      $i = 1;
+      $handle = fopen('uploads/liste.csv', 'r');
+      while(($row = fgetcsv($handle, 1000, ';')) !== FALSE) {
+        if($i >= $start_row) {
+          array_push($x, utf8_encode($row[3]));
+        }
+        $i++;
+      }
+      fclose($handle);
+      return $x;
 
     }
 

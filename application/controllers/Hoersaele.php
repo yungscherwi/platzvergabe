@@ -57,7 +57,7 @@
       //Insert in die jeweilige Hörsaaltabelle
       $i=0; //counter variable für anzahlPlaetze
       while(!empty($_POST["anzahlPlaetze".$i.""])){ //Solange wiederholen, bis anzahlPlaetze nicht vorhanden
-        $insertInfo =  [$_POST["hoersaalID"],$_POST["anzahlPlaetze".$i.""]]; //Input für insert
+        $insertInfo =  [$_POST["hoersaalID"],$_POST["anzahlPlaetze".$i.""], ($i+1)]; //Input für insert
         $i++;
         $data['insertInfo'] = $this->hoersaal_model->insertIntoDatabase($insertInfo);
       }
@@ -73,7 +73,8 @@
       $page = implode([$_POST["hoersaalID"]]);
       $platzAnzahl = $this->hoersaal_model->get_platzAnzahl($page); //Aufruf entsprechend übergebener Raumnummer
       $sperrplatzreihe = $this->hoersaal_model->get_sperrplatzreihe($page);
-      $sperrplaetze = $this->hoersaal_model->get_sperrplatz($page);
+      $sperrplatzcheck = $this->hoersaal_model->get_sperrplatzcheck($page);
+      $sperrplaetze = $this->hoersaal_model->get_sperrplatz($page,$sperrplatzreihe,$sperrplatzcheck);
       $reihe = $this->hoersaal_model->get_reihe($page);
 
       $revsperrplaetze = $this->hoersaal_model->get_revsperrplatz($page); // sonst wird nicht richtig gezählt, rev nur relevant für count

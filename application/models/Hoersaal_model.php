@@ -18,7 +18,7 @@ class Hoersaal_model extends CI_Model{
 
 // Ausgabe von Spalte 'platzAnzahl' in einem Array
   public function get_platzAnzahl($raum){
-    $sql = "SELECT group_concat(platzAnzahl separator ',') as 'platzAnzahl' FROM $raum";
+    $sql = "SELECT group_concat(platzAnzahl separator ',') as 'platzAnzahl' FROM hoersaele WHERE hoersaalID = '$raum'";
     $query = $this->db->query($sql);
     $array1 = $query->row_array();
     $arr = explode(',',$array1['platzAnzahl']);
@@ -29,7 +29,7 @@ class Hoersaal_model extends CI_Model{
   }
   //Ausgabe von Spalte 'reihe' in einem Array
   public function get_reihe($raum){
-    $sql = "SELECT group_concat(reihe separator ',') as 'reihe' FROM $raum";
+    $sql = "SELECT group_concat(reihe separator ',') as 'reihe' FROM hoersaele WHERE hoersaalID = '$raum'";
     $query = $this->db->query($sql);
     $array1 = $query->row_array();
     $arr = explode(',',$array1['reihe']);
@@ -116,7 +116,7 @@ for($i=0;$i<count($revarr);$i++){
     }
 }
 
-/*  public function get_revsperrplatz($raum){
+  public function get_revsperrplatz($raum){
     $sql = "SELECT group_concat(sperrplatz separator ',') as 'sperrplatz' FROM `sperrplaetze` WHERE hoersaalID = '".$raum."'";
     $query = $this->db->query($sql);
     $array1 = $query->row_array();
@@ -124,7 +124,7 @@ for($i=0;$i<count($revarr);$i++){
     $revarr = array_reverse($arr); //für richtige Ausrichtung des hörsaals
 
     return ($revarr);
-  } */
+  }
 
   public function get_sperrplatzreihe($raum){
     $sql = "SELECT group_concat(sperrplatzreihe separator ',') as 'sperrplatzreihe' FROM `sperrplaetze` WHERE hoersaalID = '".$raum."'";
@@ -138,29 +138,6 @@ for($i=0;$i<count($revarr);$i++){
 
 
   public function createDatabase($raumInfo){
-    $this->load->dbforge();
-
-    $fields = array( //Erstellen der Spalten
-      'reihe' => array(
-        'type' => 'int'
-        , 'constraint' => 11 //maximal 11 Zeichen
-        , 'auto_increment' => true
-      )
-      ,'platzAnzahl' => array(
-        'type' => 'int'
-        , 'constraint' => 11
-      )
-      ,'hoersaalID' =>array(
-        'type' => 'varchar'
-        , 'constraint' => 255
-      )
-    );
-
-
-    $this->dbforge->add_field($fields);
-    $this->dbforge->add_key('reihe', true); //Primärschlüssel
-    $this->dbforge->add_field('CONSTRAINT FOREIGN KEY (hoersaalID) REFERENCES hoersaaluebersicht(hoersaalID)'); //Fremdschlüssel
-    $this->dbforge->create_table($raumInfo[0]); //Name = erste Stelle vom Array
     //hoersaalID wird eingefügt in die Tabelle
     $data = array(
       'hoersaalID' => $raumInfo[0]
@@ -172,9 +149,10 @@ for($i=0;$i<count($revarr);$i++){
     public function insertIntoDatabase($insertInfo){
     $infos = array(
       'platzAnzahl' => $insertInfo [1],
-      'hoersaalID' => $insertInfo[0]
+      'hoersaalID' => $insertInfo[0],
+      'reihe' => $insertInfo[2]
     );
-    $this->db->insert($insertInfo[0], $infos);
+    $this->db->insert('hoersaele', $infos);
 
     return ($insertInfo);
 
@@ -208,7 +186,7 @@ for($i=0;$i<count($revarr);$i++){
     }
 
     public function delete_hoersaal($hoersaalID){
-      $sql = "DROP TABLE ".$hoersaalID."";
+      $sql = "DELETE FROM hoersaele WHERE hoersaalID = '".$hoersaalID."'";
       $query = $this->db->query($sql);
 
       $sql = "DELETE FROM sperrplaetze WHERE hoersaalID = '".$hoersaalID."'";
@@ -222,7 +200,7 @@ for($i=0;$i<count($revarr);$i++){
     }
 //höchste Anzahl an Plätzen pro Reihe im Hörsaal
     public function get_maxPlatzAnzahl($hoersaalID){
-      $sql = "SELECT MAX(platzAnzahl) FROM ".$hoersaalID."";
+      $sql = "SELECT MAX(platzAnzahl) FROM hoersaele WHERE hoersaalID = '$hoersaalID'";
       $query = $this->db->query($sql);
       $array1 = $query->row_array();
 

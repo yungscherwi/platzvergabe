@@ -58,8 +58,8 @@ $autoload['packages'] = array();
 |
 |	$autoload['libraries'] = array('user_agent' => 'ua');
 */
-$autoload['libraries'] = array('database', 'session', 'form_validation');   
- //For Load Session Library in this application 
+$autoload['libraries'] = array('database', 'session', 'form_validation');
+
 /*
 | -------------------------------------------------------------------
 |  Auto-load Drivers
@@ -89,7 +89,7 @@ $autoload['drivers'] = array();
 |
 |	$autoload['helper'] = array('url', 'file');
 */
-$autoload['helper'] = array('url'); //erlaubt weiterleitung per url oder so
+$autoload['helper'] = array('url','form', 'security'); //erlaubt weiterleitung per url oder so
 
 /*
 | -------------------------------------------------------------------

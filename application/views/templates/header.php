@@ -1,49 +1,77 @@
-<!-- Wird auf jeder Seite geladen, alles hiernach ist Body und ist eingeschlossen durch footer.php-->
-<!doctype html>
 <html lang="en">
-  <head>
-    <title>Platzvergabe</title>
-    <!-- Required Meta Tags-->
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.3/css/bootstrap.min.css" integrity="sha384-Zug+QiDoJOrZ5t4lssLdxGhVrurbmBWopoEl+M6BdEfwnCJZtKxi1KgxUyJq13dy" crossorigin="anonymous">
-    <!-- Eigene CSS -->
-    <link rel="stylesheet" type="text/css" href="<?php echo base_url() ;?>css/table.css">
-
-    <!-- Javascripts-->
-    <script type="text/javascript">
-        function goToNewPage() {
+<head>
+            <?php
+        if(!isset($_SESSION['username'])) {                                     //alert message funktioniert nicht
+            ('<script type="text/javascript">
+                alert("log dich erstmal vorher ein");                           
+                </script>');                            
+            redirect( base_url() . 'main/login' );
+        }
+        //Abfrage der Nutzer ID vom Login
+        $userid = $_SESSION['username'];
+        ?>
+    
+	<script type="text/javascript">function goToNewPage() {
           var nr = document.getElementById("hoersaal");
           var selectedHs = nr.options[nr.selectedIndex].value;
-          window.open(selectedHs); //window.location = selectedVal um es im selben Fenster zu öffnen (klappt bisher leider nicht)
-      }
-
-    function showReihen(int){
-      if(int.length == 0){
-        document.getElementById('output').innerHTML = '';
-      } else{
-        //AJAX REQUEST
-        var xmlhttp = new XMLHttpRequest();
-        xmlhttp.onreadystatechange = function(){          //prüft ob serververbindung besteht
-          if(this.readyState == 4 && this.status == 200){
-            document.getElementById('output').
-            innerHTML = this.responseText;
-          }
-        }
-        //aufruf der funktion im controller hoersaele  + Übergabe der Eingabe
-        xmlhttp.open("GET", "hoersaele/reihen?q="+int, true);
-        xmlhttp.send();
-      }
-    }
-      function printpage() {
-        window.print();
-      }
-    </script>
-  </head>
-  <!-- Header vorbei -->
+          window.open(selectedHs); //öffnet Hörsaal
+          window.open('kontrollliste'); //öffnet Kontrollliste
+      }</script>
+	<meta charset="UTF-8">
+	<title>Platzvergabe</title>
+	<script src="<?php echo base_url(); ?>../libraries/jquery.js"></script>
+	<script src="<?php echo base_url(); ?>../libraries/dropzone.js"></script>
+	<script src="<?php echo base_url(); ?>../bootstrap/js/bootstrap.min.js"></script>
+	<link rel="stylesheet" href="<?php echo base_url() ?>../css/dropzone.css">
+	<link rel="stylesheet" href="<?php echo base_url() ?>../css/default.css">
+	<link rel="stylesheet" href="<?php echo base_url() ?>../bootstrap/css/bootstrap.min.css">
+</head>
 <body>
-    <a>
-    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/95/Georg-August-Universit%C3%A4t_G%C3%B6ttingen_Logo.svg/571px-Georg-August-Universit%C3%A4t_G%C3%B6ttingen_Logo.svg.png" width="285" height="56" class="d-inline-block align-top" alt="">
-    </a>
+	<header>
+		<div class="container-fluid logo-container">
+			<img id="logo" src="http://www.uni-goettingen.de/img/redesign/logo.svg">
+		</div>
+	</header>
+	<div class="" style="height: 40px;" id="navigation-container">
+			<div class="container-fluid">	
+				<div class="navigation">
+					<nav>
+						<ol>
+							<li>
+								<a href="<?php echo base_url();?>main/view">Home</a>
+							</li>
+							<li>
+								<a href="<?php echo base_url();?>hoersaele">Prüfungsraum erstellen</a>
+							</li>
+							<li>
+								<a class="dropdown-toggle" data-toggle="dropdown" href="<?php echo base_url();?>hochladen">Prüfungsraum auswählen<span class="caret"></span></a>
+								<ul class="dropdown-menu">
+									<li><a href="<?php echo base_url(); ?>zhg">ZHG Hörsaal</a></li><br>
+									<li><a href="<?php echo base_url(); ?>hochladen">Erstellte Prüfungsräume</a></li>
+								</ul>
+							</li>
+							<li>
+								<a href="<?php echo base_url();?>hoersaele/hoersaeleverwalten">Prüfungsraum verwalten</a>
+							</li>
+						</ol>
+					</nav>
+					<label class="logoutbtn" ><a style="color: white" href="<?php echo base_url();?>main/logout"><span class="glyphicon glyphicon-log-out"></span>&nbsp;&nbsp;Logout</a></label> 
+				</div>
+			</div>
+	</div>
 </body>
+<script>
+window.onscroll = function() {myFunction()};
+
+var navbar = document.getElementById("navigation-container");
+var sticky = navbar.offsetTop;
+
+function myFunction() {
+  if (window.pageYOffset >= sticky) {
+    navbar.classList.add("sticky")
+  } else {
+    navbar.classList.remove("sticky");
+  }
+}
+</script>
+</html>

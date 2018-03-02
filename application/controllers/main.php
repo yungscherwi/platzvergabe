@@ -5,14 +5,14 @@
       function login()  
       {  
            //http://localhost/platzvergabe/main/login   
-           $this->load->view('templates/header');                           
+           $this->load->view('templates/platzvergabeheader');                           
            $this->load->view("pages/login");  
            $this->load->view('templates/footer');
       }  
       function login_validation()  
       {   
-           $this->form_validation->set_rules('username', 'Username', 'required');  
-           $this->form_validation->set_rules('password', 'Password', 'required');  
+           $this->form_validation->set_rules('username', 'Username', 'trim|required|xss_clean');  
+           $this->form_validation->set_rules('password', 'Password', 'trim|required|xss_clean');  
            if($this->form_validation->run())  
            {  
                 //true  
@@ -42,8 +42,7 @@
       }  
       function enter(){  
            if($this->session->userdata('username') != '')  
-           {    echo "<script>
-                    alert('There are no fields to generate a report');                 
+           {    echo "<script>                 
                     window.location.href='view';
                     </script>";
 
@@ -69,7 +68,7 @@
         $data['title'] = ucfirst($page);
 
         $this->load->view('templates/header');
-        $this->load->view('templates/navbar');
+        //    $this->load->view('templates/navbar');
         $this->load->view('pages/'.$page, $data);
         $this->load->view('templates/footer');
     }

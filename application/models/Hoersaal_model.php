@@ -67,17 +67,56 @@ class Hoersaal_model extends CI_Model{
     return($arr);
   }
 
-  public function get_sperrplatz($raum){
+  public function get_sperrplatz($raum,$sperrplatzreihe,$sperrplatzcheck){
+    if($sperrplatzcheck==1){
     $sql = "SELECT group_concat(sperrplatz separator ',') as 'sperrplatz' FROM `sperrplaetze` WHERE hoersaalID = '".$raum."'";
     $query = $this->db->query($sql);
     $array1 = $query->row_array();
     $arr = explode(',',$array1['sperrplatz']);
     $revarr = array_reverse($arr); //für richtige Ausrichtung des hörsaals
 
-    return ($arr);
-  }
+$zwischen=[];
+$new=[];
+$final=[];
+for($i=0;$i<count($revarr);$i++){
+	if(!empty($revarr[$i+1])){
+	if($sperrplatzreihe[$i]==$sperrplatzreihe[$i+1]){
+		array_push($zwischen,$revarr[$i]);
+	}
+	else{
+		array_push($zwischen,$revarr[$i]);
+		sort($zwischen);
+		array_push($final,$zwischen);
+		$zwischen=[];
+	   }
+	}
+	else{
+		if($sperrplatzreihe[$i]==$sperrplatzreihe[$i-1]){
+			array_push($zwischen,$revarr[$i]);
+			sort($zwischen);
+			array_push($final,$zwischen);
+		}
+		else{
+		sort($zwischen);
+		array_push($final,$zwischen);
+		$zwischen=[];
+		array_push($zwischen,$revarr[$i]);
+		array_push($final,$zwischen);
+	   }
+   }
+}
 
-  public function get_revsperrplatz($raum){
+  $result = call_user_func_array('array_merge', $final);
+
+
+    return ($result);
+  }
+  else{
+    return;
+    }
+}
+
+/*  public function get_revsperrplatz($raum){
     $sql = "SELECT group_concat(sperrplatz separator ',') as 'sperrplatz' FROM `sperrplaetze` WHERE hoersaalID = '".$raum."'";
     $query = $this->db->query($sql);
     $array1 = $query->row_array();
@@ -85,7 +124,7 @@ class Hoersaal_model extends CI_Model{
     $revarr = array_reverse($arr); //für richtige Ausrichtung des hörsaals
 
     return ($revarr);
-  }
+  } */
 
   public function get_sperrplatzreihe($raum){
     $sql = "SELECT group_concat(sperrplatzreihe separator ',') as 'sperrplatzreihe' FROM `sperrplaetze` WHERE hoersaalID = '".$raum."'";
@@ -96,6 +135,8 @@ class Hoersaal_model extends CI_Model{
     $revarr = array_reverse($arr); //für richtige Ausrichtung des hörsaals
     return ($revarr);
   }
+
+
   public function createDatabase($raumInfo){
     $this->load->dbforge();
 

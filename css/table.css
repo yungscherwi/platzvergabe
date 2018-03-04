@@ -1,0 +1,110 @@
+#logo {
+	height: 50px;
+}
+
+@media (min-width: 768px) {
+  .navbar-nav.navbar-center {
+    position: absolute;
+    left: 75%;
+    transform: translatex(-50%);
+  }
+  .navbar-brand{
+    position: sticky;
+    left: 15%; /* Prozentzahl ändern, um bstand zu ändern */
+    transform: translatex(-50%);
+  }
+  .navbar-nav{
+    font-size: 18px;
+  }
+  .navbar-nav li{
+    margin-right: 50px;
+  }
+  .navbar-brand{
+    font-size:20px;
+  }
+}
+
+header {
+    background-color: #13306a;
+    display: block;
+    box-sizing: border-box;
+
+}
+
+body {
+    font-family: "Helvetica Neue",Helvetica,ARial,sans-serif;
+    font-size: 14px;
+    line-height: 1.42857143;
+    color: #333;
+    margin: 0;
+}
+
+html {
+    font-size: 10px;
+    font-family: sans-serif;
+}
+
+* {
+    box-sizing: border box;
+    -moz-box-sizing: border-box;
+}
+
+table {
+	display: table;
+	border-collapse: collapse;
+	border-spacing: 2px;
+	border-color: black;
+	border-style: hidden;
+}
+
+th {
+	text-align: center;
+}
+
+td {
+	width: 85px;
+}
+table, th, td {
+	padding: 15px;
+}
+
+table td, table th {
+	border: 2px solid black;
+}
+
+td.noBorder, th.noBorder, tr.noBorder td {
+	border-right-style: hidden;
+	border: 0;
+}
+
+tr.trgrey, td.tdgrey {
+	background-color: #8e8e8e; /*heavy-grey: #424242;*/
+}
+tr.trgrey {
+	line-height: 10px;
+}
+
+.container-fluid {
+    padding-top: 25px;
+    padding-bottom: 25px;
+    padding-right: 15px;
+    padding-left: 15px;
+    max-width: 1170px;
+    margin-right: auto;
+    margin-left: auto;
+
+}
+
+.container{
+    padding-top: 25px;
+    padding-right: 15px;
+    padding-left: 15px;
+    margin-right: auto;
+    margin-left: auto;
+    width: 1170px;
+}
+
+#logoutbtn {
+    float: right;
+    padding-right: 25px;
+}

@@ -1,28 +1,28 @@
-Matrnr;Anrede;Nachname;Vorname;Email;Note;Punkte;Prfbem;Prfbem-Bezeichnung;Versuch;Studiengang;Fachgruppe;Fachsemester;Vorbehalt
-123456789;Herr;A;Vorname A;Vorname A.A@stud.uni-goettingen.de;;;;<Ohne>;1;Wirtschaftsinformatik (Bachelor of Science);Vertiefung Wirtschaftsinformatik - Wahlmodule (3 aus IIV, DIW, IKT, SRS);7;0
-123456790;Frau;Ä;Vorname K;Vorname K.Ä@stud.uni-goettingen.de;;;;<Ohne>;1;Wirtschaftsinformatik (Bachelor of Science);Vertiefung Wirtschaftsinformatik - Wahlmodule (3 aus IIV, DIW, IKT, SRS);5;0
-123456791;Herr;B;Vorname Ä;Vorname Ä.B@stud.uni-goettingen.de;;;;<Ohne>;1;Wirtschaftsinformatik (Bachelor of Science);Vertiefung Wirtschaftsinformatik - Wahlmodule (3 aus IIV, DIW, IKT, SRS);6;0
-123456792;Herr;C;Vorname Y;Vorname Y.C@stud.uni-goettingen.de;;;;<Ohne>;1;Wirtschaftsinformatik (Bachelor of Science);Vertiefung Wirtschaftsinformatik - Wahlmodule (3 aus IIV, DIW, IKT, SRS);6;0
-123456793;Herr;D;Vorname C;Vorname C.D@stud.uni-goettingen.de;;;;<Ohne>;1;Wirtschaftsinformatik (Bachelor of Science);Vertiefung Wirtschaftsinformatik - Wahlmodule (3 aus IIV, DIW, IKT, SRS);6;0
-123456794;Herr;E;Vorname N;Vorname N.E@stud.uni-goettingen.de;;;;<Ohne>;1;Wirtschaftsinformatik (Bachelor of Science);Freier Wahlbereich;5;0
-123456795;Herr;F;Vorname D;Vorname D.F@stud.uni-goettingen.de;;;;<Ohne>;1;Wirtschaftsinformatik (Bachelor of Science);Vertiefung Wirtschaftsinformatik - Wahlmodule (3 aus IIV, DIW, IKT, SRS);6;0
-123456796;Frau;G;Vorname E;Vorname E.G@stud.uni-goettingen.de;;;;<Ohne>;1;Wirtschaftsinformatik (Bachelor of Science);Vertiefung Wirtschaftsinformatik - Wahlmodule (3 aus IIV, DIW, IKT, SRS);4;0
-123456797;Herr;H;Vorname F;Vorname F.H@stud.uni-goettingen.de;;;;<Ohne>;1;Wirtschaftsinformatik (Bachelor of Science);Freier Wahlbereich;6;0
-123456798;Frau;I;Vorname S;Vorname S.I@stud.uni-goettingen.de;;;;<Ohne>;1;Wirtschaftsinformatik (Bachelor of Science);Vertiefung Wirtschaftsinformatik - Wahlmodule (3 aus IIV, DIW, IKT, SRS);6;0
-123456799;Frau;J;Vorname G;Vorname G.J@stud.uni-goettingen.de;;;;<Ohne>;1;Wirtschaftsinformatik (Bachelor of Science);Vertiefung Wirtschaftsinformatik - Wahlmodule (3 aus IIV, DIW, IKT, SRS);4;0
-123456800;Frau;K;Vorname H;Vorname H.K@stud.uni-goettingen.de;;;;<Ohne>;1;Wirtschaftsinformatik (Bachelor of Science);Vertiefung Wirtschaftsinformatik - Wahlmodule (3 aus IIV, DIW, IKT, SRS);8;0
-123456801;Herr;L;Vorname I;Vorname I.L@stud.uni-goettingen.de;;;;<Ohne>;1;Wirtschaftsinformatik (Bachelor of Science);Freier Wahlbereich;7;0
-123456802;Herr;O;Vorname T;Vorname T.O@stud.uni-goettingen.de;;;;<Ohne>;1;Wirtschaftsinformatik (Bachelor of Science);Freier Wahlbereich;6;0
-123456803;Frau;Ö;Vorname J;Vorname J.Ö@stud.uni-goettingen.de;;;;<Ohne>;1;Wirtschaftsinformatik (Bachelor of Science);Vertiefung Wirtschaftsinformatik - Wahlmodule (3 aus IIV, DIW, IKT, SRS);7;0
-123456804;Herr;P;Vorname U;Vorname U.P@stud.uni-goettingen.de;;;;<Ohne>;1;Wirtschaftsinformatik (Bachelor of Science);Vertiefung Wirtschaftsinformatik - Wahlmodule (3 aus IIV, DIW, IKT, SRS);6;0
-123456805;Frau;Q;Vorname L;Vorname L.Q@stud.uni-goettingen.de;;;;<Ohne>;1;Wirtschaftsinformatik (Bachelor of Science);Vertiefung Wirtschaftsinformatik - Wahlmodule (3 aus IIV, DIW, IKT, SRS);4;0
-123456806;Frau;R;Vorname O;Vorname O.R@stud.uni-goettingen.de;;;;<Ohne>;1;Wirtschaftsinformatik (Bachelor of Science);Vertiefung Wirtschaftsinformatik - Wahlmodule (3 aus IIV, DIW, IKT, SRS);6;0
-123456807;Herr;S;Vorname B;Vorname B.S@stud.uni-goettingen.de;;;;<Ohne>;1;Wirtschaftsinformatik (Bachelor of Science);Freier Wahlbereich;7;0
-123456808;Herr;T;Vorname P;Vorname P.T@stud.uni-goettingen.de;;;;<Ohne>;1;Wirtschaftsinformatik (Bachelor of Science);Vertiefung Wirtschaftsinformatik - Wahlmodule (3 aus IIV, DIW, IKT, SRS);11;0
-123456809;Herr;U;Vorname R;Vorname R.U@stud.uni-goettingen.de;;;;<Ohne>;1;Wirtschaftsinformatik (Bachelor of Science);Vertiefung Wirtschaftsinformatik - Wahlmodule (3 aus IIV, DIW, IKT, SRS);4;0
-123456810;Herr;Ü;Vorname V;Vorname V.Ü@stud.uni-goettingen.de;;;;<Ohne>;1;Wirtschaftsinformatik (Bachelor of Science);Vertiefung Wirtschaftsinformatik - Wahlmodule (3 aus IIV, DIW, IKT, SRS);7;0
-123456811;Herr;V;Vorname Z;Vorname Z.V@stud.uni-goettingen.de;;;;<Ohne>;1;Wirtschaftsinformatik (Bachelor of Science);Vertiefung Wirtschaftsinformatik - Wahlmodule (3 aus IIV, DIW, IKT, SRS);6;0
-123456812;Herr;W;Vorname M;Vorname M.W@stud.uni-goettingen.de;;;;<Ohne>;1;Wirtschaftsinformatik (Bachelor of Science);Vertiefung Wirtschaftsinformatik - Wahlmodule (3 aus IIV, DIW, IKT, SRS);6;0
-123456813;Herr;X;Vorname X;Vorname X.X@stud.uni-goettingen.de;;;;<Ohne>;1;Wirtschaftsinformatik (Bachelor of Science);Vertiefung Wirtschaftsinformatik - Wahlmodule (3 aus IIV, DIW, IKT, SRS);6;0
-123456814;Herr;Y;Vorname W;Vorname W.Y@stud.uni-goettingen.de;;;;<Ohne>;1;Wirtschaftsinformatik (Bachelor of Science);Vertiefung Wirtschaftsinformatik - Wahlmodule (3 aus IIV, DIW, IKT, SRS);7;0
-123456815;Herr;Z;Vorname Q;Vorname Q.Z@stud.uni-goettingen.de;;;;<Ohne>;1;Wirtschaftsinformatik (Bachelor of Science);Vertiefung Wirtschaftsinformatik - Wahlmodule (3 aus IIV, DIW, IKT, SRS);6;0
+Matrnr;Anrede;Nachname;Vorname;Email;Note;Punkte;Prfbem;Versucht;Studiengang;Fachgruppe;Fachsemester;Vorbehalt
+12345678;Herr;Meier;Kai;Kai.Meier@stud.uni-goettingen.de;;;<Ohne>;1;Wirtschaftsinformatik (Bachelor of Science);Vertiefung Wirtschaftsinformatik - Wahlmodule (3 aus IIV, DIW, IKT, SRS);1;0
+23456789;Frau;Maier;Oliver;Oliver.Maier@stud.uni-goettingen;;;<Ohne>;1;Wirtschaftsinformatik (Bachelor of Science);Vertiefung Wirtschaftsinformatik - Wahlmodule (3 aus IIV, DIW, IKT, SRS);2;0
+12347893;Frau;Frank;Frank;Frank.Frank@stud.uni-goettingen;;;<Ohne>;1;Wirtschaftsinformatik (Bachelor of Science);Vertiefung Wirtschaftsinformatik - Wahlmodule (3 aus IIV, DIW, IKT, SRS);3;0
+98745632;Herr;Kerl;Jens;Jens.Kerl@stud.uni-goettingen;;;<Ohne>;1;Wirtschaftsinformatik (Bachelor of Science);Vertiefung Wirtschaftsinformatik - Wahlmodule (3 aus IIV, DIW, IKT, SRS);4;0
+12345676;Frau;Karl;Gerd;Gerd.Karl@stud.uni-goettingen;;;<Ohne>;1;Wirtschaftsinformatik (Bachelor of Science);Vertiefung Wirtschaftsinformatik - Wahlmodule (3 aus IIV, DIW, IKT, SRS);5;0
+25874136;Frau;Url;Franz;Franz.Url@stud.uni-goettingen;;;<Ohne>;1;Wirtschaftsinformatik (Bachelor of Science);Vertiefung Wirtschaftsinformatik - Wahlmodule (3 aus IIV, DIW, IKT, SRS);6;0
+45896321;Frau;Obi;Konrad;Konrad.Obi@stud.uni-goettingen;;;<Ohne>;1;Wirtschaftsinformatik (Bachelor of Science);Vertiefung Wirtschaftsinformatik - Wahlmodule (3 aus IIV, DIW, IKT, SRS);7;0
+10101022;Frau;Wan;Michael;Michael.Wan@stud.uni-goettingen;;;<Ohne>;1;Wirtschaftsinformatik (Bachelor of Science);Vertiefung Wirtschaftsinformatik - Wahlmodule (3 aus IIV, DIW, IKT, SRS);1;0
+10102525;Frau;Kenobi;Thomas;Thomas.Kenobi@stud.uni-goettingen;;;<Ohne>;1;Wirtschaftsinformatik (Bachelor of Science);Vertiefung Wirtschaftsinformatik - Wahlmodule (3 aus IIV, DIW, IKT, SRS);2;0
+47859632;Frau;Yoda;Petrus;Petrus.Yoda@stud.uni-goettingen;;;<Ohne>;1;Wirtschaftsinformatik (Bachelor of Science);Vertiefung Wirtschaftsinformatik - Wahlmodule (3 aus IIV, DIW, IKT, SRS);3;0
+15987412;Frau;Batman;Simon;Simon.Batman@stud.uni-goettingen;;;<Ohne>;1;Wirtschaftsinformatik (Bachelor of Science);Vertiefung Wirtschaftsinformatik - Wahlmodule (3 aus IIV, DIW, IKT, SRS);4;0
+12001212;Frau;Peter;Andereas;Andereas.Peter@stud.uni-goettingen;;;<Ohne>;1;Wirtschaftsinformatik (Bachelor of Science);Vertiefung Wirtschaftsinformatik - Wahlmodule (3 aus IIV, DIW, IKT, SRS);5;0
+12001213;Frau;Parker;Thaddel;Thaddel.Parker@stud.uni-goettingen;;;<Ohne>;1;Wirtschaftsinformatik (Bachelor of Science);Vertiefung Wirtschaftsinformatik - Wahlmodule (3 aus IIV, DIW, IKT, SRS);6;0
+12001214;Frau;xD;Markus;Markus.xD@stud.uni-goettingen;;;<Ohne>;1;Wirtschaftsinformatik (Bachelor of Science);Vertiefung Wirtschaftsinformatik - Wahlmodule (3 aus IIV, DIW, IKT, SRS);8;0
+12001215;Frau;Raw;Johannes;Johannes.Raw@stud.uni-goettingen;;;<Ohne>;1;Wirtschaftsinformatik (Bachelor of Science);Vertiefung Wirtschaftsinformatik - Wahlmodule (3 aus IIV, DIW, IKT, SRS);9;0
+12001216;Frau;Chan;Lukas;Lukas.Chan@stud.uni-goettingen;;;<Ohne>;1;Wirtschaftsinformatik (Bachelor of Science);Vertiefung Wirtschaftsinformatik - Wahlmodule (3 aus IIV, DIW, IKT, SRS);7;0
+12001217;Frau;Schmidt;Jesus;Jesus.Schmidt@stud.uni-goettingen;;;<Ohne>;1;Wirtschaftsinformatik (Bachelor of Science);Vertiefung Wirtschaftsinformatik - Wahlmodule (3 aus IIV, DIW, IKT, SRS);10;0
+12001218;Frau;Andres;Isaak;Isaak.Andres@stud.uni-goettingen;;;<Ohne>;1;Wirtschaftsinformatik (Bachelor of Science);Vertiefung Wirtschaftsinformatik - Wahlmodule (3 aus IIV, DIW, IKT, SRS);5;0
+12001219;Frau;Sanders;Isa;Isa.Sanders@stud.uni-goettingen;;;<Ohne>;1;Wirtschaftsinformatik (Bachelor of Science);Vertiefung Wirtschaftsinformatik - Wahlmodule (3 aus IIV, DIW, IKT, SRS);5;0
+12001220;Frau;Lose;Lisa;Lisa.Lose@stud.uni-goettingen;;;<Ohne>;1;Wirtschaftsinformatik (Bachelor of Science);Vertiefung Wirtschaftsinformatik - Wahlmodule (3 aus IIV, DIW, IKT, SRS);2;0
+12001221;Frau;Bierkoff;Lena;Lena.Bierkoff@stud.uni-goettingen;;;<Ohne>;1;Wirtschaftsinformatik (Bachelor of Science);Vertiefung Wirtschaftsinformatik - Wahlmodule (3 aus IIV, DIW, IKT, SRS);3;0
+12001222;Frau;Kliensmann;Sarah;Sarah.Kliensmann@stud.uni-goettingen;;;<Ohne>;1;Wirtschaftsinformatik (Bachelor of Science);Vertiefung Wirtschaftsinformatik - Wahlmodule (3 aus IIV, DIW, IKT, SRS);6;0
+12001223;Frau;Kufur;Maria;Maria.Kufur@stud.uni-goettingen;;;<Ohne>;1;Wirtschaftsinformatik (Bachelor of Science);Vertiefung Wirtschaftsinformatik - Wahlmodule (3 aus IIV, DIW, IKT, SRS);8;0
+12001224;Frau;Jeremies;Silvia;Silvia.Jeremies@stud.uni-goettingen;;;<Ohne>;1;Wirtschaftsinformatik (Bachelor of Science);Vertiefung Wirtschaftsinformatik - Wahlmodule (3 aus IIV, DIW, IKT, SRS);9;0
+12001225;Frau;Linke;Marta;Marta.Linke@stud.uni-goettingen;;;<Ohne>;1;Wirtschaftsinformatik (Bachelor of Science);Vertiefung Wirtschaftsinformatik - Wahlmodule (3 aus IIV, DIW, IKT, SRS);7;0
+12001226;Frau;Bobic;Manuela;Manuela.Bobic@stud.uni-goettingen;;;<Ohne>;1;Wirtschaftsinformatik (Bachelor of Science);Vertiefung Wirtschaftsinformatik - Wahlmodule (3 aus IIV, DIW, IKT, SRS);8;0
+12001227;Frau;Kahn;Lea;Lea.Kahn@stud.uni-goettingen;;;<Ohne>;1;Wirtschaftsinformatik (Bachelor of Science);Vertiefung Wirtschaftsinformatik - Wahlmodule (3 aus IIV, DIW, IKT, SRS);10;0

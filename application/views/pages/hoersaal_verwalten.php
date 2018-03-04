@@ -13,7 +13,7 @@
       $hoersaalLength = count($hoersaalID);
     for($i=0; $i<$hoersaalLength; $i++){
       //Erstellen eines inputs um übergabe der enthaltenen Daten zu ermöglichen
-        print ('<form action="hoersaal_delete" method="post"><tr>
+        print ('<form action="../pages/hoersaal_delete" method="post"><tr>
               <td><input type="hidden" name="hoersaal" value="'.$hoersaalID[$i].'">'.$hoersaalID[$i].'</td>
               <td>'.$plaetze[$i].'</td>
               <td><input type="submit" class="btn btn-danger" value="Löschen">

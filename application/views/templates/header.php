@@ -10,21 +10,16 @@
         //Abfrage der Nutzer ID vom Login
         $userid = $_SESSION['username'];
         ?>
-    
-	<script type="text/javascript">function goToNewPage() {
-          var nr = document.getElementById("hoersaal");
-          var selectedHs = nr.options[nr.selectedIndex].value;
-          window.open(selectedHs); //öffnet Hörsaal
-          window.open('kontrollliste'); //öffnet Kontrollliste
-      }</script>
 	<meta charset="UTF-8">
 	<title>Platzvergabe</title>
+        <script src="<?php echo base_url(); ?>../libraries/scripts.js"></script>
 	<script src="<?php echo base_url(); ?>../libraries/jquery.js"></script>
 	<script src="<?php echo base_url(); ?>../libraries/dropzone.js"></script>
 	<script src="<?php echo base_url(); ?>../bootstrap/js/bootstrap.min.js"></script>
 	<link rel="stylesheet" href="<?php echo base_url() ?>../css/dropzone.css">
 	<link rel="stylesheet" href="<?php echo base_url() ?>../css/default.css">
 	<link rel="stylesheet" href="<?php echo base_url() ?>../bootstrap/css/bootstrap.min.css">
+      
 </head>
 <body>
 	<header>

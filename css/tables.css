@@ -1,0 +1,44 @@
+td.noBorder, th.noBorder, tr.noBorder td {
+	border-right-style: hidden;
+	border: 0;
+	width: 80px;
+}
+
+tr.trgrey, td.tdgrey {
+	background-color: #8e8e8e; /*heavy-grey: #424242;*/
+}
+tr.trgrey {
+	line-height: 10px;
+}
+
+body {
+	margin: 0;
+}
+
+table {
+	height: 50%;
+	table-layout: fixed;
+	border-collapse: collapse;
+	width: 100%;
+    border: hidden;
+
+}
+
+tr {
+	width: 200%;
+}
+
+td {
+	height: 45px;
+	font-size: 10px;
+}
+
+td {
+	border: 1.5px solid black;
+}
+
+td.noBorder, th.noBorder, tr.noBorder td {
+	border-right-style: hidden;
+	border: 0;
+	width: 80px;
+}

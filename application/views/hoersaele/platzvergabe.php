@@ -10,7 +10,14 @@ $MartrNrLength = count($MartrNr);
 $platznummer = $MartrNrLength; //counter Variabel für Platznummer
 $sitzplaetze=$plaetze; //weil $plaetze als Counter benötigt
 //<td class="noBorder" style="background-color: #FFFFFF"></td> Sperrplatz Code
+print('<br>sperrplatzreihe ');
+print_r($sperrplatzreihe);
+print('<br>reihe ');
+print_r($reihe);
 $sperrplatzcounter=0;
+print_r(count($sperrplaetze));
+print('<br>sperrplätze ');
+print_r($sperrplaetze);
 //Hier beginnt der eigentliche Platzvergabe-Algorithmus
 /* So oft durchlaufen wie der Array lang ist */
 for($i=0;$i<$reiheLength;$i++){

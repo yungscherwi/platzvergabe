@@ -154,6 +154,8 @@ body {
 
 @media print {
 
+#kontrollliste { page-break-after: always;}    
+    
 /****** none displayed printobjects ******/
 
 #drucken, #navigation-container {

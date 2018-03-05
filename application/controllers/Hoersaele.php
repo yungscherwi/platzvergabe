@@ -6,8 +6,14 @@
         $this->load->view('templates/header');
         $this->load->view('hoersaele/index');
         $this->load->view('templates/footer');
-
     }
+    
+    	public function index_zhg() {
+            $this->load->view('templates/header');
+            $this->load->view('hoersaele/zhg_auswahl');
+            $this->load->view('templates/footer');
+        }
+
     //Hörsaalaufruf
     public function view($page){ //Raumnummer aus Auswahl wird übergeben
       //Gibt Spalte 'reihe' als Array aus hoersaal aus
@@ -34,7 +40,23 @@
         $this->load->view('hoersaele/alternativen', $data);
         $this->load->view('templates/footer');
       }
-  }
+  }  
+        //ZHG Aufruf 
+  	public function view_zhg($page){
+        //Wenn Seite nicht existiert->404
+         /*if(!file_exists(APPPATH.'views/pages/'.$page.'.php')){
+        show_404();
+         }*/
+      //ucfirst-> UpperCasefirst, also erster Buchstabe groß
+      	$output = $this->first_column();
+      	$output = $this->fillarray(160, $output);
+        $data['title'] = ucfirst($page);
+        $data['value'] = $output;
+        $this->load->view('templates/platzvergabeheader');
+        $this->load->view('lecture_hall/zhg'.$page, $data);
+        $this->load->view('templates/footer');
+    }
+    
 //Kontrolliste Aufruf mit Übergabe des ausgewählten Hörsaals
   public function kontrollliste($page){
     $data['hoersaalID'] = $this->hoersaal_model->get_hoersaalID(); //liefert die HoersaalID Spalte aus hoersaal
@@ -99,7 +121,6 @@
       $this->load->view('hoersaele/success', $data);
       $this->load->view('templates/footer');
     }
-
 
     //AJAX
     public function reihen(){
@@ -198,7 +219,7 @@
       $x = [];
       $start_row = 2;
       $i = 1;
-      $handle = fopen('uploads/liste.csv', 'r');
+      $handle = fopen('uploads/liste_' . $_SESSION['username'] . '_' . date('Y_m_d') . '.csv', 'r');
       while(($row = fgetcsv($handle, 1000, ';')) !== FALSE) {
         if($i >= $start_row) {
           array_push($x, $row[0]);
@@ -216,7 +237,7 @@
 
       $start_row = 2;
       $i = 1;
-      $handle = fopen('uploads/liste.csv', 'r');
+        $handle = fopen('uploads/liste_' . $_SESSION['username'] . '_' . date('Y_m_d') . '.csv', 'r');
       while(($row = fgetcsv($handle, 1000, ';')) !== FALSE) {
         if($i >= $start_row) {
           array_push($x, utf8_encode($row[2]));
@@ -233,7 +254,7 @@
 
       $start_row = 2;
       $i = 1;
-      $handle = fopen('uploads/liste.csv', 'r');
+      $handle = fopen('uploads/liste_' . $_SESSION['username'] . '_' . date('Y_m_d') . '.csv', 'r');
       while(($row = fgetcsv($handle, 1000, ';')) !== FALSE) {
         if($i >= $start_row) {
           array_push($x, utf8_encode($row[3]));
@@ -243,6 +264,18 @@
       fclose($handle);
       return $x;
     }
+    
+     public function fillarray($x, $o) {//$x = anzahl sitzplaetze; $o = array
+			$f = sizeof($o);
+			if ($f < $x) {
+				$k = $x - $f;
+				for($i = 0; $i < $k; $i++) {
+					$o[$f+$i] = "";
+				}
+			}
+			return $o;
+		}
+                
         public function hoersaeleverwalten() {
       $data['hoersaalID'] = $this->hoersaal_model->get_hoersaalID(); //liefert die HoersaalID Spalte aus hoersaal
       $data['plaetze'] = $this->hoersaal_model->get_allPlaetze(); //alle plätze als array

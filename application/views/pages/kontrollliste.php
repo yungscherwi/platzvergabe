@@ -1,4 +1,4 @@
-<h1>Kontrollliste</h1>
+<h1>Liste zur Identitätskontrolle</h1>
 <table class="table" id='kontrollliste' >
   <thead>
     <tr>
@@ -31,7 +31,7 @@
 </table>
 <br>
 <br>
-<h1>Sitzliste</h1>
+<h1>Liste der Platzzuweisung</h1>
 <table class="table">
   <thead>
     <tr>

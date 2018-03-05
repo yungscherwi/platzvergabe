@@ -1,6 +1,6 @@
 @media all {   
     
-     /****** CSS Reset ******/
+/****** CSS Reset ******/
  
 html, body, div, span, applet, object, iframe, h1, h2, legend, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code,
 del, dfn, em, font, img, ins, kbd, q, s, samp,small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li,
@@ -15,172 +15,177 @@ ins {text-decoration: none;}
 del {text-decoration: line-through;}
 table {border-collapse: collapse; border-spacing: 0;}
 
-/* used colors  
-        deep-cobalt blue: #13306a
-        greyish-blue: #7387ad
-        light-grey: #f2f2f2
-        middle-grey: #8e8e8e
-        heavy-grey: #424242
-        white: #FFFFFF
-        ironside grey: #6f6f6e
+/* benutzte farben  
+    deep-cobalt blue: #13306a
+    greyish-blue: #7387ad
+    light-grey: #f2f2f2
+    middle-grey: #8e8e8e
+    heavy-grey: #424242
+    white: #FFFFFF
+    ironside grey: #6f6f6e
 */
 }
 @media screen {     
 
 /****** Header ******/
 
- #logo { height: 90px; width: 450px; }
+    #logo { height: 90px; width: 450px; }
 
-header{
-    background-color: #13306a;
-    display: block;
-    box-sizing: border-box;
-    margin-bottom: 3px;
-}
+    header{
+        background-color: #13306a;
+        display: block;
+        box-sizing: border-box;
+        margin-bottom: 3px;
+    }
 
-.logo-container {
-    padding-top: 24px;
-    padding-bottom: 24px;
-    position: relative;
-}
- /****** Navbar ******/
+    .logo-container {
+        padding-top: 24px;
+        padding-bottom: 24px;
+        position: relative;
+    }
+/****** Navbar ******/
  
- #navigation-container {
-    background-color: #7387ad;
-    font-size: 18px;
-    text-transform: uppercase;
-    overflow: hidden;
- }
-#navigation-container ol { margin: auto; padding: 0;}
+    #navigation-container {
+        background-color: #7387ad;
+        font-size: 18px;
+        text-transform: uppercase;
+        overflow: hidden;
+        height: 40px;
+    }
+    #navigation-container ol { margin: auto; padding: 0;}
 
-#navigation-container ol li {  margin-right: 12px;}
+    #navigation-container ol li {  margin-right: 12px;}
 
-#navigation-container a {padding: 8px; display: block;}
+    #navigation-container a {padding: 8px; display: block;}
 
-#navbar {
-  overflow: hidden;
-  background-color: #7387ad;
-  font-size:20px;
-  text-transform: uppercase;
-}
-/****** Navbar left ******/
+    #navbar {
+        overflow: hidden;
+        background-color: #7387ad;
+        font-size:20px;
+        text-transform: uppercase;
+    }
+/****** linke Navbar ******/
 
-#navbar a {
-  float: left;
-  display: block;
-  color: #f2f2f2;
-  text-align: center;
-  padding: 14px;
-  text-decoration: none;
-}
+    #navbar a {
+        float: left;
+        display: block;
+        color: #f2f2f2;
+        text-align: center;
+        padding: 14px;
+        text-decoration: none;
+    }
 
-a:focus, a:hover { color: #fff; text-decoration: underline; }
+    a:focus, a:hover { color: #fff; text-decoration: underline; }
 
-a {color: #fff; text-decoration: none;}
+    a {color: #fff; text-decoration: none;}
 
-a, a:visited, a:hover, a:visited:hover, a:focus, a:active { color: #fff; }
+    a, a:visited, a:hover, a:visited:hover, a:focus, a:active { color: #fff; }
 
-/****** Page content ******/
-.content {padding: 16px;}
+/****** Seiteninhalt ******/
 
-/****** Table style ******/
+    .content {padding: 16px;}
 
-td.noBorder, th.noBorder, tr.noBorder {
+/****** Tabellen Design ******/
+
+    td.noBorder, th.noBorder, tr.noBorder {
 	border-right-style: hidden;
 	border: 0;
 	width: 80px;
-}
-tr.trgrey, td.tdgrey { background-color: #8e8e8e; }
+    }
+    tr.trgrey, td.tdgrey { background-color: #8e8e8e; }
 
-tr.trgrey { line-height: 10px; }
+    tr.trgrey { line-height: 10px; }
 
-table {
+    table {
 	height: 50%;
 	table-layout: fixed;
 	border-collapse: collapse;
 	width: 150%;
         margin-bottom: 20px;
-}
+    }
 
-tr {    width: 200%; }
+    tr {    width: 200%; }
 
-td { 
+    td { 
         height: 30px; 
-        font-size: 12px;
+        font-size: 15px;
         border: 1.5px solid black; 
-}
+    }
 
 /****** The sticky class is added to the navbar with JS when it reaches its scroll position ******/
-.sticky {
-  position: fixed;
-  top: 0;
-  width: 100%
-}
+    .sticky {
+        position: fixed;
+        top: 0;
+        width: 100%
+    }
 
 /*** Add some top padding to the page content to prevent sudden quick movement 
 (as the navigation bar gets a new position at the top of the page (position:fixed and top:0) ***/
 
-.sticky + .content {  padding-top: 60px; }
+    .sticky + .content {  padding-top: 60px; }
 
-nav li {
-  display: inline-block;
-  float:left;
-  white-space: nowrap;
-}
+    nav li {
+        display: inline-block;
+        float:left;
+        white-space: nowrap;
+    }
 
-.logoutbtn { float: right; color: #FFFFFF; } 
+    .logoutbtn { float: right; color: #FFFFFF; } 
 
 /****** Style body ******/
-.container-fluid { max-width: 1200px; }
+    .container-fluid { max-width: 1200px; }
 
-body {
-  font-size: 16px;
-  font-family: "Calibri", "Open Sans", sans-serif;
-  color: #fff;
-  background: #6f6f6e;
-  line-height:1.25;
-}
+    body {
+        font-size: 16px;
+        font-family: "Calibri", "Open Sans", sans-serif;
+        color: #fff;
+        background: #6f6f6e;
+        line-height:1.25;
+    }
 
 /****** main zugehörige klasse? kann das weg? ******/
-.main {
-  margin-top: 20px;
-  margin-left: 10px;
-}
+    .main {
+        margin-top: 20px;
+        margin-left: 10px;
+    }
 
-.panel-heading { color: #7387ad; }
+    .panel-heading { color: #7387ad; }
 
-.panel-title{ color: white !important; }
-}
+    .panel-title{ color: white !important; }
+    }
 
-@media print {
-
-#kontrollliste { page-break-after: always;}    
+/****** Druckansicht ******/
+@media print {  
     
-/****** none displayed printobjects ******/
+/****** nicht druckbare Objekte ******/
 
-#drucken, #navigation-container {
+    #drucken, #navigation-container {
         display:none;
-}
-/****** Table style ******/
+    }
 
-table {
+    #kontrollliste { page-break-after: always;}  
+    
+/****** Tabellen Design ******/
+
+    table {
 	height: 50%;
 	table-layout: fixed;
 	border-collapse: collapse;
 	width: 100%;
-}
+    }
 
-tr {    width: 200%; }
+    tr {    width: 200%; }
 
-td {
+    td {
         border: 1.5px solid black;
         height: 25px;
-        font-size: 50%;
-}
-td.noBorder, th.noBorder, tr.noBorder td {
+        font-size: 15px;
+    }
+    
+    td.noBorder, th.noBorder, tr.noBorder td {
 	border-right-style: hidden;
 	border: 0;
 	width: 80px;
-}
-tr.trgrey, td.tdgrey { background-color: #8e8e8e; }
+    }
+    tr.trgrey, td.tdgrey { background-color: #8e8e8e; }
 }

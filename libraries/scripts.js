@@ -62,6 +62,20 @@ function printpage() {
         window.print();
       }
 
+    window.onscroll = function() {myFunction()};
+
+    var navbar = document.getElementById("navigation-container");
+    var sticky = navbar.offsetTop;
+
+    function myFunction() {
+        if (window.pageYOffset >= sticky) {
+        navbar.classList.add("sticky")
+        }     
+        else {
+        navbar.classList.remove("sticky");
+        }
+    }
+    
   Dropzone.options.mydropzone = {
     parallelUploads: 1, //nur ein upload möglich
     autoProcessQueue: true, //automatischer upload on

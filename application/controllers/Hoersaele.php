@@ -53,7 +53,7 @@
         $data['title'] = ucfirst($page);
         $data['value'] = $output;
         $this->load->view('templates/platzvergabeheader');
-        $this->load->view('lecture_hall/zhg'.$page, $data);
+        $this->load->view('hoersaele/zhg/zhg'.$page, $data);
         $this->load->view('templates/footer');
     }
     

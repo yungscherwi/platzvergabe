@@ -17,8 +17,11 @@ class LoginSystem extends CI_Controller {
         if($this->form_validation->run())  
         {  
             //username und password werden dem model geliefert
+           
             $username = $this->input->post('username');  
             $password = $this->input->post('password');  
+ 
+
             //model function  
             $this->load->model('Login_model');  
             if($this->Login_model->can_login($username, $password))  

@@ -386,15 +386,3 @@
         border-left: 6px solid transparent;
         border-right: 6px solid transparent;
         border-bottom: 6px solid #be2626; }
-
-
-
-/*damit die error message oben angezeigt wird und den delete button nicht ueberdeckt*/
-.dz-error-message{
-    top: -50px !important;
-  }
-  .dz-error-message:after{
-    border-top: 6px solid #be2626 !important;
-    border-bottom: none !important;
-    top: 50px !important;
-  }

@@ -1,39 +1,73 @@
 function printpage() {
-			window.print();
+			window.print();                                 //druck funktion
 		}
 
-function goToNewPage() {
-    		var nr = document.getElementById("hoersaal");
-    		var selectedHs = nr.options[nr.selectedIndex].value;
+  function goToNewPage() {
+          var nr = document.getElementById("hoersaal");
+          var selectedHs = nr.options[nr.selectedIndex].value;
+          window.open(selectedHs);                                      //öffnet Hörsaal in einem neuen Fenster
+          window.open('hoersaele/kontrollliste/'+selectedHs);           //öffnet Kontrolllisten in einem neuen Fenster
+      }
+      
+  function showReihen(int){
+      if(int.length == 0){
+        document.getElementById('reihen').innerHTML = '';
+      } else{
+        //AJAX REQUEST
+        var xmlhttp = new XMLHttpRequest();
+        xmlhttp.onreadystatechange = function(){          //prüft ob serververbindung besteht
+          if(this.readyState == 4 && this.status == 200){
+            document.getElementById('reihen').
+            innerHTML = this.responseText;
+          }
+        }
+        //aufruf der funktion im controller hoersaele  + Übergabe der Eingabe
+        xmlhttp.open("GET", "hoersaele/reihen?q="+int, true);
+        xmlhttp.send();
+      }
+    }
+  
+    function sperrplaetze(int){
+      if(int.length == 0){
+        document.getElementById('sperrplaetze').innerHTML = '';
+      } else{
+        //AJAX REQUEST
+        var xmlhttp = new XMLHttpRequest();
+        xmlhttp.onreadystatechange = function(){          //prüft ob serververbindung besteht
+          if(this.readyState == 4 && this.status == 200){
+            document.getElementById('sperrplaetze').
+            innerHTML = this.responseText;
+          }
+        }
+        //aufruf der funktion im controller hoersaele  + Übergabe der Eingabe
+        xmlhttp.open("GET", "hoersaele/sperrplaetze?q="+int, true);
+        xmlhttp.send();
+      }
+    }
 
-    		window.open(selectedHs); //window.location = selectedVal um es im selben Fenster zu öffnen (klappt bisher leider nicht)
+    function showMe (box) {
+
+    var chboxs = document.getElementsByName("showSperrplaetze");
+    var vis = "none";
+    for(var i=0;i<chboxs.length;i++) {
+        if(chboxs[i].checked){
+         vis = "block";
+            break;
+        }
+    }
+    document.getElementById(box).style.display = vis;
 }
 
-Dropzone.options.mydropzone = {
-    parallelUploads: 1, //nur ein upload möglich
-    autoProcessQueue: true, //automatischer upload on
-    maxFiles: 1, //man kann nur eine file hochladen
-    acceptedFiles: ".csv", //nur .csv 
-    init: function() {
-      this.on("success", function() { //wenn hochgeladen, dann kann man auch weiter
-        $('button:submit').attr('disabled', false);
-      });
+    window.onscroll = function() {myFunction()};
 
-      this.on("addedfile", function(file) { //added button unter der file zum löschen der datei, falls man doch was falsches hochgeladen hat
-        var removeButton = Dropzone.createElement("<button style='width: 70%; heigth: 70%;margin:auto;display:block;border-radius: 12px;border: none;margin-top: 5px;'>Remove file</button>");
+    var navbar = document.getElementById("navigation-container");
+    var sticky = navbar.offsetTop;
 
-        var _this = this;
-
-        removeButton.addEventListener("click", function(e) {
-          e.preventDefault();
-          e.stopPropagation();
-
-          _this.removeFile(file);
-        });
-        file.previewElement.appendChild(removeButton);
-      });
-
-      this.on("error", function)
-
+    function myFunction() {
+        if (window.pageYOffset >= sticky) {
+        navbar.classList.add("sticky")
+        }     
+        else {
+        navbar.classList.remove("sticky");
+        }
     }
-  };

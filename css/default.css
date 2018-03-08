@@ -83,14 +83,14 @@ table {border-collapse: collapse; border-spacing: 0;}
 
     a, a:visited, a:hover, a:visited:hover, a:focus, a:active { color: #fff; }
       
-/****** The sticky class is added to the navbar with JS when it reaches its scroll position ******/
+/****** The sticky class is added to the navbar with JS when it reaches its scroll position Die sticky class wird zur navbar durch js hinzugefügt wenn die scroll position erreicht wird******/
     .sticky {
         position: fixed;
         top: 0;
         width: 100%
     }
 
-/*** Add some top padding to the page content to prevent sudden quick movement 
+/*** Add some top padding to the page content to prevent sudden quick movement
 (as the navigation bar gets a new position at the top of the page (position:fixed and top:0) ***/
 
     .sticky + .content {  padding-top: 60px; }
@@ -118,7 +118,6 @@ table {border-collapse: collapse; border-spacing: 0;}
     tr.trgrey { line-height: 10px; }
 
     table {
-	height: 50%;
 	table-layout: fixed;
 	border-collapse: collapse;
 	width: 150%;

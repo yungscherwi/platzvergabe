@@ -43,7 +43,7 @@
       this.on("addedfile", function(file) { //added button unter der file zum löschen der datei, falls man doch was falsches hochgeladen hat
         var removeButton = Dropzone.createElement("<button style='width: 70%; heigth: 70%;margin:auto;display:block;border-radius: 12px;border: none;margin-top: 5px;'>Remove file</button>");
         var _this = this;
-        removeButton.addEventListener("click", function(e) {
+        removeButton.addEventListener("click", function(e) { //haelt davon ab, dass beim click action der form ausgefuehrt wird
           e.preventDefault();
           e.stopPropagation();
           _this.removeFile(file);

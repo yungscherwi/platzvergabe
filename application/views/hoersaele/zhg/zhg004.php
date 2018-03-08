@@ -168,4 +168,5 @@
 	<form method="get" action="">
 		<button id="drucken" type="button" class="btn btn-default" onClick="printpage()" style="float: right;"><span class="glyphicon glyphicon-print"></span>&nbsp;Drucken</button>
 	</form>
+	<br><br>
 </div>

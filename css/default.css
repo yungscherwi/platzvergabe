@@ -64,9 +64,6 @@ table {border-collapse: collapse; border-spacing: 0;}
         font-size:20px;
         text-transform: uppercase;
     }
-    
-
-/****** linke Navbar ******/
 
     #navbar a {
         float: left;
@@ -77,30 +74,27 @@ table {border-collapse: collapse; border-spacing: 0;}
         text-decoration: none;
     }
 
+        nav li {
+        display: inline-block;
+        float:left;
+        white-space: nowrap;
+    }
+    
     a:focus, a:hover { color: #fff; text-decoration: underline; }
 
     a {color: #fff; text-decoration: none;}
 
     a, a:visited, a:hover, a:visited:hover, a:focus, a:active { color: #fff; }
       
-/****** The sticky class is added to the navbar with JS when it reaches its scroll position ******/
+/******  Die sticky class wird zur navbar durch js hinzugefügt wenn die scroll position erreicht wird ******/
     .sticky {
         position: fixed;
         top: 0;
         width: 100%
     }
 
-/*** Add some top padding to the page content to prevent sudden quick movement 
-(as the navigation bar gets a new position at the top of the page (position:fixed and top:0) ***/
-
     .sticky + .content {  padding-top: 60px; }
-
-    nav li {
-        display: inline-block;
-        float:left;
-        white-space: nowrap;
-    }
-
+    
 
 /****** Seiteninhalt ******/
 
@@ -118,7 +112,6 @@ table {border-collapse: collapse; border-spacing: 0;}
     tr.trgrey { line-height: 10px; }
 
     table {
-	height: 50%;
 	table-layout: fixed;
 	border-collapse: collapse;
 	width: 150%;
@@ -147,12 +140,10 @@ table {border-collapse: collapse; border-spacing: 0;}
     }
 
 
-    .panel-group { width: 1000px; } 
-    
-    .panel-heading { color: #7387ad;width: 1000px; }
-
     .panel-title { color: white !important; }
     }
+
+    img { width: 800px; }
 
 /****** Druckansicht ******/
 @media print {  

@@ -1414,14 +1414,104 @@
 					<td class="noBorder" style="background-color: #d3d3d3"></td>
 					<td class="noBorder" style="background-color: #FFFFFF">Reihe 1</td>
 				</tr>
+				<tr class="noBorder">
+				<td></td>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td></td>
+			</tr>
+			<tr class="noBorder"	>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td></td>
+			</tr>
+			<tr>
+				<td class="noBorder"></td>
+				<td class="noBorder"></td>
+				<td class="noBorder"></td>
+				<td class="noBorder"></td>
+				<td class="noBorder"></td>
+				<td class="noBorder"></td>
+				<td colspan="30" style="height: 100px; background-color: #17202A"><p style="text-align: center; color: #FFFFFF"><strong> Rednerpult</strong></p></td>
+			</tr>
 			</table>
 		</div>
-		<br><br>
-		<button id="drucken" type="button" class="btn btn-default" onClick="javascript:location.href='localhost/my_project/secondtry/application/views/zhg004.php" style="float: right; margin-left: 3px;"><span class="glyphicon glyphicon-floppy-disk"></span>&nbsp;Speichern
-		</button>
-		<form method="get" action="">
-			<button id="drucken" type="button" class="btn btn-default" onClick="printpage()" style="float: right;"><span class="glyphicon glyphicon-print"></span>&nbsp;Drucken</button>
-		</form>
-	</div>
-</body>
-</html>
+	<br><br>
+	<form method="get" action="">
+		<button type="button" class="btn btn-default" onClick="printpage()" style="float: right;"><span class="glyphicon glyphicon-print"></span>&nbsp;Drucken</button>
+	</form>
+	<br><br>
+</div>

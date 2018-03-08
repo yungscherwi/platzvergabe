@@ -14,7 +14,7 @@
           <option value="hoersaele/view_zhg/007">ZHG 007 (Plätze: 32)</option>
           <option value="hoersaele/view_zhg/008">ZHG 008 (Plätze: 65)</option>
           <option value="hoersaele/view_zhg/009">ZHG 009 (Plätze: 64)</option>
-          <option value="hoersaele/view_zhg/010">ZHG 010 (Plätze: 80)</option>
+          <option value="hoersaele/view_zhg/010">ZHG 010 (Plätze: 79)</option>
           <option value="hoersaele/view_zhg/011">ZHG 011 (Plätze: 153)</option>
           <option value="hoersaele/view_zhg/101">ZHG 101 (Plätze: 40)</option>
           <option value="hoersaele/view_zhg/102">ZHG 102 (Plätze: 41)</option>

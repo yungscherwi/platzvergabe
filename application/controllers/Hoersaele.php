@@ -4,13 +4,13 @@
     public function index(){
 
         $this->load->view('templates/header');                  
-        $this->load->view('hoersaele/index');                  
+        $this->load->view('hoersaele/raum_erstellen');                  
         $this->load->view('templates/footer');
     }
     
     	public function index_zhg() {
             $this->load->view('templates/header');
-            $this->load->view('hoersaele/zhg_auswahl');
+            $this->load->view('hochladen/zhg_auswahl');
             $this->load->view('templates/footer');
         }
 
@@ -43,11 +43,6 @@
   }  
         //ZHG Aufruf 
   	public function view_zhg($page){
-        //Wenn Seite nicht existiert->404
-         /*if(!file_exists(APPPATH.'views/pages/'.$page.'.php')){
-        show_404();
-         }*/
-      //ucfirst-> UpperCasefirst, also erster Buchstabe groß
       	$output = $this->first_column();
       	$output = $this->fillarray(160, $output);
         $data['title'] = ucfirst($page);

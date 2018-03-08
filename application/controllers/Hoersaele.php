@@ -3,8 +3,8 @@
     //Hörsaal-Erstellen
     public function index(){
 
-        $this->load->view('templates/header');
-        $this->load->view('hoersaele/index');
+        $this->load->view('templates/header');                  
+        $this->load->view('hoersaele/index');                  
         $this->load->view('templates/footer');
     }
     

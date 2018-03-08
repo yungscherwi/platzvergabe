@@ -2,30 +2,30 @@
 <head>
     
     <?php   //Abfrage der Nutzer ID vom Login
-    if(!isset($_SESSION['username'])) {                             
-        redirect( base_url() . 'loginsystem/login' );
+    if(!isset($_SESSION['username'])) {                             //falls in der session kein username aktiv ist, dann...
+        redirect( base_url() . 'loginsystem/login' );               //...zurück zur login seite, sonst...
     }
-        $userid = $_SESSION['username'];
+        $userid = $_SESSION['username'];                            //...$userid = username des eingeloggten
     ?>
     
     <meta charset="UTF-8">
     <title>Platzvergabe</title>
-    <script src="<?php echo base_url(); ?>../libraries/scripts.js"></script>
-    <script src="<?php echo base_url(); ?>../libraries/jquery.js"></script>
-    <script src="<?php echo base_url(); ?>../libraries/dropzone.js"></script>
-    <script src="<?php echo base_url(); ?>../bootstrap/js/bootstrap.min.js"></script>
-    <link rel="stylesheet" href="<?php echo base_url() ?>../css/dropzone.css">
-    <link rel="stylesheet" href="<?php echo base_url() ?>../css/default.css">
-    <link rel="stylesheet" href="<?php echo base_url() ?>../bootstrap/css/bootstrap.min.css">
+    <script src="<?php echo base_url(); ?>../libraries/scripts.js"></script>                    <!--eigene javascripts laden-->
+    <script src="<?php echo base_url(); ?>../libraries/jquery.js"></script>                     <!--jqueryscripts laden-->
+    <script src="<?php echo base_url(); ?>../libraries/dropzone.js"></script>                   <!--dropzone scripts laden-->
+    <script src="<?php echo base_url(); ?>../bootstrap/js/bootstrap.min.js"></script>           <!--bootstrap scripts  laden-->
+    <link rel="stylesheet" href="<?php echo base_url() ?>../css/dropzone.css">                  <!--dropzone css laden-->
+    <link rel="stylesheet" href="<?php echo base_url() ?>../css/default.css">                   <!--eigene erstellte css laden-->
+    <link rel="stylesheet" href="<?php echo base_url() ?>../bootstrap/css/bootstrap.min.css">   <!--bootstrap css laden-->
 
 </head>
 <body>
 <header>
     <div class="container-fluid logo-container">
-        <img id="logo" src="http://www.uni-goettingen.de/img/redesign/logo.svg">
+        <img id="logo" src="http://www.uni-goettingen.de/img/redesign/logo.svg">                <!--Uni logo laden-->
     </div>
 </header>
-    <div id="navigation-container">
+    <div id="navigation-container">                                                             <!--Navbar laden-->
         <div class="container-fluid">	
             <div class="navigation">
                 <nav>
@@ -42,7 +42,7 @@
                         <li> <a href="<?php echo base_url();?>hoersaele/hoersaeleverwalten">Prüfungsraum verwalten</a> </li>
                     </ol>
                 </nav>
-                <label class="logoutbtn" ><a style="color: white" href="<?php echo base_url();?>loginsystem/logout"><span class="glyphicon glyphicon-log-out"></span>&nbsp;&nbsp;Logout</a></label> 
+                <label class="logoutbtn" ><a href="<?php echo base_url();?>loginsystem/logout"><span class="glyphicon glyphicon-log-out"></span>&nbsp;&nbsp;Logout</a></label> 
             </div>
         </div>
     </div>

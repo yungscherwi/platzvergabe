@@ -1,15 +1,14 @@
 function printpage() {
-			window.print();
+			window.print();                                 //druck funktion
 		}
 
   function goToNewPage() {
           var nr = document.getElementById("hoersaal");
           var selectedHs = nr.options[nr.selectedIndex].value;
-          window.open(selectedHs); //öffnet Hörsaal
-         // window.open('kontrollliste'); //öffnet Kontrollliste
-          window.open('hoersaele/kontrollliste/'+selectedHs);
+          window.open(selectedHs);                                      //öffnet Hörsaal in einem neuen Fenster
+          window.open('hoersaele/kontrollliste/'+selectedHs);           //öffnet Kontrolllisten in einem neuen Fenster
       }
-
+      
   function showReihen(int){
       if(int.length == 0){
         document.getElementById('reihen').innerHTML = '';
@@ -27,7 +26,7 @@ function printpage() {
         xmlhttp.send();
       }
     }
-
+  
     function sperrplaetze(int){
       if(int.length == 0){
         document.getElementById('sperrplaetze').innerHTML = '';
@@ -58,9 +57,6 @@ function printpage() {
     }
     document.getElementById(box).style.display = vis;
 }
-      function printpage() {
-        window.print();
-      }
 
     window.onscroll = function() {myFunction()};
 
@@ -75,25 +71,3 @@ function printpage() {
         navbar.classList.remove("sticky");
         }
     }
-    
-  Dropzone.options.mydropzone = {
-    parallelUploads: 1, //nur ein upload möglich
-    autoProcessQueue: true, //automatischer upload on
-    maxFiles: 1, //man kann nur eine file hochladen
-    acceptedFiles: ".csv", //nur .csv 
-    init: function() {
-      this.on("success", function() { //wenn hochgeladen, dann kann man auch weiter
-        $('button:submit').attr('disabled', false);
-      });
-      this.on("addedfile", function(file) { //added button unter der file zum löschen der datei, falls man doch was falsches hochgeladen hat
-        var removeButton = Dropzone.createElement("<button style='width: 70%; heigth: 70%;margin:auto;display:block;border-radius: 12px;border: none;margin-top: 5px;'>Remove file</button>");
-        var _this = this;
-        removeButton.addEventListener("click", function(e) {
-          e.preventDefault();
-          e.stopPropagation();
-          _this.removeFile(file);
-        });
-        file.previewElement.appendChild(removeButton);
-      });
-    }
-  };

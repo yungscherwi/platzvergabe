@@ -64,6 +64,8 @@ table {border-collapse: collapse; border-spacing: 0;}
         font-size:20px;
         text-transform: uppercase;
     }
+    
+
 /****** linke Navbar ******/
 
     #navbar a {
@@ -80,6 +82,25 @@ table {border-collapse: collapse; border-spacing: 0;}
     a {color: #fff; text-decoration: none;}
 
     a, a:visited, a:hover, a:visited:hover, a:focus, a:active { color: #fff; }
+      
+/****** The sticky class is added to the navbar with JS when it reaches its scroll position ******/
+    .sticky {
+        position: fixed;
+        top: 0;
+        width: 100%
+    }
+
+/*** Add some top padding to the page content to prevent sudden quick movement 
+(as the navigation bar gets a new position at the top of the page (position:fixed and top:0) ***/
+
+    .sticky + .content {  padding-top: 60px; }
+
+    nav li {
+        display: inline-block;
+        float:left;
+        white-space: nowrap;
+    }
+
 
 /****** Seiteninhalt ******/
 
@@ -112,24 +133,6 @@ table {border-collapse: collapse; border-spacing: 0;}
         border: 1.5px solid black; 
     }
 
-/****** The sticky class is added to the navbar with JS when it reaches its scroll position ******/
-    .sticky {
-        position: fixed;
-        top: 0;
-        width: 100%
-    }
-
-/*** Add some top padding to the page content to prevent sudden quick movement 
-(as the navigation bar gets a new position at the top of the page (position:fixed and top:0) ***/
-
-    .sticky + .content {  padding-top: 60px; }
-
-    nav li {
-        display: inline-block;
-        float:left;
-        white-space: nowrap;
-    }
-
     .logoutbtn { float: right; color: #FFFFFF; } 
 
 /****** Style body ******/
@@ -143,15 +146,12 @@ table {border-collapse: collapse; border-spacing: 0;}
         line-height:1.25;
     }
 
-/****** main zugehörige klasse? kann das weg? ******/
-    .main {
-        margin-top: 20px;
-        margin-left: 10px;
-    }
 
-    .panel-heading { color: #7387ad; }
+    .panel-group { width: 1000px; } 
+    
+    .panel-heading { color: #7387ad;width: 1000px; }
 
-    .panel-title{ color: white !important; }
+    .panel-title { color: white !important; }
     }
 
 /****** Druckansicht ******/

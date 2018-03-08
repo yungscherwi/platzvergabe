@@ -6,53 +6,54 @@ class LoginSystem extends CI_Controller {
     function login()  
     {  
         //http://localhost/platzvergabe/loginsystem/login   
-        $this->load->view('templates/platzvergabeheader');                           
-        $this->load->view("pages/login");  
-        $this->load->view('templates/footer');
+        $this->load->view('templates/platzvergabeheader');                                     //laden des headers...
+        $this->load->view("pages/login");                                                      //...der Login Seite...
+        $this->load->view('templates/footer');                                                 //...und des footers
     }  
     function login_validation()                                                              
-    {   
+    {                                                                                          //CI_framework library funktion 
         $this->form_validation->set_rules('username', 'Username', 'trim|required|xss_clean');  //trim entfernt leerzeichen vor und nach dem string
         $this->form_validation->set_rules('password', 'Password', 'trim|required|xss_clean');  //xss_clean liefert xss filter
         if($this->form_validation->run())  
+         
         {  
-            //username und password werden dem model geliefert
+            
            
-            $username = $this->input->post('username');  
-            $password = $this->input->post('password');  
+            $username = $this->input->post('username');                                        //username = eingegebenen username aus view
+            $password = $this->input->post('password');                                        //password = eingegebenen password aus view
  
 
-            //model function  
-            $this->load->model('Login_model');  
-            if($this->Login_model->can_login($username, $password))  
+             
+            $this->load->model('Login_model');                                                 //login_model wird geladen  
+            if($this->Login_model->can_login($username, $password))                            //username und password werden dem model geliefert  
             {  
-                //session wird für den Benutzer angelegt
+                                                                                               //session wird für den Benutzer angelegt
                 $session_data = array(                              
                 'username'    =>    $username  
                 );  
                 $this->session->set_userdata($session_data);  
-                redirect(base_url() . 'LoginSystem/enter');  
+                redirect(base_url() . 'LoginSystem/enter');                                    //aufrufen der "enter" funktion
             }  
-            else  
+            else                                                                               //...sonst...
             {  
-                $this->session->set_flashdata('error', 'Invalid Username and Password');  
-                redirect(base_url() . 'LoginSystem/login');  
+                $this->session->set_flashdata('error', 'Invalid Username and Password');       //...Fehlermeldung anzeigen
+                redirect(base_url() . 'LoginSystem/login');                                    //...und zurück zum Login
             }  
         }  
-        else  
+        else                                                                                   //...sonst... 
         {  
         //false  
-        $this->login();  
+        $this->login();                                                                        //...zurück zum Login
         }  
     }  
     function enter(){  
-        if($this->session->userdata('username') != '')                    //falls aktive session vorhanden, weiterleitung auf Home-Seite
+        if($this->session->userdata('username') != '')                     //falls aktive session vorhanden...
         {    
-            echo "<script>window.location.href='view';</script>";
+            echo "<script>window.location.href='view';</script>";          //...weiterleitung auf Home-Seite
         }  
         else  
         {  
-            redirect(base_url() . 'LoginSystem/login');  
+            redirect(base_url() . 'LoginSystem/login');                    //...sonst zurück zur Login Seite
         }  
     }  
     function logout()  
@@ -62,16 +63,16 @@ class LoginSystem extends CI_Controller {
     }  
   
     public function view($page ='home'){
-        //Wenn Seite nicht existiert->404
-        if(!file_exists(APPPATH.'views/pages/'.$page.'.php'))
+       
+        if(!file_exists(APPPATH.'views/pages/'.$page.'.php'))               //Wenn Seite nicht existiert->404
         {
             show_404();
         }
-        //ucfirst-> UpperCasefirst, also erster Buchstabe groß
-        $data['title'] = ucfirst($page);
-        $this->load->view('templates/header');
-        $this->load->view('pages/'.$page, $data);
-        $this->load->view('templates/footer');
+        
+        $data['title'] = ucfirst($page);                                    //ucfirst-> UpperCasefirst, also Anfangsbuchstabe groß
+        $this->load->view('templates/header');                              //laden des headers...
+        $this->load->view('pages/'.$page, $data);                           //...der Startseite...
+        $this->load->view('templates/footer');                              //...und dem footer
     }
 }
       

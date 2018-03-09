@@ -173,14 +173,14 @@
       for($i=0;$i<(count($sperrplaetze));$i++){ //solange Sperrplätze vorliegen
         //ungerade Reihenanzahl
       if($reiheLength%2!=0){
-        if($sperrplatzreihe[$i]==$reiheLength || $sperrplatzreihe[$i]%2==1){ //sperrplatzreihe ist erste Reihe oder ungerade
+        if($sperrplatzreihe[$i]==1 || $sperrplatzreihe[$i]%2==1){ //sperrplatzreihe ist erste Reihe oder ungerade
           if($sperrplaetze[$i]==0 || $sperrplaetze[$i]%3==1) //sperrplatz gleich 1. platz in der Reihe oder jeder 3.
         $plaetze--;
         }
       }
       //gerade Reihenanzahl
       if($reiheLength%2==0){
-        if($sperrplatzreihe[$i]==$reiheLength || $sperrplatzreihe[$i]%2!=0){ //sperrplatzreihe ist erste Reihe oder gerade
+        if($sperrplatzreihe[$i]==1 || $sperrplatzreihe[$i]%2!=0){ //sperrplatzreihe ist erste Reihe oder gerade
           if($sperrplaetze[$i]==0 || $sperrplaetze[$i]%3==1) //sperrplatz gleich 1. platz in der Reihe oder jeder 3.
         $plaetze--;
         }

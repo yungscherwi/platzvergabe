@@ -6,7 +6,7 @@ class Login_model extends CI_Model
   
         $this->db->where('benutzername', $username);           //abgleich von eingegebenen Benutzerdaten mit den 
                                                                //Benutzerdaten in der Datenbank
-        $query = $this->db->get('benutzer');                   //SELECT * FROM users WHERE username = '$username' AND password = '$password'  
+        $query = $this->db->get('benutzer');                   //SELECT * FROM benutzer WHERE username = '$username'  
         if($query->num_rows() > 0)                             //anzahl der reihen größer 0?, dann... 
         {  
             $user_row = $query -> row();                        //$user_row = Benutzerdaten aus DB

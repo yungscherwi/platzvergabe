@@ -180,7 +180,7 @@
 	</div>
 	<br><br>
 	<form>
-		<button type="button" class="btn btn-default" onClick="printpage()" style="float: right;"><span class="glyphicon glyphicon-print"></span>&nbsp;Drucken</button>
+		<button id="drucken" type="button" class="btn btn-default" onClick="printpage()" style="float: right;"><span class="glyphicon glyphicon-print"></span>&nbsp;Drucken</button>
 	</form>
 	<br><br>
 </div>

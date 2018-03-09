@@ -1,24 +1,21 @@
 <?php
   class Hoersaele extends CI_Controller{
-    //Hörsaal-Erstellen
+    //Raum-Erstellen
     public function index(){
-
-        $this->load->view('templates/header');                  
-        $this->load->view('hoersaele/raum_erstellen');                  
+        $this->load->view('templates/header');
+        $this->load->view('hoersaele/raum_erstellen');
         $this->load->view('templates/footer');
     }
-    
+    //ZHG-Hörsaalauswahl
     	public function index_zhg() {
             $this->load->view('templates/header');
             $this->load->view('hochladen/zhg_auswahl');
             $this->load->view('templates/footer');
         }
-
-    //Hörsaalaufruf
+    //Aufruf eines eigenerstellten Raumes aus Datenbank
     public function view($page){ //Raumnummer aus Auswahl wird übergeben
-      //Gibt Spalte 'reihe' als Array aus hoersaal aus
       $data['platzAnzahl'] = $this->hoersaal_model->get_platzAnzahl($page); //Plätze pro Reihe
-      $data['reihe'] = $this->hoersaal_model->get_reihe($page);
+      $data['reihe'] = $this->hoersaal_model->get_reihe($page); //Gibt Spalte 'reihe' als Array aus hoersaal aus
       $data['plaetze'] = $this->hoersaal_model->get_plaetze($page); //Plätze des gesamten Hörsaals
       $data['sperrplatzcheck'] = $this->hoersaal_model->get_sperrplatzCheck($page);
       $sperrplatzcheck = $this->hoersaal_model->get_sperrplatzCheck($page);
@@ -26,33 +23,32 @@
       $sperrplatzreihe = $this->hoersaal_model->get_sperrplatzreihe($page);
       $data['sperrplaetze'] = $this->hoersaal_model->get_sperrplatz($page,$sperrplatzreihe,$sperrplatzcheck);
       $data['raum'] = $page;
-      $data['MartrNr'] = $this->first_column();
-      $data['maxPlatzAnzahl'] = $this->hoersaal_model->get_maxPlatzAnzahl($page);
-
+      $data['MartrNr'] = $this->first_column(); //Gibt erste Spalte der Liste von FlexNow aus
+      $data['maxPlatzAnzahl'] = $this->hoersaal_model->get_maxPlatzAnzahl($page); //Platzanzahl der längsten Reihe des Raumes
       //wenn hörsaal groß genug, dann führe aus:
       if($data['plaetze']>=count($data['MartrNr'])){
         $this->load->view('templates/platzvergabeheader');
         $this->load->view('hoersaele/platzvergabe', $data);
         $this->load->view('templates/footer');
       }
+      //sonst lade view "alternativen"
       else{
         $this->load->view('templates/header');
         $this->load->view('hoersaele/alternativen', $data);
         $this->load->view('templates/footer');
       }
-  }  
-        //ZHG Aufruf 
+  }
+    //ZHG Aufruf
   	public function view_zhg($page){
-      	$output = $this->first_column();
-      	$output = $this->fillarray(160, $output);
+      	$output = $this->first_column(); //Erste Spalte ausgeben
+      	$output = $this->fillarray(160, $output); //erhöht die länge des arrays $output auf 160 durch leere felder, um fehlermeldung(array zu kurz) bei seitenaufruf zu vermeiden
         $data['title'] = ucfirst($page);
         $data['value'] = $output;
         $this->load->view('templates/platzvergabeheader');
         $this->load->view('hoersaele/zhg/zhg'.$page, $data);
         $this->load->view('templates/footer');
     }
-    
-//Kontrolliste Aufruf mit Übergabe des ausgewählten Hörsaals
+  //Kontrolliste Aufruf mit Übergabe des ausgewählten Hörsaals
   public function kontrollliste($page){
     $data['hoersaalID'] = $this->hoersaal_model->get_hoersaalID(); //liefert die HoersaalID Spalte aus hoersaal
     $data['plaetze'] = $this->hoersaal_model->get_allPlaetze(); //alle plätze als array
@@ -60,7 +56,6 @@
     $data['nachnamen'] = $this->nachname_column();
     $data['vornamen'] = $this->vorname_column();
     $data['reihe'] = $this->hoersaal_model->get_reihe($page);
-
     $this->load->view('templates/header');
     $this->load->view('pages/kontrollliste', $data);
     $this->load->view('templates/footer');
@@ -69,8 +64,7 @@
     public function create(){
       $raumInfo = [$_POST["hoersaalID"]]; //Variable aus der Form in einen Array speichern
       //Erstellung der jeweiligen Hörsaaltabelle
-      $data['raumInfo'] = $this->hoersaal_model->createDatabase($raumInfo);
-
+      $data['raumInfo'] = $this->hoersaal_model->insertIntoHoersaaluebersicht($raumInfo);
       //Insert in die jeweilige Hörsaaltabelle
       $i=0; //counter variable für anzahlPlaetze
       while(!empty($_POST["anzahlPlaetze".$i.""])){ //Solange wiederholen, bis anzahlPlaetze nicht vorhanden
@@ -85,7 +79,6 @@
         $j++;
         $data['sperrplatzInfo'] = $this->hoersaal_model->insertIntoSperrplaetze($sperrplatzInfo);
       }
-
       //Variablen für Platzberechnung
       $page = implode([$_POST["hoersaalID"]]);
       $platzAnzahl = $this->hoersaal_model->get_platzAnzahl($page); //Aufruf entsprechend übergebener Raumnummer
@@ -93,22 +86,18 @@
       $sperrplatzcheck = $this->hoersaal_model->get_sperrplatzcheck($page);
       $sperrplaetze = $this->hoersaal_model->get_sperrplatz($page,$sperrplatzreihe,$sperrplatzcheck);
       $reihe = $this->hoersaal_model->get_reihe($page);
-
       $revsperrplaetze = $this->hoersaal_model->get_revsperrplatz($page); // sonst wird nicht richtig gezählt, rev nur relevant für count
-
       //hoersaalübersicht updaten, wenn sperrplatz vorhanden
       $hoersaalID = [$_POST["hoersaalID"]];
       if(!empty($_POST["checkbox"])){ //checkbox ist das InputFeld für Sperrplätze
         $this->hoersaal_model->updateSperrplatz($hoersaalID);
       }
-
       $sperrplatzcheck = $this->hoersaal_model->get_sperrplatzCheck($page);
       $plaetze=$this->countPlaetze($platzAnzahl, $sperrplatzcheck, $sperrplatzreihe, $revsperrplaetze, $reihe);
-
       //Platzanzahl bei Klausur in hoersaalübersicht
       $hoersaalInfo = [$_POST["hoersaalID"], $plaetze];
       $this->hoersaal_model->insertIntoHoersaal($hoersaalInfo);
-
+      //Aufruf des success Seite mit entsprechenden Informationen
       $data['hoersaalID']=[$_POST["hoersaalID"]];
       $data['reihen'] =$reihe;
       $data['plaetze']=$plaetze;
@@ -116,12 +105,10 @@
       $this->load->view('hoersaele/success', $data);
       $this->load->view('templates/footer');
     }
-
-    //AJAX
+    //AJAX für Reihen
     public function reihen(){
       $q = $_REQUEST['q']; //Query für Eingabe
       $reihen = ""; //initialisiert String
-
         for($i=0; $q>$i;$i++){ //Ausgabe von Formvorlage entsprechend eingegebener Zahl
           $reihen = $reihen . //name="anzahlPlaetze.$i um für jede Reihe einen individuellen Namen zu haben"
           '<div class="form-group">
@@ -131,11 +118,10 @@
         }
       echo $reihen; //Output
     }
-    //AJAX
+    //AJAX für Sperrplätze
     public function sperrplaetze(){
       $q = $_REQUEST['q']; //Query für Eingabe
       $sperrplaetze = ""; //initialisiert String
-
         for($i=0; $q>$i;$i++){ //Ausgabe von Formvorlage entsprechend eingegebener Zahl
           $sperrplaetze = $sperrplaetze . //name="anzahlPlaetze.$i um für jede Reihe einen individuellen Namen zu haben"
           '<h2>Sperrplatz '.($i+1).'</h1>
@@ -152,11 +138,10 @@
         }
       echo $sperrplaetze; //Output
     }
-
+    //zählt die Anzahl der Plätze für eine Klausur
     public function countPlaetze($platzAnzahl, $sperrplatzcheck, $sperrplatzreihe, $sperrplaetze, $reihe){
       $plaetze=0;
       $reiheLength = count($reihe);
-
       for($i=0;$i<$reiheLength;$i++){
         /* Wenn ungerade reihenanzahl,dann: */
         if($reiheLength%2!=0){
@@ -184,19 +169,19 @@
         }
       }
       //Sperrplatzüberprüfung
-      if($sperrplatzcheck[0]==1){
-      for($i=0;$i<(count($sperrplaetze));$i++){
+      if($sperrplatzcheck[0]==1){ //Wenn Sperrplätze vorliegen, dann
+      for($i=0;$i<(count($sperrplaetze));$i++){ //solange Sperrplätze vorliegen
         //ungerade Reihenanzahl
       if($reiheLength%2!=0){
-        if($sperrplatzreihe[$i]==$reiheLength || $sperrplatzreihe[$i]%2==1){
-          if($sperrplaetze[$i]==0 || $sperrplaetze[$i]%3==1)
+        if($sperrplatzreihe[$i]==$reiheLength || $sperrplatzreihe[$i]%2==1){ //sperrplatzreihe ist erste Reihe oder ungerade
+          if($sperrplaetze[$i]==0 || $sperrplaetze[$i]%3==1) //sperrplatz gleich 1. platz in der Reihe oder jeder 3.
         $plaetze--;
         }
       }
       //gerade Reihenanzahl
       if($reiheLength%2==0){
-        if($sperrplatzreihe[$i]==$reiheLength || $sperrplatzreihe[$i]%2!=0){
-          if($sperrplaetze[$i]==0 || $sperrplaetze[$i]%3==1)
+        if($sperrplatzreihe[$i]==$reiheLength || $sperrplatzreihe[$i]%2!=0){ //sperrplatzreihe ist erste Reihe oder gerade
+          if($sperrplaetze[$i]==0 || $sperrplaetze[$i]%3==1) //sperrplatz gleich 1. platz in der Reihe oder jeder 3.
         $plaetze--;
         }
       }
@@ -204,81 +189,69 @@
     return $plaetze;
   }
     else{
-              return $plaetze;
+              return $plaetze; //sonst einfach plaetze return ohne sperrplatzalgorithmus durchzugehen
             }
     }
-
-
     //matrnr werden als array erzeugt
     public function first_column(){
       $x = [];
       $start_row = 2;
       $i = 1;
-      $handle = fopen('uploads/liste_' . $_SESSION['username'] . '_' . date('Y_m_d') . '.csv', 'r');
-      while(($row = fgetcsv($handle, 1000, ';')) !== FALSE) {
-        if($i >= $start_row) {
-          array_push($x, $row[0]);
-        }
-        $i++;
-      }
-      fclose($handle);
-      return $x;	//print_r ($x);
-
-    }
-
-    //Spalte Nachname
-    public function nachname_column(){
-      $x = [];
-
-      $start_row = 2;
-      $i = 1;
-        $handle = fopen('uploads/liste_' . $_SESSION['username'] . '_' . date('Y_m_d') . '.csv', 'r');
-      while(($row = fgetcsv($handle, 1000, ';')) !== FALSE) {
-        if($i >= $start_row) {
-          array_push($x, utf8_encode($row[2]));
+      $handle = fopen('uploads/liste_' . $_SESSION['username'] . '_' . date('Y_m_d') . '.csv', 'r'); //Name generieren nach Session und Datum
+      while(($row = fgetcsv($handle, 1000, ';')) !== FALSE) { //solange Inhalt vorhanden,
+        if($i >= $start_row) { //wenn $i größer gleich start_row
+          array_push($x, $row[0]); //pusht die erste reihe in den array x
         }
         $i++;
       }
       fclose($handle);
       return $x;
-
+    }
+    //Spalte Nachname
+    public function nachname_column(){
+      $x = [];
+      $start_row = 2;
+      $i = 1;
+        $handle = fopen('uploads/liste_' . $_SESSION['username'] . '_' . date('Y_m_d') . '.csv', 'r'); //Name generieren nach Session und Datum
+      while(($row = fgetcsv($handle, 1000, ';')) !== FALSE) { //solange Inhalt vorhanden,
+        if($i >= $start_row) { //wenn $i größer gleich start_row
+          array_push($x, utf8_encode($row[2])); //pusht die erste reihe in den array x
+        }
+        $i++;
+      }
+      fclose($handle);
+      return $x;
     }
     //Spalte Vorname
     public function vorname_column(){
       $x = [];
-
       $start_row = 2;
       $i = 1;
-      $handle = fopen('uploads/liste_' . $_SESSION['username'] . '_' . date('Y_m_d') . '.csv', 'r');
-      while(($row = fgetcsv($handle, 1000, ';')) !== FALSE) {
-        if($i >= $start_row) {
-          array_push($x, utf8_encode($row[3]));
+      $handle = fopen('uploads/liste_' . $_SESSION['username'] . '_' . date('Y_m_d') . '.csv', 'r'); //Name generieren nach Session und Datum
+      while(($row = fgetcsv($handle, 1000, ';')) !== FALSE) { //solange Inhalt vorhanden,
+        if($i >= $start_row) { //wenn $i größer gleich start_row
+          array_push($x, utf8_encode($row[3])); //pusht die erste reihe in den array x
         }
         $i++;
       }
       fclose($handle);
       return $x;
     }
-    
      public function fillarray($x, $o) {//$x = anzahl sitzplaetze; $o = array
 			$f = sizeof($o);
-			if ($f < $x) {
-				$k = $x - $f;
-				for($i = 0; $i < $k; $i++) {
-					$o[$f+$i] = "";
+			if ($f < $x) { //Länge von $o kleiner als anzahl sitzplaetze
+				$k = $x - $f; //$k bestimmt anzahl der durchläufe der for-schleife
+				for($i = 0; $i < $k; $i++) { //solange $i kleiner als $k,
+					$o[$f+$i] = ""; //leeres feld einfügen
 				}
 			}
 			return $o;
 		}
-                
         public function hoersaeleverwalten() {
       $data['hoersaalID'] = $this->hoersaal_model->get_hoersaalID(); //liefert die HoersaalID Spalte aus hoersaal
       $data['plaetze'] = $this->hoersaal_model->get_allPlaetze(); //alle plätze als array
-
       $this->load->view('templates/header');
       $this->load->view('pages/hoersaal_verwalten', $data);
       $this->load->view('templates/footer');
     }
-
- 
 }?>

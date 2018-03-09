@@ -35,7 +35,7 @@ class Hoersaal_model extends CI_Model{
     $arr = explode(',',$array1['hoersaalID']);
     return($arr);
   }
-  public function createDatabase($raumInfo){
+  public function insertIntoHoersaaluebersicht($raumInfo){
     //hoersaalID wird eingefügt in die Tabelle
     $data = array(
       'hoersaalID' => $raumInfo[0]

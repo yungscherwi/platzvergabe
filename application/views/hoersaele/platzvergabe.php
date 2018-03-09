@@ -194,11 +194,11 @@ for($i=0;$i<$reiheLength;$i++){
 //Print für eine Reihe Abstand
 print('<tr><td class="noBorder"></td></tr><tr>');
   //Zentrieren durch Einfügen leerer Zellen
-  for($k=0;($maxPlatzAnzahl/4)>$k;$k++){
+  for($k=0;($maxPlatzAnzahl/8)>$k;$k++){
     print('<td class="noBorder"></td>');
   }
 //Print des Rednerpults
-print('<td colspan="10" style="height: 100px; background-color: #17202A"><p style="text-align: center; color: #FFFFFF"><strong> Rednerpult</strong></p></td>
+print('<td colspan="8" style="height: 100px; background-color: #17202A"><p style="text-align: center; color: #FFFFFF"><strong> Rednerpult</strong></p></td>
       </tr>
       </table>
       </div>
